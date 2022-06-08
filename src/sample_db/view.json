@@ -1,0 +1,16 @@
+[
+    {
+    "answers": 
+        ["Descartes", "Isaac Newton", "Fibonacci", "Pythagoras"], 
+    "category": "Toán", 
+    "code": "math", 
+    "content": "Nhà toán học nào đã sáng tạo ra hệ thống ký hiệu miêu tả lũy thừa các số?", 
+    "id": "5", 
+    "image": "https://randomuser.me/api/portraits/men/5.jpg"
+    }, 
+        {"answers": ["Tần số góc", "Tốc gộ góc", "Chu kỳ", "Gia tốc"], 
+            "category": "Vật lý", "code": "physical", 
+            "content": "Căn bậc hai(mgd/l) là công thức đại lượng nào của con lắc vật lý "},
+             {"answers": ["Saccarose", "Glucose", "Fructose", "Maltose"], "category": "Hóa học", "code": "chemist", 
+                "content": "Trong các loại cacbohidrad dưới đây, loại nào không có phản ứng tráng gương: Glucose, Fructose, Saccarose, Maltose."}, {"answers": [12, 3, 0, 20], "category": "Sinh học", "code": "biology", "content": "Cà độc dược có bao nhiêu kiểu đột biến thể ba? "}, {"answers": ["Tiếng trổng thu không", "Tiếng quét rác", "Tiếng kẻng", "Tiếng chuông nhà thờ"], "category": "Văn học ", "code": "literature", "content": "Âm thanh nào mở đầu cho tác phẩm 'Hai đứa trẻ'? "}, {"answers": ["Minh Mạng", "Tự Đức", "Gia Long", "Quang Trung"], "category": "Lịch sử", "code": "history", "content": "Thành Thăng Long chính thức đổi tên thành Hà Nội vào thời vua nào?"}, {"answers": ["Mantle", "Lớp vỏ", "Lõi trong", "Lõi ngoài"], "category": "Địa lý", "code": "geography", "content": "Lớp nào chiếm tới 80% thể tích và 68.5% khối lượng của trái đất?"}, {"answers": ["1986-2004", "2004", "2008", "1996"], "category": "Thể thao", "code": "sport", "content": "Hy Lạp đăng cai tổ chức Thế vận hội hiện đại vào những năm nào? "}, {"answers": ["Đàn tính", "Đàn đáy", "Đàn bầu", "Sáo"], "category": "Nghệ thuật", "code": "art", "content": "Nhạc cụ truyền thống của dân tộc Tày là cây đàn nào?"}, {"answers": ["Hàng Than", "Hàng Tre", "Hàng Bạc", "Hàng Gai"], "category": undefined, "code": undefined, "content": "Bánh cốm là một đặc sản nổi tiếng của phố ... Hà Nội?"}, {"answers": ["Tanzania", "Nam Phi", "Nhật Bản", "Brazil"], "category": "Hiểu biết chung", "code": "common_knowledge", "content": "Vườn quốc gia Kilimanjaro nằm ở quốc gia nào?"}, {"answers": ["United Nations", "Asean", "EU", "WTO"], "category": "Tiếng Anh", "code": "english", 
+                "content": "Which is the biggest organization in the world?"}]

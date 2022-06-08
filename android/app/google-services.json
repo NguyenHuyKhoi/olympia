@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "286492075382",
+    "firebase_url": "https://olympia-cf242.firebaseio.com",
+    "project_id": "olympia-cf242",
+    "storage_bucket": "olympia-cf242.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286492075382:android:257208f1e804fa96754657",
+        "android_client_info": {
+          "package_name": "com.olympia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286492075382-6sbt90fghn2ee30do64phkrp39ce8ren.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWk0S-euX4AHn3oNORVz-3PtXhOJ-PBu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286492075382-6sbt90fghn2ee30do64phkrp39ce8ren.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

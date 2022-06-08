@@ -1,0 +1,2144 @@
+{
+    "data_bank": {
+        "round1": [
+            {
+                "category": "Toán",
+                "code": "math",
+                "questions": [
+                    {
+                        "answers": [
+                            69,
+                            60,
+                            30,
+                            50
+                        ],
+                        "content": "Số 45 trong hệ thập lục phân có giá trị là bao nhiêu trong hệ thập phân?"
+                    },
+                    {
+                        "answers": [
+                            "Ngoặc vuông, ngoặc móc",
+                            "Ngoặc vuông ,ngoặc tròn",
+                            "Ngoặc móc, ngoặc tròn",
+                            "Ngoặc móc, ngoặc nhọn"
+                        ],
+                        "content": "Để chỉ phần nguyên và phần thập phân của một số thực, người ta lần lượt sử dụng các dấu ....... và .........?"
+                    },
+                    {
+                        "answers": [
+                            "2pi*a^2",
+                            "4pi*a^3",
+                            "3pi*/5",
+                            "2pi*a"
+                        ],
+                        "content": "Diện tích hình tròn ngoại tiếp hình vuông có cạnh bằng 2a bằng bao nhiêu?"
+                    },
+                    {
+                        "answers": [
+                            1,
+                            0,
+                            "oo",
+                            -1
+                        ],
+                        "content": "Logarit tự nhiên của số nào bằng 0? "
+                    },
+                    {
+                        "answers": [
+                            "Cửu giác",
+                            "Lục giác",
+                            "Ngũ giác",
+                            "Bát giác"
+                        ],
+                        "content": "Tổng số đo các góc trong hình đa giác nào bằng 1260 độ?"
+                    },
+                    {
+                        "answers": [
+                            "Descartes",
+                            "Isaac Newton",
+                            "Fibonacci",
+                            "Pythagoras"
+                        ],
+                        "content": "Nhà toán học nào đã sáng tạo ra hệ thống ký hiệu miêu tả lũy thừa các số?",
+                        "id": "5"
+                    },
+                    {
+                        "answers": [
+                            "Hình chữ nhật - Hình thoi",
+                            "Hình chữ nhật và tam giác",
+                            "Hình thoi và hình tứ giác",
+                            "Hình tứ giác và tam giác"
+                        ],
+                        "content": "Tập hợp các hình vuông là giao của tập hợp các hình ... và hình ..."
+                    },
+                    {
+                        "answers": [
+                            "Hình cầu",
+                            "Hình trụ",
+                            "Hình lăng trụ",
+                            "Hình hộp chữ nhật"
+                        ],
+                        "content": "Trong các hình có cùng diện tích bề mặt, hình ..... có thể tích lớn nhất"
+                    },
+                    {
+                        "answers": [
+                            "Dời hình",
+                            "Biến hình",
+                            "Đối xứng",
+                            "Chiếu"
+                        ],
+                        "content": "Tịnh tiến, đối xứng là các phép ... nhưng vị tự không phải là một phép ..."
+                    },
+                    {
+                        "answers": [
+                            36,
+                            50,
+                            10,
+                            45
+                        ],
+                        "content": "Có bao nhiêu cách chọn số có 2 chữ số sao cho số hàng đơn vị lớn hơn số hàng chục?"
+                    }
+                ]
+            },
+            {
+                "category": "Vật lý",
+                "code": "physical",
+                "questions": [
+                    {
+                        "answers": [
+                            "Có",
+                            "Không",
+                            "Tùy môi trường",
+                            "Tùy loại sóng"
+                        ],
+                        "content": "Khi sóng điện từ gặp mặt phân cách giữa hai môi trường, nó có bị phản xạ hay khúc xạ không?"
+                    },
+                    {
+                        "answers": [
+                            "Khí lý tưởng",
+                            "Chất lỏng",
+                            "Chất rắn",
+                            "Khí trơ"
+                        ],
+                        "content": "'pV/T = hằng số' là phương trình trạng thái của ................? ?"
+                    },
+                    {
+                        "answers": [
+                            "Phản xạ toàn phần",
+                            "Khúc xạ",
+                            "Ánh xạ",
+                            "Phản xạ bán phần"
+                        ],
+                        "content": "Kính tiềm vọng là ứng dụng của hiện tượng vật lý nào? "
+                    },
+                    {
+                        "answers": [
+                            "Tần số góc",
+                            "Tốc gộ góc",
+                            "Chu kỳ",
+                            "Gia tốc"
+                        ],
+                        "content": "Căn bậc hai(mgd/l) là công thức đại lượng nào của con lắc vật lý "
+                    },
+                    {
+                        "answers": [
+                            "Độ tự cảm",
+                            "Điện trở",
+                            "Hiệu điện thế",
+                            "Điện dung"
+                        ],
+                        "content": "Henry là đơn vị được dùng để đo đại lượng vật lý nào?"
+                    },
+                    {
+                        "answers": [
+                            "Nhật Bản",
+                            "Mỹ",
+                            "Nga",
+                            "Trung quốc"
+                        ],
+                        "content": "3 nhà vật lý đoạt giải Nobel Vật lý 2014 đều đến từ đất nước nào?"
+                    },
+                    {
+                        "answers": [
+                            "Cộng hưởng",
+                            "Khuếch xạ",
+                            "Tán xạ",
+                            "Đàn hồi"
+                        ],
+                        "content": "Nhờ có hiện tượng vật lý nào mà ta có thể dùng lực nhỏ tạo ra dao động với biên độ lớn?"
+                    },
+                    {
+                        "answers": [
+                            "Tán sắc",
+                            "Khuếch xạ",
+                            "Phản xạ",
+                            "Khúc xạ"
+                        ],
+                        "content": "Nguyên tắc hoạt động của máy quang phổ lăng kính dựa trên hiện tượng vật lý nào?"
+                    },
+                    {
+                        "answers": [
+                            "Ngược pha",
+                            "Cùng pha",
+                            "Tỉ lệ thuận",
+                            "Bằng"
+                        ],
+                        "content": "Gia tốc trong dao động điều hòa ............. so với li độ."
+                    },
+                    {
+                        "answers": [
+                            "Nhiệt",
+                            "Cơ",
+                            "Điện",
+                            "Nguyên tử"
+                        ],
+                        "content": "Dạng năng lượng phổ biến dự trữ trong vật chất dựa vào chuyển động hỗn loạn của các hạt cấu tạo nên vật chất?"
+                    }
+                ]
+            },
+            {
+                "category": "Hóa học",
+                "code": "chemist",
+                "questions": [
+                    {
+                        "answers": [
+                            4,
+                            5,
+                            2,
+                            3
+                        ],
+                        "content": "Cộng hóa trị của Cacbon trong hợp chất HCOOH là bao nhiêu?"
+                    },
+                    {
+                        "answers": [
+                            "axetat",
+                            "nilon 6-6",
+                            "capron",
+                            "Cả 3"
+                        ],
+                        "content": "Trong các loại tơ sau đây, tơ nào là tơ nhân tạo: Tơ nilon 6-6, tơ capron,tơ axetat?"
+                    },
+                    {
+                        "answers": [
+                            "Toluene",
+                            "Benzen",
+                            "Axit axetat",
+                            "Andehit"
+                        ],
+                        "content": "Methylbenzene là danh pháp IUPAC của hợp chất hữu cơ nào?"
+                    },
+                    {
+                        "answers": [
+                            "Al2O3",
+                            "Al(OH)3",
+                            "AlCl3",
+                            "Al2(SO4)3"
+                        ],
+                        "content": "Thành phần chủ yếu của ruby, sappphires là hợp chất nào? "
+                    },
+                    {
+                        "answers": [
+                            "Lập phương tâm khối",
+                            "Lập phương tâm mặt",
+                            "Trực thoi tâm đáy",
+                            "Trực thoi tâm mặt"
+                        ],
+                        "content": "Các kim loại kiềm đều có kiểu mạng tinh thể nào?"
+                    },
+                    {
+                        "answers": [
+                            "CO2",
+                            "H2O",
+                            "CaCO3",
+                            "CAO"
+                        ],
+                        "content": "Trong các phương pháp dập tắt đám cháy, không thể sử dụng phương pháp nào đối với tác nhân gây cháy là magie?"
+                    },
+                    {
+                        "answers": [
+                            "Cacbon",
+                            "Oxi",
+                            "Silic",
+                            "Hidro"
+                        ],
+                        "content": "Nguyên tố nào có khả năng tạo được nhiều hợp chất nhất? "
+                    },
+                    {
+                        "answers": [
+                            "Saccarose",
+                            "Glucose",
+                            "Fructose",
+                            "Maltose"
+                        ],
+                        "content": "Trong các loại cacbohidrad dưới đây, loại nào không có phản ứng tráng gương: Glucose, Fructose, Saccarose, Maltose."
+                    },
+                    {
+                        "answers": [
+                            "Hydro",
+                            "Oxi",
+                            "Silic",
+                            "Cacbon"
+                        ],
+                        "content": "Nguyên tố nào có số lượng nhiều thứ hai trên Trái Đất? "
+                    },
+                    {
+                        "answers": [
+                            "Teflon",
+                            "Celluloid",
+                            "Cao su Buna",
+                            "Poliamit "
+                        ],
+                        "content": "Polymer nhiệt dẻo, có độ bền cao với các dung môi và hóa chất, dùng trong chảo chống dính?"
+                    }
+                ]
+            },
+            {
+                "category": "Sinh học",
+                "code": "biology",
+                "questions": [
+                    {
+                        "answers": [
+                            "Mất đoạn",
+                            "Lặp đoạn",
+                            "Thêm đoạn",
+                            "Tráo đoạn"
+                        ],
+                        "content": "Dạng đột biến cấu trúc nhiễm sắc thể nào thường gây chết hoặc làm giảm sức sống của sinh vật?"
+                    },
+                    {
+                        "answers": [
+                            "Chọn lọc tự nhiên",
+                            "Khí hậu",
+                            "Đột biến di truyền",
+                            "Chuỗi thức ăn"
+                        ],
+                        "content": "Nhân tố nào quy định chiều hướng tiến hóa của sinh giới?"
+                    },
+                    {
+                        "answers": [
+                            "Viêm gan C",
+                            "Viêm phổi",
+                            "Viêm dạ dày",
+                            "Bướu cổ"
+                        ],
+                        "content": "Virus HCV là virus gây ra bệnh gì?"
+                    },
+                    {
+                        "answers": [
+                            "Quang tự dưỡng",
+                            "Tự dưỡng cacbon",
+                            "Tự dương nitơ",
+                            "Quang năng vô cơ"
+                        ],
+                        "content": "Kiểu dinh dưỡng của vi khuẩn lam là gì?"
+                    },
+                    {
+                        "answers": [
+                            "Lang ben",
+                            "Viêm gan B",
+                            "Quai bị",
+                            "Bại liệt"
+                        ],
+                        "content": "Bệnh nào trong các bệnh sau không phải do virus gây ra: bại liệt, viêm gan B, lang ben, quai bị?"
+                    },
+                    {
+                        "answers": [
+                            "Da",
+                            "Ruột già",
+                            "Phổi",
+                            "Dạ dày"
+                        ],
+                        "content": "Cơ quan nào của cơ thể có tổng diện tích bề mặt lớn nhất?"
+                    },
+                    {
+                        "answers": [
+                            "Kì sau-kỳ cuối",
+                            "Kỳ đầu-kỳ cuối",
+                            "Kỳ đầu-kỳ sau",
+                            "Kỳ đầu-kỳ giữa"
+                        ],
+                        "content": "Ở những kỳ nào của nguyên phân mà tế bào có 4n nhiễm sắc thể đơn? "
+                    },
+                    {
+                        "answers": [
+                            "Kỷ Jura",
+                            "Kỷ Trias",
+                            "Kỷ Creta",
+                            "Kỷ Paleogen"
+                        ],
+                        "content": "Khí hậu ấm hơn, cây hạt trần tiếp tục phát triển, bò sát cổ ngự trị là những đặc điểm của Kỉ địa chất nào?"
+                    },
+                    {
+                        "answers": [
+                            "Bộ có đuôi",
+                            "Bộ không đuôi",
+                            "Bộ không chân",
+                            "Không thuộc bộ nào"
+                        ],
+                        "content": "Cá cóc Tam Đảo thuộc Bộ nào của Lớp Lưỡng cư?"
+                    },
+                    {
+                        "answers": [
+                            12,
+                            3,
+                            0,
+                            20
+                        ],
+                        "content": "Cà độc dược có bao nhiêu kiểu đột biến thể ba? "
+                    }
+                ]
+            },
+            {
+                "category": "Văn học ",
+                "code": "literature",
+                "questions": [
+                    {
+                        "answers": [
+                            "Nguyễn Tường Vinh",
+                            "Nguyễn Thạch Lam",
+                            "Nguyễn Kim Thành",
+                            "Trần Hữu Tri"
+                        ],
+                        "content": "Tên khai sinh của nhà văn Thạch Lam là gì?"
+                    },
+                    {
+                        "answers": [
+                            "Tố Hữu",
+                            "Chế Lan Viên",
+                            "Huy Cận",
+                            "Hàn Mặc Tử"
+                        ],
+                        "content": "Nhà thơ nào trong những nhà thơ sau không tham gia phong trào Thơmới: Chế Lan Viên, Tố Hữu, Huy Cận, Hàn Mặc Tử? "
+                    },
+                    {
+                        "answers": [
+                            "Tú Bà",
+                            "Hoạn Thư",
+                            "Hồ Tôn Hiến",
+                            "Kim Trọng"
+                        ],
+                        "content": "Trong tác phẩm Truyện Kiều của Nguyễn Du, Sở Khanh là tay sai của ai?"
+                    },
+                    {
+                        "answers": [
+                            "Thu ẩm",
+                            "Thu vịnh",
+                            "Thu điếu",
+                            "Không có bài nào"
+                        ],
+                        "content": "Tựa đề bài thơ nào trong chùm thơ thu của Nguyễn Khuyến có nghĩa là 'mùa thu uống rượu'?"
+                    },
+                    {
+                        "answers": [
+                            "Hemingway",
+                            "Cervantes",
+                            "Shakespeare",
+                            "Lev Tolstoy"
+                        ],
+                        "content": "Ai là cha đẻ của lí thuyết 'Tảng băng trôi' trong sáng tác văn học? "
+                    },
+                    {
+                        "answers": [
+                            "Truyện Tây Bắc",
+                            "Mười năm",
+                            "Núi Cứu quốc",
+                            "Miền Tây"
+                        ],
+                        "content": "'Vợ chồng A Phủ' nằm trong tập truyện nào của nhà văn Tô Hoài? "
+                    },
+                    {
+                        "answers": [
+                            "Pushkin",
+                            "Lev Tolstoy",
+                            "Fyodor Dostoevsky",
+                            "Maksim Gorky"
+                        ],
+                        "content": "'Mặt trời thi ca Nga' là nhà văn, nhà thơ nào?"
+                    },
+                    {
+                        "answers": [
+                            "Tiếng trổng thu không",
+                            "Tiếng quét rác",
+                            "Tiếng kẻng",
+                            "Tiếng chuông nhà thờ"
+                        ],
+                        "content": "Âm thanh nào mở đầu cho tác phẩm 'Hai đứa trẻ'? "
+                    },
+                    {
+                        "answers": [
+                            "Naples",
+                            "Roma",
+                            "Milano",
+                            "Torino"
+                        ],
+                        "content": "Thành phố nào của Italy xuất hiện trong tác phẩm Chiếc lá cuối cùng của O'Henry?"
+                    },
+                    {
+                        "answers": [
+                            "Võ Nguyên Giáp",
+                            "Hồ Chí Minh",
+                            "Tố Hữu",
+                            "Nam Cao"
+                        ],
+                        "content": "Ai là tác giả của tác phẩm 'Những năm tháng không thể nào quên'? "
+                    }
+                ]
+            },
+            {
+                "category": "Lịch sử",
+                "code": "history",
+                "questions": [
+                    {
+                        "answers": [
+                            "Mũi Bão Tố",
+                            "Mũi Né",
+                            "Mũi York",
+                            "Mũi Blanc"
+                        ],
+                        "content": "Trước khi được đổi tên là Mũi Hảo Vọng, địa danh này đã được đặt tên là gì?"
+                    },
+                    {
+                        "answers": [
+                            1919,
+                            1789,
+                            1945,
+                            1960
+                        ],
+                        "content": "Quốc tế thứ Ba được thành lập vào năm nào?"
+                    },
+                    {
+                        "answers": [
+                            "Lê Uy Mục",
+                            "Lê Tương Dực",
+                            "Lê Long Đĩnh",
+                            "Minh Mạng"
+                        ],
+                        "content": "Vị vua nào trong lịch sử phong kiến Việt Nam bị người đời gọi là 'Quỷ vương'?"
+                    },
+                    {
+                        "answers": [
+                            "Tây Sơn",
+                            "Nguyễn",
+                            "Hậu Lê",
+                            "Mạc"
+                        ],
+                        "content": "Triều đại nào tồn tại từ năm 1778 đến năm 1802?"
+                    },
+                    {
+                        "answers": [
+                            "Minh Mạng",
+                            "Tự Đức",
+                            "Gia Long",
+                            "Quang Trung"
+                        ],
+                        "content": "Thành Thăng Long chính thức đổi tên thành Hà Nội vào thời vua nào?"
+                    },
+                    {
+                        "answers": [
+                            "Anh - Pháp - Nga",
+                            "Đức - Ý - Nhật",
+                            "Anh - Pháp - Mỹ",
+                            "Đức - Ý - Hung"
+                        ],
+                        "content": "Phe Hiệp ước trong Thế chiến thứ Nhất gồm 3 đế quốc chủ chốt nào?"
+                    },
+                    {
+                        "answers": [
+                            "1946-1954",
+                            "1856-1884",
+                            "1945-1954",
+                            "1954-1975"
+                        ],
+                        "content": "Kháng chiến chống thực dân Pháp trở lại xâm lược diễn ra từ năm nào đến năm nào?"
+                    },
+                    {
+                        "answers": [
+                            "Bỉ",
+                            "Đức",
+                            "Nga",
+                            "Ba Lan"
+                        ],
+                        "content": "Nơi diễn ra trận Waterloo nằm ở quốc gia nào hiện nay? "
+                    },
+                    {
+                        "answers": [
+                            "1965 - 1968",
+                            "1960-1965",
+                            "1968-1972",
+                            "1960-1975"
+                        ],
+                        "content": "Chiến tranh cục bộ được Mỹ triển khai tại Việt Nam vào khoảng thời gian nào?"
+                    },
+                    {
+                        "answers": [
+                            1915,
+                            1917,
+                            1918,
+                            1916
+                        ],
+                        "content": "Trong Thế chiến thứ Nhất, Italy đã rời khỏi phe Liên minh và gia nhập phe Hiệp ước vào năm nào?"
+                    }
+                ]
+            },
+            {
+                "category": "Địa lý",
+                "code": "geography",
+                "questions": [
+                    {
+                        "answers": [
+                            "Tây Côn Lĩnh",
+                            "Phan-xi-păng",
+                            "Đỉnh Ngọc Linh",
+                            "Đỉnh Vọng Phu"
+                        ],
+                        "content": "Đỉnh núi nào là đỉnh núi cao nhất vùng Đông Bắc nước ta?"
+                    },
+                    {
+                        "answers": [
+                            "Ninh Thuận",
+                            "Bình Thuận",
+                            "Quảng Bình",
+                            "Ninh Bình"
+                        ],
+                        "content": "Hang Rái là địa điểm du lịch nổi tiếng ở tỉnh, thành nào của nước ta?"
+                    },
+                    {
+                        "answers": [
+                            "Nam Định",
+                            "Ninh Bình",
+                            "Bắc Ninh",
+                            "Hà Tĩnh"
+                        ],
+                        "content": "Làng Cổ Chất là làng tơ nổi tiếng ở tỉnh, thành nào của nước ta?"
+                    },
+                    {
+                        "answers": [
+                            "Châu Phi",
+                            "Châu Á",
+                            "Châu Âu",
+                            "Châu Mỹ"
+                        ],
+                        "content": "Núi Kilimanjaro thuộc châu lục nào?"
+                    },
+                    {
+                        "answers": [
+                            "Congo",
+                            "Ai Cập",
+                            "Libya",
+                            "Nam Phi"
+                        ],
+                        "content": "Algeria là nước rộng nhất châu Phi, vậy nước nào rộng thứ 2 châu Phi?"
+                    },
+                    {
+                        "answers": [
+                            "Đông Bắc",
+                            "Tây Bắc",
+                            "Tây Nam",
+                            "Nam"
+                        ],
+                        "content": "Gió mùa thổi ở miền Bắc Việt Nam vào mùa đông chủ yếu có hướng gì?"
+                    },
+                    {
+                        "answers": [
+                            "Mantle",
+                            "Lớp vỏ",
+                            "Lõi trong",
+                            "Lõi ngoài"
+                        ],
+                        "content": "Lớp nào chiếm tới 80% thể tích và 68.5% khối lượng của trái đất?"
+                    },
+                    {
+                        "answers": [
+                            "Australia",
+                            "Italia",
+                            "Brasil",
+                            "Argentina"
+                        ],
+                        "content": "Tên nước nào theo tiếng Latin có nghĩa là “Phương Nam”?"
+                    },
+                    {
+                        "answers": [
+                            "Lào",
+                            "Nhật Bản",
+                            "Mông cổ",
+                            "Butan"
+                        ],
+                        "content": "Nước nào ở châu Á có hình dạng tựa cành cọ?"
+                    },
+                    {
+                        "answers": [
+                            "Gia Lai",
+                            "Bắc Giang",
+                            "Quảng Ninh",
+                            "Hồ Chí Minh"
+                        ],
+                        "content": "Tỉnh nào có diện tích lớn thứ 2 Việt Nam? "
+                    }
+                ]
+            },
+            {
+                "category": "Thể thao",
+                "code": "sport",
+                "questions": [
+                    {
+                        "answers": [
+                            2,
+                            0,
+                            4,
+                            9
+                        ],
+                        "content": "Đã có mấy cầu thủ từng giành giải Quả bóng vàng của FIFA?"
+                    },
+                    {
+                        "answers": [
+                            1,
+                            0,
+                            2,
+                            4
+                        ],
+                        "content": "Câu lạc bộ Chelsea đã mấy lần vô địch Champions League? "
+                    },
+                    {
+                        "answers": [
+                            "Incheon",
+                            "Yokohama",
+                            "Bắc Kinh",
+                            "Seoul"
+                        ],
+                        "content": "Asiad 17 sẽ được tổ chức tại thành phố nào?"
+                    },
+                    {
+                        "answers": [
+                            1980,
+                            2000,
+                            1988,
+                            2008
+                        ],
+                        "content": "Việt Nam lần đầu tiên tham dự Thế vận hội vào năm nào? "
+                    },
+                    {
+                        "answers": [
+                            "Trắng - Đen",
+                            "Trắng - Xanh",
+                            "Đỏ - Đen",
+                            "Da cam - Trắng"
+                        ],
+                        "content": "Trang phục truyền thống của đội tuyển bóng đá Đức có 2 màu chính nào?"
+                    },
+                    {
+                        "answers": [
+                            4,
+                            1,
+                            8,
+                            2
+                        ],
+                        "content": "Vị thứ cao nhất của Đoàn thể thao Việt Nam tại SEA Games trước năm 2002 là bao nhiêu?"
+                    },
+                    {
+                        "answers": [
+                            "Nhật Bản",
+                            "Hàn Quốc",
+                            "Mỹ",
+                            "Đức"
+                        ],
+                        "content": "Đội tuyển nào đã giành chức vô địch Giải vô địch bóng đá nữ thế giới năm 2011 tại Đức?"
+                    },
+                    {
+                        "answers": [
+                            "Andy Murray",
+                            "Roger Federer",
+                            "Novak Djokovic",
+                            "Roger Federer"
+                        ],
+                        "content": "Vận động viên nào giành huy chương vàng Olympic 2012 môn quần vợt đơn nam?"
+                    },
+                    {
+                        "answers": [
+                            "1986-2004",
+                            "2004",
+                            "2008",
+                            "1996"
+                        ],
+                        "content": "Hy Lạp đăng cai tổ chức Thế vận hội hiện đại vào những năm nào? "
+                    },
+                    {
+                        "answers": [
+                            1,
+                            0,
+                            4,
+                            2
+                        ],
+                        "content": "Môn võ Vovinam đã được đưa vào thi đấu chính thức tại bao nhiêu kì SEA Games?"
+                    }
+                ]
+            },
+            {
+                "category": "Nghệ thuật",
+                "code": "art",
+                "questions": [
+                    {
+                        "answers": [
+                            "Cống hiến",
+                            "Giải Sao Mai",
+                            "Bài hát Việt",
+                            "VLive Awards"
+                        ],
+                        "content": "Giải thưởng Âm nhạc nào được coi là \"giải Grammy của nhạc Việt\"? "
+                    },
+                    {
+                        "answers": [
+                            "Taylor Swift",
+                            "Maroon 5",
+                            "Justi Bieber",
+                            "Cardi B"
+                        ],
+                        "content": "Ca sĩ nào có album đạt giải thưởng \"Album của năm\" trong lễ trao giảiGrammy lần thứ 58 (năm 2016)?"
+                    },
+                    {
+                        "answers": [
+                            "Girls' Generation",
+                            "T-Ara",
+                            "EXO",
+                            "Blackpink"
+                        ],
+                        "content": "Nhóm nhạc nào đạt danh hiệu \"Nhóm nhạc nữ xuất sắc nhất\" trongMAMA 2015?"
+                    },
+                    {
+                        "answers": [
+                            "Đàn tính",
+                            "Đàn đáy",
+                            "Đàn bầu",
+                            "Sáo"
+                        ],
+                        "content": "Nhạc cụ truyền thống của dân tộc Tày là cây đàn nào?"
+                    },
+                    {
+                        "answers": [
+                            "Piano",
+                            "Trống",
+                            "Trumpet",
+                            "violoncelle"
+                        ],
+                        "content": "Dàn nhạc giao hưởng cổ điển không có nhạc cụ nào trong các loại nhạc cụ sau đây: piano, trống, trumpet, violoncelle"
+                    },
+                    {
+                        "answers": [
+                            "Đặng Thái Sơn",
+                            "Thái Thị Liên",
+                            "Hoàng Phạm",
+                            "Lưu Đức Anh"
+                        ],
+                        "content": "Ai là người Việt Nam đầu tiên và duy nhất đạt giải Nhất Cuộc thi Piano quốc tế Chopin?"
+                    },
+                    {
+                        "answers": [
+                            "Brazil",
+                            "Argentina",
+                            "Italia",
+                            "Colombia"
+                        ],
+                        "content": "Samba là một vũ điệu Latino có xuất xứ từ quốc gia nào?"
+                    },
+                    {
+                        "answers": [
+                            "Hoàng Việt",
+                            "Văn Cao",
+                            "Trịnh Công Sơn",
+                            "Lưu Quang Vũ"
+                        ],
+                        "content": "Ai là tác giả của bản giao hưởng đầu tiên của Việt Nam?"
+                    },
+                    {
+                        "answers": [
+                            "Đàn đáy",
+                            "Đàn tranh",
+                            "Đàn bầu",
+                            "Sáo"
+                        ],
+                        "content": "Nhạc cụ không thể thiếu trong nghệ thuật ca trù là cây đàn nào? "
+                    },
+                    {
+                        "answers": [
+                            "Tháng 2",
+                            "Tháng 4",
+                            "Thàng 12",
+                            "Tháng 7"
+                        ],
+                        "content": "Giải thưởng Grammy được trao vào tháng mấy hàng năm?"
+                    }
+                ]
+            },
+            {
+                "category": "Lĩnh vực khác",
+                "code": "other",
+                "questions": [
+                    {
+                        "answers": [
+                            "Nhật Bản",
+                            "Hàn Quốc",
+                            "Ấn Độ",
+                            "Anh"
+                        ],
+                        "content": "Những “khu vườn đá” là cảnh đẹp đặc trưng của đất nước nào? "
+                    },
+                    {
+                        "answers": [
+                            "Hàng Than",
+                            "Hàng Tre",
+                            "Hàng Bạc",
+                            "Hàng Gai"
+                        ],
+                        "content": "Bánh cốm là một đặc sản nổi tiếng của phố ... Hà Nội?"
+                    },
+                    {
+                        "answers": [
+                            "Đài Loan",
+                            "Hàn Quốc",
+                            "Anh",
+                            "Mỹ"
+                        ],
+                        "content": "HTC là hãng điện thoại thông minh của nước nào? "
+                    },
+                    {
+                        "answers": [
+                            "2.5 triệu",
+                            "10 triệu",
+                            "1 triệu",
+                            "20 triệu"
+                        ],
+                        "content": "Thiên Hà gần nhất cách Mặt Trời khoảng bao nhiêu năm ánh sáng?"
+                    },
+                    {
+                        "answers": [
+                            "Ada Lovelace",
+                            "Alan Turing",
+                            "Linux Tovalds",
+                            "James Gosling"
+                        ],
+                        "content": "Ai được xem là lập trình viên đầu tiên của thế giới?"
+                    },
+                    {
+                        "answers": [
+                            "Kim",
+                            "Mộc",
+                            "Thủy",
+                            "Thổ"
+                        ],
+                        "content": "Trong số các hành tinh trong nhóm hành tinh đất đá, hành tinh nào có khí quyển dày nhất? "
+                    },
+                    {
+                        "answers": [
+                            "Helium",
+                            "Hidro",
+                            "Oxi",
+                            "Cacbon"
+                        ],
+                        "content": "Nguyên tố nào phổ biến thứ hai trong vũ trụ?"
+                    },
+                    {
+                        "answers": [
+                            "Địa chỉ IP",
+                            "Địa chỉ MAC",
+                            "Tên máy tính",
+                            "Tên người dùng"
+                        ],
+                        "content": "Cái gì giúp cho máy tính nhận dạng và liên lạc được với nhau trên mạng máy tính? "
+                    },
+                    {
+                        "answers": [
+                            255,
+                            128,
+                            127,
+                            100
+                        ],
+                        "content": "Địa chỉ IP được chia làm 4 vùng. Mỗi vùng trong địa chỉ IP có trị số lớn  nhất là bao nhiêu?"
+                    },
+                    {
+                        "answers": [
+                            1986,
+                            1900,
+                            2004,
+                            1960
+                        ],
+                        "content": "Lần gần nhất sao chổi Halley xuất hiện là vào năm nào? "
+                    }
+                ]
+            },
+            {
+                "category": "Hiểu biết chung",
+                "code": "common_knowledge",
+                "questions": [
+                    {
+                        "answers": [
+                            "Digan",
+                            "Minoan",
+                            "Israelite",
+                            "Greek"
+                        ],
+                        "content": "Gitan, Gypsy hay Bohemien là những tên gọi khác của dân tộc nổi tiếng nào trên thế giới?"
+                    },
+                    {
+                        "answers": [
+                            "Hãy đợi đấy",
+                            "Tom và Jerry",
+                            "Sonix",
+                            "Pokemon"
+                        ],
+                        "content": "Bộ phim hoạt hình nào nổi tiếng với câu nói \"Nupakachi\"?"
+                    },
+                    {
+                        "answers": [
+                            "Tháng Sửu",
+                            "Tháng Ngọ",
+                            "Tháng Tý",
+                            "Tháng Mùi"
+                        ],
+                        "content": "Theo 12 con giáp, tháng Chạp được gọi là tháng gì? "
+                    },
+                    {
+                        "answers": [
+                            "Ai Cập",
+                            "Italia",
+                            "Hi Lạp",
+                            "Anh"
+                        ],
+                        "content": "Hải đăng Alexandria - một trong 7 kì quan cổ đại - nằm ở quốc gia nào? "
+                    },
+                    {
+                        "answers": [
+                            "Tanzania",
+                            "Nam Phi",
+                            "Nhật Bản",
+                            "Brazil"
+                        ],
+                        "content": "Vườn quốc gia Kilimanjaro nằm ở quốc gia nào?"
+                    },
+                    {
+                        "answers": [
+                            1989,
+                            1900,
+                            2008,
+                            2002
+                        ],
+                        "content": "Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương được thành lập vào năm nào?"
+                    },
+                    {
+                        "answers": [
+                            "500000 - 220",
+                            "200000 - 140",
+                            "200000 - 220",
+                            "500000 - 200"
+                        ],
+                        "content": "Điện thế truyền tải điện năng tại Việt Nam cao nhất và thấp nhất là bao nhiêu Volt?"
+                    },
+                    {
+                        "answers": [
+                            "San Francisco",
+                            "New York",
+                            "Luân Đôn",
+                            "Pa-ri"
+                        ],
+                        "content": "Liên Hiệp Quốc được thành lập tại thành phố nào?"
+                    },
+                    {
+                        "answers": [
+                            "Nhà Rông",
+                            "Chùa Một Cột",
+                            "Đầm Sen",
+                            "Cảng biển"
+                        ],
+                        "content": "Mặt sau của đồng xu 2000đ là hình gì?"
+                    },
+                    {
+                        "answers": [
+                            "Singapore",
+                            "Qatar",
+                            "Đài Loan",
+                            "Nhật Bản"
+                        ],
+                        "content": "Đảo hình thành từ rác thải đầu tiên trên thế giới thuộc quốc gia nào?"
+                    }
+                ]
+            },
+            {
+                "category": "Tiếng Anh",
+                "code": "english",
+                "questions": [
+                    {
+                        "answers": [
+                            "Eight",
+                            "Zero",
+                            "Seven",
+                            "Four"
+                        ],
+                        "content": "How many edges are there in an octagon? "
+                    },
+                    {
+                        "answers": [
+                            "Walt Disney",
+                            "20 Centuries",
+                            "Sony Picture",
+                            "W. Bros"
+                        ],
+                        "content": "Who was the creator of Mickey Mouse?"
+                    },
+                    {
+                        "answers": [
+                            "Germany",
+                            "England",
+                            "USA",
+                            "French"
+                        ],
+                        "content": "Where is Albert Einstein from?"
+                    },
+                    {
+                        "answers": [
+                            27,
+                            12,
+                            20,
+                            32
+                        ],
+                        "content": "How many country which is a member of European Union? "
+                    },
+                    {
+                        "answers": [
+                            "France",
+                            "England",
+                            "Russia",
+                            "Japan"
+                        ],
+                        "content": "Which country does Seine River located? "
+                    },
+                    {
+                        "answers": [
+                            "United Nations",
+                            "Asean",
+                            "EU",
+                            "WTO"
+                        ],
+                        "content": "Which is the biggest organization in the world? "
+                    },
+                    {
+                        "answers": [
+                            "Boxing Day",
+                            "New Day",
+                            "Thanksgiving",
+                            "Free Day"
+                        ],
+                        "content": "In England, what is the day after Christmas Day called?"
+                    },
+                    {
+                        "answers": [
+                            "Humming Bird",
+                            "Parrots",
+                            "Owl",
+                            "Sparrow"
+                        ],
+                        "content": "Which bird can fly backward?"
+                    },
+                    {
+                        "answers": [
+                            "Penicillin",
+                            "Amoxicillin",
+                            "Cephalexin",
+                            "Bromhexin"
+                        ],
+                        "content": "What is the name of the first invented antibiotic in the world? "
+                    },
+                    {
+                        "answers": [
+                            "British",
+                            "Best",
+                            "Branch",
+                            "Bravor"
+                        ],
+                        "content": "What does the first letter “B” in the abbreviation “BBC” stand for? "
+                    }
+                ]
+            }
+        ],
+        "round2": [
+            {
+                "keyword": {
+                    "answer": "Italia",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/1.jpg?alt=media&token=47541211-3877-4fdc-9918-be7373e952ee"
+                },
+                "questions": [
+                    {
+                        "answer": "Venice",
+                        "content": "Thành phố nào được mệnh danh là \"thành phố của các kênh đào\"?"
+                    },
+                    {
+                        "answer": "Alps",
+                        "content": "Dãy núi nào lớn và đồ sộ nhất Tây Âu?"
+                    },
+                    {
+                        "answer": "Roma",
+                        "content": "Một trong hai quốc gia cổ đại phương Tây"
+                    },
+                    {
+                        "answer": "Pháp",
+                        "content": "\"Đất nước hình lục lăng\" là quốc gia nào? "
+                    },
+                    {
+                        "answer":"Italia",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Mía",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/2.jpg?alt=media&token=c5378aef-626d-4dbe-aad8-bcf58885f21b"
+                },
+                "questions": [
+                    {
+                        "answer": "Ngọt",
+                        "content": "Đầu lưỡi nhạy cảm với vị nào nhất?"
+                    },
+                    {
+                        "answer": "Nhật Bản",
+                        "content": "Gió mậu dịch chỉ thổi ở đới khí hậu nào?"
+                    },
+                    {
+                        "answer": "Cỏ",
+                        "content": "Dạng thực vật gây hại cho cây trồng "
+                    },
+                    {
+                        "answer": "Đốt",
+                        "content": "Tre là thực vật thân gỗ, họ Hòa thảo, thân chia thành nhiều ..."
+                    },
+                    {
+                        "answer":"Mía",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Sao Hỏa",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/3.jpg?alt=media&token=266d1b25-cbbc-4711-be35-27314973ac7a"
+                },
+                "questions": [
+                    {
+                        "answer": "Lửa",
+                        "content": "Phát minh quan trọng nhất của loài người là gì?"
+                    },
+                    {
+                        "answer": "Olympus",
+                        "content": "Đỉnh núi cao nhất Hi Lạp, là nơi ở của 12 vị thần trong Thần thoại Hi Lạp tên gì?"
+                    },
+                    {
+                        "answer": "Hành tinh",
+                        "content": "Vật thể có hình cầu, quay quanh sao và có tâm sai nhỏ gọi là gì?"
+                    },
+                    {
+                        "answer": "4",
+                        "content": "Hợp số nhỏ nhất là số tự nhiên nào?"
+                    },
+                    {
+                        "answer":"Sao Hỏa",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Thanh Hóa",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/4.png?alt=media&token=44eb4cfc-b4a5-482f-b3c4-5766838fa75e"
+                },
+                "questions": [
+                    {
+                        "answer": "Đông Sơn",
+                        "content": "Nhà nước Văn Lang - Âu Lạc ra đời dựa trên nền tảng của nền văn hóa nào?"
+                    },
+                    {
+                        "answer": "Sông Mã",
+                        "content": "Con sông nào xuất hiện trong bài thơ Tây Tiến (Quang Dũng)? "
+                    },
+                    {
+                        "answer": "Tây Đô",
+                        "content": "Kinh đô của nước ta thời nhà Hồ tên là gì? "
+                    },
+                    {
+                        "answer": "Lê Lợi",
+                        "content": "Người lên ngôi năm 1428, chấm dứt 20 năm đô hộ của giặc Minh"
+                    },
+                    {
+                        "answer":"Thanh Hóa",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Tụ điện",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/5.jpg?alt=media&token=2088d647-475e-4bee-a168-5cd9a56a267b"
+                },
+                "questions": [
+                    {
+                        "answer": "F",
+                        "content": "Trong hệ thập lục phân, kí tự nào có giá trị lớn nhất? "
+                    },
+                    {
+                        "answer": "Trở kháng",
+                        "content": "Đại lượng vật lý đặc trưng cho sự cản trở dòng điện của một mạch điện khi có một hiệu điện thế đặt vào là gì?"
+                    },
+                    {
+                        "answer": "Phân cực",
+                        "content": ") Liên kết cộng hoá trị giữa nguyên tử của các nguyên tố có độ âm điện không bằng nhau có tính chất như thế nào? "
+                    },
+                    {
+                        "answer": "Linh kiện",
+                        "content": ") Các thành phần cơ bản có thể ghép nối thành mạch điện tử hay thiết bị điện tử được gọi là gì?"
+                    },
+                    {
+                        "answer":"Tụ điện",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Nguyệt thực",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/6.jpg?alt=media&token=58b8ff06-a8c0-4fe5-880f-bba78f9ea1a9"
+                },
+                "questions": [
+                    {
+                        "answer": "Bóng",
+                        "content": "Hình sẽ đi đôi với ................?"
+                    },
+                    {
+                        "answer": "Máu",
+                        "content": "Karl Landsteiner đã đoạt giải Nobel cho công trình về phân loại chất gì?"
+                    },
+                    {
+                        "answer": "Thiên văn",
+                        "content": "Edwin Hubble không được trao giải Nobel vì thời ông sống chưa có giải Nobel về lĩnh vực nào?"
+                    },
+                    {
+                        "answer": "Mặt trăng",
+                        "content": "Vệ tinh tự nhiên duy nhất của Trái đất"
+                    },
+                    {
+                        "answer":"Nguyệt thực",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Gió mậu dịch",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/7.png?alt=media&token=6f91a01e-36e8-4daf-8198-f0175de51d55"
+                },
+                "questions": [
+                    {
+                        "answer": "Mùa hè",
+                        "content": "Học sinh toàn thế giới sẽ được nghỉ học vào mùa nào trong năm?"
+                    },
+                    {
+                        "answer": "Xích đạo",
+                        "content": "Đây là một đường tròn tưởng tượng, dài khoảng 40075km, có ý nghĩa rất quan trọng"
+                    },
+                    {
+                        "answer": "Tin",
+                        "content": "Có câu “Một sự bất tín, vạn sự bất ......”. Từ nào còn thiếu "
+                    },
+                    {
+                        "answer": "Động lượng",
+                        "content": "Đại lượng nào là tích số của khối lượng và vận tốc?"
+                    },
+                    {
+                        "answer":"Gió mậu dịch",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Nguyên Hồng",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/8.jpg?alt=media&token=89634780-7948-4b7b-b442-157bef0727f6"
+                },
+                "questions": [
+                    {
+                        "answer": "Thời thơ ấu",
+                        "content": "Lev Tolstoi và Maksim Gorky có 1 tác phẩm trùng tên với nhau. Đó là tác phẩm nào?"
+                    },
+                    {
+                        "answer": "Hội Nhà văn",
+                        "content": "Nhà thơ Hữu Thỉnh hiện đang là Chủ tịch của ...... Việt Nam. Điền vào chỗ trống?"
+                    },
+                    {
+                        "answer": "Nam Định",
+                        "content": "Non Côi, sông Vị là những địa danh thuộc tỉnh/thành phố nào?"
+                    },
+                    {
+                        "answer": "1918",
+                        "content": "Chiến tranh thế giới thứ nhất kết thúc vào năm nào?"
+                    },
+                    {
+                        "answer":"Nguyên Hồng",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Ung thư",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/9.jpg?alt=media&token=52b2e9a7-6021-40fa-95e7-5a6a726e5927"
+                },
+                "questions": [
+                    {
+                        "answer": "Phóng xạ",
+                        "content": "Hiện tượng một số hạt nhân nguyên tử không bền, tự biến đổi và phát ra bức xạ hạt nhân được gọi là gì?"
+                    },
+                    {
+                        "answer": "Ủ bệnh",
+                        "content": "Khoảng thời gian từ lúc bắt đầu nhiễm bệnh đến lúc triệu chứng bệnh bộc lộ ra ngoài được gọi là gì?"
+                    },
+                    {
+                        "answer": "Trực phân",
+                        "content": "Hình thức phân bào rất đơn giản, không có sự hình thành thoi vô sắc được gọi là gì?"
+                    },
+                    {
+                        "answer": "Di căn",
+                        "content": "Hiện tượng những tế bào có khả năng xâm lấn những mô khác bằng cách phát triển trực tiếp vào mô lân cận hoặc di chuyển đến nơi xađược gọi là gì? "
+                    },
+                    {
+                        "answer":"Ung thư",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            },
+            {
+                "keyword": {
+                    "answer": "Bánh trôi nước",
+                    "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/10.jpg?alt=media&token=b2089c6f-122e-4fc4-bba0-ab2f74d99450"
+                },
+                "questions": [
+                    {
+                        "answer": "Luộc",
+                        "content": "Quá trình dùng nước để làm chín thức ăn được gọi là gì? "
+                    },
+                    {
+                        "answer": "Trung Quốc",
+                        "content": "Tiền giấy là phát minh của nước nào? "
+                    },
+                    {
+                        "answer": "Hàn thực",
+                        "content": "Tết nào ở Trung Quốc để tưởng nhớ một nhân vật thời Sở có tên là Giới Tử Thôi?"
+                    },
+                    {
+                        "answer": "Hồ Xuân Hương",
+                        "content": "Nhà thơ được mệnh danh \"Bà chúa thơ Nôm\""
+                    },
+                    {
+                        "answer":"Bánh trôi nước",
+                        "content":"Hãy trả lời từ khóa"
+                    }
+                ]
+            }
+        ],
+        "round3": [
+            {
+                "category": "IQ1",
+                "code": "iq1",
+                "questions": [
+                    {
+                        "answers": [
+                            25,
+                            30,
+                            17,
+                            2
+                        ],
+                        "hint": "Mỗi số trong phần giao nhau của 2 hình tròn bằng tổng các số màu trắng của 2 vòng tròn đó.Vd 23=1+7+5+10",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a1.PNG?alt=media&token=231a3050-0392-4539-b82c-3b191e4efb16"
+                    },
+                    {
+                        "answers": [
+                            "D",
+                            "B",
+                            "C",
+                            "A"
+                        ],
+                        "hint": "các kí hiệu nhỏ quay 45 độ cùng chiều kim đồng hồ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a2.PNG?alt=media&token=bd4f0f71-7ae7-4844-acb4-2039ac8de146"
+                    },
+                    {
+                        "answers": [
+                            "E",
+                            "B",
+                            "C",
+                            "F"
+                        ],
+                        "hint": "",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a3.PNG?alt=media&token=4c13a48a-0c44-4d5e-a72c-f9cdda1f31a6"
+                    },
+                    {
+                        "answers": [
+                            "4",
+                            "5",
+                            "10",
+                            "0"
+                        ],
+                        "hint": "Gợi ý 9*8=72,7*4=28,9*6=54",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a4.PNG?alt=media&token=661ee4fc-95ce-4d37-93e2-403f777cbba5"
+                    },
+                    {
+                        "answers": [
+                            "D",
+                            "A",
+                            "B",
+                            "E"
+                        ],
+                        "hint": "Để ý quy luật chuyển động của từng chấm đen trong từng ô vuông tương ứng ở các hình",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a5.PNG?alt=media&token=f8a6f6f9-0125-4622-9914-f533a9169a33"
+                    },
+                    {
+                        "answers": [
+                            "17",
+                            "20",
+                            "5",
+                            "4"
+                        ],
+                        "hint": "Gợi ý.Số ở 2 ô tròn ngoài đối diện nhau 12+14=7+7+5+7",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a6.PNG?alt=media&token=5435fa8c-9522-40b2-8a40-887eb3140b44"
+                    },
+                    {
+                        "answers": [
+                            "55",
+                            "43",
+                            "20",
+                            "15"
+                        ],
+                        "hint": "55 nghĩa là dòng thứ 5 cột thứ 5",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a7.PNG?alt=media&token=60d512d1-6897-44f3-9bce-9d439e80f882"
+                    },
+                    {
+                        "answers": [
+                            "A",
+                            "D",
+                            "E",
+                            "C"
+                        ],
+                        "hint": "Tổng số chấm đen ở 3 hình bằng 5 ,số chấm trắng bằng 4",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a8.PNG?alt=media&token=04838ddd-9079-4caa-ad07-a6c5291f486f"
+                    },
+                    {
+                        "answers": [
+                            "13",
+                            "20",
+                            "5",
+                            "25"
+                        ],
+                        "hint": "Theo quy luât đó, có 2 trường hợp xảy ra, đó là: tích các số theo hàng ngang sẽ bằng tổng các số theo côt dọc hoặc  ngược lại. Vậy số cần điền là: 1x17 – 4 = 13.",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a9.PNG?alt=media&token=2776dd64-07f8-4d06-ab3b-b91ec3e986de"
+                    },
+                    {
+                        "answers": [
+                            "D",
+                            "E",
+                            "A",
+                            "B"
+                        ],
+                        "hint": " Vì trog tam giác nếu để ý sẽ thấy có một cặp hình giống nhau và chỉ khác màu",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a10.PNG?alt=media&token=446f9142-1d52-4f27-a61e-3667599dbc03"
+                    }
+                ]
+            },
+            {
+                "category": "IQ2",
+                "code": "iq2",
+                "questions": [
+                    {
+                        "answers": [
+                            "21",
+                            "5",
+                            "30",
+                            "10"
+                        ],
+                        "hint": "(7+6+5)=18;3+4+8=15;2+12+7=21",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a11.PNG?alt=media&token=a22e79ec-6f9b-4556-a625-1a14bee2c8d6"
+                    },
+                    {
+                        "answers": [
+                            "8",
+                            "6",
+                            "10",
+                            "0"
+                        ],
+                        "hint": " vì tích hai số dưới chia cho số trên là 15",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a12.PNG?alt=media&token=63ee6e2f-54cd-4f2e-9894-15d40febb5f7"
+                    },
+                    {
+                        "answers": [
+                            "32",
+                            "24",
+                            "15",
+                            "50"
+                        ],
+                        "hint": "vì 45 đảo ngược là 54,12 đảo ngược là 21,....23 đảo ngược là 3",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a13.PNG?alt=media&token=fe95d1a2-bf1b-41d2-b63e-43bfe4d2991c"
+                    },
+                    {
+                        "answers": [
+                            "91",
+                            "19",
+                            "11",
+                            "53"
+                        ],
+                        "hint": "Các số còn lại là số nguyên tố?",
+                        "content": "Số nào khác các số còn lại?",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a14.PNG?alt=media&token=94f7ef9f-6e01-4c56-9259-a3f55b901cc5"
+                    },
+                    {
+                        "answers": [
+                            "7",
+                            "10",
+                            "15",
+                            "21"
+                        ],
+                        "hint": " Số ở giữa bằng 2 lần tổng các số bên ngoài",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a15.PNG?alt=media&token=15b7eeca-b357-40b7-8188-f4787c131d28"
+                    },
+                    {
+                        "answers": [
+                            "15",
+                            "0",
+                            "10",
+                            "5"
+                        ],
+                        "hint": ".Số phút - số giờ :10h25 (=) 25-10 =15 ",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a16.PNG?alt=media&token=02c8a7a0-bfbc-4dae-a644-ac2bdd4f00f9"
+                    },
+                    {
+                        "answers": [
+                            "6",
+                            "5",
+                            "19",
+                            "3"
+                        ],
+                        "hint": "Tổng 2 tay = tổng đầu với chân. Ở hình thứ nhất 12+8 = 6+5+9 . Ở hình 2 : 3 + 12= 7+2+ x từ đó=> x =15 - 9 = 6",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a17.PNG?alt=media&token=02daf6ed-2896-4af8-8b95-2a0e68779281"
+                    },
+                    {
+                        "answers": [
+                            "6",
+                            "3",
+                            "10",
+                            "8"
+                        ],
+                        "hint": "Quy luật (5+11+9+3+7)/5=7",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a18.PNG?alt=media&token=08314178-dfc2-4825-9ef9-64b399feba3a"
+                    },
+                    {
+                        "answers": [
+                            "5",
+                            "4",
+                            "10",
+                            "8"
+                        ],
+                        "hint": "(4+6)/2=5",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a19.PNG?alt=media&token=b7ef65f9-57d1-4778-ab4d-c6e7aa77e092"
+                    },
+                    {
+                        "answers": [
+                            "O",
+                            "F",
+                            "W",
+                            "U"
+                        ],
+                        "hint": "LMN từ trái sang, OPQ từ phải sang",
+                        "content": "Hãy tìm chữ cái còn lại?",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/a20.PNG?alt=media&token=a9f6b4e8-f95c-4619-a95c-dc4ab070e76d"
+                    }
+                ]
+            },
+            {
+                "category": "Sắp xếp/lọc",
+                "code": "sort/filter",
+                "questions": [
+                    {
+                        "answers": [
+                            "C",
+                            "D",
+                            "A",
+                            "B"
+                        ],
+                        "hint:": "Giải thích: các ký tự được xếp cố định vào một hàng và chỉ di chuyển trong nội bộ hàng đã đặt. Hình C có hình thoi và hình chữ nhật đứng đổi chỗ cho nhau và rời khỏi hàng ban đầu của mình",
+                        "content": "Tìm hình khác các hình còn lại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b1.PNG?alt=media&token=949992a3-e957-4960-bf87-f7d655e2fd34"
+                    },
+                    {
+                        "answers": [
+                            "D",
+                            "F",
+                            "A",
+                            "C"
+                        ],
+                        "hint:": "A giống E, B giống F, C giống G",
+                        "content": "Tìm hình khác với các hình còn lại?",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b2.PNG?alt=media&token=d8389364-201c-4de1-8f98-6703559056eb"
+                    },
+                    {
+                        "answers": [
+                            "F",
+                            "A",
+                            "D",
+                            "B"
+                        ],
+                        "content": "Hình nào khác so với các hình còn lại?",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b3.PNG?alt=media&token=c4942d2e-e3c4-4f00-8329-3882b52640a6"
+                    },
+                    {
+                        "answers": [
+                            "A-C-D-B",
+                            "A-D-C-B",
+                            "D-C-A-B",
+                            "B-C-A-D"
+                        ],
+                        "content": " sắp xếp các kinh đô sau với triều đại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b4.PNG?alt=media&token=e30ceb3b-7e28-4aab-87c0-43026c997aa2"
+                    },
+                    {
+                        "answers": [
+                            "B",
+                            "D",
+                            "G",
+                            "A"
+                        ],
+                        "hint:": " vì G và F ghép lại, A và E ghép lại, C và D ghép lại. tất cả đều ra hình lục giác màu cam",
+                        "content": "Tìm hình khác các hình còn lại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b5.PNG?alt=media&token=5ff35993-40ce-4f69-b783-7c7ad9e48496"
+                    },
+                    {
+                        "answers": [
+                            "C",
+                            "A",
+                            "B",
+                            "D"
+                        ],
+                        "content": "Tìm hình khác các hình còn lại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b6.PNG?alt=media&token=b3ee0ebf-92b7-4a64-93fd-b51e8233eab2"
+                    },
+                    {
+                        "answers": [
+                            "C",
+                            "A",
+                            "B",
+                            "D"
+                        ],
+                        "hint:": "Vì trong hình A, B, D, E & F có 8 hình nhỏ, chỉ duy nhất hình C có 9 hình nhỏ",
+                        "content": "Tìm hình khác các hình còn lại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b7.PNG?alt=media&token=00a50845-eef2-43a0-ac29-876d89287c9b"
+                    },
+                    {
+                        "answers": [
+                            "D",
+                            "A",
+                            "B",
+                            "E"
+                        ],
+                        "hint:": "Các hình khác có 2 que xanh dương.Hình D có 1 xanh dương.",
+                        "content": "Tìm hình khác các hình còn lại",
+                        "image": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/b8.PNG?alt=media&token=db5f2773-84b3-46e2-9f22-184f11687884"
+                    }
+                ]
+            },
+            {
+                "category": "Dữ kiện",
+                "code": "data",
+                "questions": [
+                    {
+                        "answers": [
+                            "Áp suất",
+                            "Oxi",
+                            "Khí",
+                            "Chất lỏng"
+                        ],
+                        "content": "Đây là gì?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv1.mp4?alt=media&token=75df87a4-5c4c-4a43-af49-6109d74a80c2"
+                    },
+                    {
+                        "answers": [
+                            "Tố Hữu",
+                            "Trần Phú",
+                            "Hữu Thỉnh",
+                            "Chế Lan Viên"
+                        ],
+                        "content": "Đây là ai?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv2.mp4?alt=media&token=95596104-11bc-4d82-8916-816449cf5974"
+                    },
+                    {
+                        "answers": [
+                            "QDND Việt Nam",
+                            "Đại tướng Võ Nguyên Giáp",
+                            "Kháng chiến chống Pháp",
+                            "Kháng chiến chống Mỹ"
+                        ],
+                        "content": "Đây là gì?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv3.mp4?alt=media&token=7ac9fb6f-c15a-4739-af2e-6e987642eb73"
+                    },
+                    {
+                        "answers": [
+                            "60",
+                            "50",
+                            "20",
+                            "55"
+                        ],
+                        "content": "Đây là số nào?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv4.mp4?alt=media&token=25f76336-e2e5-45ff-bfb0-2e1db1a72a35"
+                    },
+                    {
+                        "answers": [
+                            "Phạm Tuân",
+                            "Lưu Quang Vũ",
+                            "Xuân Quỳnh",
+                            "Huy Cận"
+                        ],
+                        "content": "Đây là ai?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv5.mp4?alt=media&token=1d3da549-ade7-4bb7-ad79-5265c056235d"
+                    },
+                    {
+                        "answers": [
+                            "Me",
+                            "Bàng",
+                            "Mít",
+                            "Xoan"
+                        ],
+                        "content": "Đây là cây gì?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv6.mp4?alt=media&token=3b26f82d-d500-4de2-bc9c-cee52410b1da"
+                    },
+                    {
+                        "answers": [
+                            "Vũ Trọng Phụng",
+                            "Nguyễn Công Hoan",
+                            "Chế Lan Viên",
+                            "Tố H"
+                        ],
+                        "content": "Đây là ai?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv7.mp4?alt=media&token=1571c0ca-3e65-47ec-8b58-12c56791ec4d"
+                    },
+                    {
+                        "answers": [
+                            "17",
+                            "18",
+                            "13",
+                            "19"
+                        ],
+                        "content": "Đây là số nào?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv8.mp4?alt=media&token=acd70e48-a1a1-430e-9382-58e14d72bcec"
+                    },
+                    {
+                        "answers": [
+                            "Thủy ngân",
+                            "Đồng",
+                            "Natri",
+                            "Chì"
+                        ],
+                        "content": "Đây là gì?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv9.mp4?alt=media&token=e2d03e2c-baea-4944-aa5a-3bfd0af97100"
+                    },
+                    {
+                        "answers": [
+                            "Trần Quốc Tuấn",
+                            "Trần Cảnh",
+                            "Trần Quốc Toản",
+                            "Trần Nhật Duật"
+                        ],
+                        "content": "Đây là ai?",
+                        "video": "https://firebasestorage.googleapis.com/v0/b/olympia-cf242.appspot.com/o/video%2Fv10.mp4?alt=media&token=a29df366-9bbb-45bb-90e9-8c40484d560e"
+                    }
+                ]
+            }
+        ],
+        "round4": [
+            {
+                "category": "Dễ",
+                "code": "easy",
+                "questions": [
+                    {
+                        "answers": [
+                            "8",
+                            "12",
+                            "13",
+                            "20"
+                        ],
+                        "content": "Đồng vị phóng xạ C-14 có bao nhiêu neutron?"
+                    },
+                    {
+                        "answers": [
+                            "Mexio",
+                            "Brazil",
+                            "Colombia",
+                            "Argentina"
+                        ],
+                        "content": "Quốc gia nào có nhiều người nói tiếng Tây Ban Nha nhất?"
+                    },
+                    {
+                        "answers": [
+                            "Sauri Arabia",
+                            "Mỹ",
+                            "Lybia",
+                            "Iran"
+                        ],
+                        "content": "Quốc gia nào có trữ lượng dầu mỏ lớn nhất thế giới? "
+                    },
+                    {
+                        "answers": [
+                            "Nghệ An",
+                            "Hà Tĩnh",
+                            "Thanh Hóa",
+                            "Quảng Bình"
+                        ],
+                        "content": "Phượng Hoàng Trung Đô là nơi từng được Quang Trung   Hoàng Đế chọn để xây dựng kinh đô. Địa danh đó hiện nay thuộc tỉnh nào?  "
+                    },
+                    {
+                        "answers": [
+                            "Nito",
+                            "Photpho",
+                            "Asen",
+                            "Antimon"
+                        ],
+                        "content": "Nguyên tố nhóm VA nào có đường kính bé nhất? "
+                    },
+                    {
+                        "answers": [
+                            "Mexico",
+                            "Ai Cập",
+                            "Trung quốc",
+                            "Nam Phi"
+                        ],
+                        "content": "Kim tự tháp lớn nhất thế giới nằm ở quốc gia nào?"
+                    },
+                    {
+                        "answers": [
+                            "Đắk Lăk",
+                            "Ninh Thuận",
+                            "Pleiku",
+                            "Quảng Bình"
+                        ],
+                        "content": "Vườn quốc gia Yok Đôn nằm ở tỉnh nào? "
+                    },
+                    {
+                        "answers": [
+                            "5",
+                            "1",
+                            "2",
+                            "4"
+                        ],
+                        "content": "Đại hội Đại biểu Đoàn Thanh niên Cộng sản Hồ Chí Minh được tổ chức mấy năm một lần?"
+                    },
+                    {
+                        "answers": [
+                            "11",
+                            "20",
+                            "5",
+                            "8"
+                        ],
+                        "content": "Từ -100 đến 100 có bao nhiêu số chính phương?"
+                    },
+                    {
+                        "answers": [
+                            "13",
+                            "10",
+                            "20",
+                            "8"
+                        ],
+                        "content": "Vùng Đồng bằng sông Cửu Long có bao nhiêu đơn vị hành chính cấp tỉnh?"
+                    }
+                ]
+            },
+            {
+                "category": "Trung bình",
+                "code": "medium",
+                "questions": [
+                    {
+                        "answers": [
+                            "Kỹ giữa",
+                            "Kỳ đầu",
+                            "Kỳ sau",
+                            "Kỳ cuối"
+                        ],
+                        "content": "Nhiễm sắc thể ở kì nào có thể được nhìn thấy rõ nhất?"
+                    },
+                    {
+                        "answers": [
+                            "Khóa I",
+                            "Khóa V",
+                            "Khóa X",
+                            "Khóa VIII"
+                        ],
+                        "content": "Quốc hội Khóa mấy có nhiệm kì dài nhất?"
+                    },
+                    {
+                        "answers": [
+                            "1959",
+                            "1980",
+                            "1984",
+                            "1964"
+                        ],
+                        "content": "When was the first SEA Games hosted? "
+                    },
+                    {
+                        "answers": [
+                            "Trăng lưỡi liềm",
+                            "Thanh kiếm",
+                            "Mặt trời",
+                            "Cành Oliu"
+                        ],
+                        "content": "Biểu tượng của Hồi giáo là ... và sao."
+                    },
+                    {
+                        "answers": [
+                            "Mỹ",
+                            "Nhật Bản",
+                            "Ca-na-da",
+                            "Úc"
+                        ],
+                        "content": "Cuộc cách mạng tư sản đầu tiên ngoài châu Âu diễn ra tại đâu?"
+                    },
+                    {
+                        "answers": [
+                            "Y Phương",
+                            "Trần Đăng Khoa",
+                            "Tô Hoài",
+                            "Thạch Lam"
+                        ],
+                        "content": "Tác phẩm \"Nói với con\" do nhà thơ nào sáng tác?"
+                    },
+                    {
+                        "answers": [
+                            "Argentina",
+                            "Brazil",
+                            "Colombia",
+                            "Mexico"
+                        ],
+                        "content": " Đỉnh núi cao nhất châu Mỹ nằm ở quốc gia nào?"
+                    },
+                    {
+                        "answers": [
+                            "Pushkin",
+                            "Maksim Gorky",
+                            "Lev Tolstoy",
+                            "Fyodor Dostoevsky"
+                        ],
+                        "content": "Ai là tác giả của tác phẩm văn học \"Con đầm pích\"?"
+                    },
+                    {
+                        "answers": [
+                            "John Napier",
+                            "Pythagoras",
+                            "Shakespeare",
+                            "Fibonacci"
+                        ],
+                        "content": "Ai là người phát minh ra logarit? "
+                    },
+                    {
+                        "answers": [
+                            "Sông Chảy",
+                            "Sông Hồng",
+                            "Sông Đồng Nai",
+                            "Sông Cửu Long"
+                        ],
+                        "content": "Hồ Thác Bà nằm trên con sông nào? "
+                    }
+                ]
+            },
+            {
+                "category": "Khó",
+                "code": "hard",
+                "questions": [
+                    {
+                        "answers": [
+                            "Caesium",
+                            "Vonfram",
+                            "Asen",
+                            "Neon"
+                        ],
+                        "content": "Nguyên tố nào được sử dụng làm tế bào quang điện?"
+                    },
+                    {
+                        "answers": [
+                            "Bài toán con thỏ",
+                            "Mã đi tuần",
+                            "Tám con hậu",
+                            "Người đưa thư"
+                        ],
+                        "content": "5 Bài toán nào được xem là khởi nguồn của dãy số Fibonacci?"
+                    },
+                    {
+                        "answers": [
+                            "Sydney 2000",
+                            "London 2012",
+                            "Athens 2004",
+                            "Sochi 2014"
+                        ],
+                        "content": "Đoàn thể thao Việt Nam giành được tấm huy chương đầu tiên tại kỳ Thế vận hội nào?"
+                    },
+                    {
+                        "answers": [
+                            "Phong Nhã",
+                            "Văn Cao",
+                            "Đỗ Nhuận",
+                            "Phạm Tuyên"
+                        ],
+                        "content": " Bài Đội ca là sáng tác của nhạc sĩ nào?"
+                    },
+                    {
+                        "answers": [
+                            "2",
+                            "0",
+                            "10",
+                            "7"
+                        ],
+                        "content": "Có bao nhiêu số hoàn chỉnh bé hơn 100?"
+                    },
+                    {
+                        "answers": [
+                            "Lê Tương Dực",
+                            "Lê Uy Mục",
+                            "Lê Thánh Tông",
+                            "Lê Nhân Tông"
+                        ],
+                        "content": "Bối cảnh của vở kịch Vũ Như Tô lấy ở đời vua nào?"
+                    },
+                    {
+                        "answers": [
+                            "Bahasa",
+                            "English",
+                            "Chinese",
+                            "French"
+                        ],
+                        "content": "Which is the first language of Indonesia? "
+                    },
+                    {
+                        "answers": [
+                            "Ruồi trâu",
+                            "Bắt con chim nhạn",
+                            "Cuốn theo chiều gió",
+                            "Cánh buồm đỏ thắm"
+                        ],
+                        "content": "Tên một cuốn tiểu thuyết của Ethel Lilian Voynich, đã được xuất bản năm 1897 tại Mỹ?"
+                    },
+                    {
+                        "answers": [
+                            "Lý Thánh Tông",
+                            "Lê Dụ Tông",
+                            "Trần Nhân Tông",
+                            "Nguyễn Ánh"
+                        ],
+                        "content": "Vị vua nào đã đổi quốc hiệu nước ta thành Đại Việt?"
+                    },
+                    {
+                        "answers": [
+                            "Hà Giang",
+                            "Bắc Cạn",
+                            "Điện Biên",
+                            "Sơn La"
+                        ],
+                        "content": "Đỉnh núi cao nhất Miền Bắc và Đông Bắc Bắc Bộ nằm ở tỉnh nào?"
+                    }
+                ]
+            }
+        ]
+    }
+}
