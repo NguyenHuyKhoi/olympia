@@ -1,23 +1,17 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    View,
-    StyleSheet,
-    Image,
     Alert,
-    Keyboard
+    Keyboard, Text,
+    View
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import ButtonComponent from '../../component/button.component';
 import HeaderComponent from '../../component/header.component';
 import InputTextComponent from '../../component/input_text.component';
-import { APP_NAME } from '../../util/constants';
-import { LOGO } from '../../resource/image';
-import { INDIGO_1, INDIGO_2, WHITE,GREEN, SILVER } from '../../util/palette';
+import { GREEN, INDIGO_2, WHITE } from '../../util/palette';
 
-import {connect }from 'react-redux'
-import * as actions from '../../redux/action/user.action'
+import { connect } from 'react-redux';
+import * as actions from '../../redux/action/user.action';
 import firebaseHelper from '../../util/firebase';
 import { validatePassword, validatePhone } from '../../util/helper';
 

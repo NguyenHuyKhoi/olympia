@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-
+import {View, Text} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack'
+import {createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import {Provider} from 'react-redux'
 import returnStoreAndPersistor  from './src/redux/store/'
@@ -26,11 +26,14 @@ import PracticeRound4Screen from './src/screen/practice/round4.screen';
 
 export default class App extends Component{
 	render(){
-		const stack=createStackNavigator();
+		const stack=createNativeStackNavigator();
 		return (
 			<Provider store={store}>
-			<NavigationContainer>
-				<stack.Navigator headerMode='none' initialRouteName='signin'>
+			<NavigationContainer >
+				<stack.Navigator headerMode='none' initialRouteName='signin'
+					 screenOptions={{
+						headerShown: false
+					}}>
 					<stack.Screen name='signin' component={SigninScreen}/>
 					<stack.Screen name='signup' component={SignupScreen}/>
 					<stack.Screen name='home' component={HomeScreen}/>

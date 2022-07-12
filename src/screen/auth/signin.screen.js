@@ -1,23 +1,19 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    View,
-    StyleSheet,
-    Image,
-    Alert,
-    Keyboard
+    Alert, Image, Keyboard, Text,
+    TouchableOpacity,
+    View
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { connect } from 'react-redux';
 import ButtonComponent from '../../component/button.component';
 import InputTextComponent from '../../component/input_text.component';
-import { APP_NAME } from '../../util/constants';
+import * as actions from '../../redux/action/user.action';
 import { LOGO } from '../../resource/image';
-import { INDIGO_1, INDIGO_2, WHITE,GREEN } from '../../util/palette';
+import { APP_NAME } from '../../util/constants';
 import firebaseHelper from '../../util/firebase';
 import { validatePassword, validatePhone } from '../../util/helper';
-import {connect }from 'react-redux'
-import * as actions from '../../redux/action/user.action'
+import { GREEN, INDIGO_2, WHITE } from '../../util/palette';
 
 class SigninScreen extends Component{
 

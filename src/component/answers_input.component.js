@@ -1,18 +1,11 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    StyleSheet,
-    TextInput,
-    View,
-    Alert,
-    Keyboard
+    Keyboard, TextInput,
+    View
 } from 'react-native';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import  Icon  from 'react-native-vector-icons/MaterialIcons';
-import { GREEN, INDIGO_3, RED, SILVER, WHITE } from '../util/palette';
-import { shuffle } from '../util/helper';
-import ButtonComponent from './button.component'
+import { INDIGO_3, WHITE } from '../util/palette';
+import ButtonComponent from './button.component';
 export default class AnswersInputComponent extends Component{
 
 

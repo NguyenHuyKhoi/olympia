@@ -1,14 +1,9 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    StyleSheet,
-    TextInput,
-    View
+    View,
+    FlatList
 } from 'react-native';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import  Icon  from 'react-native-vector-icons/MaterialIcons';
-import { GREEN, INDIGO_3, RED, SILVER, WHITE } from '../util/palette';
 import { shuffle } from '../util/helper';
 import AnswerOptionComponent from './answer_option.component';
 

@@ -1,24 +1,18 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    View,
-    StyleSheet,
-    Image,
-    Alert,
-    Keyboard
+    Alert, Image, Keyboard, Text,TouchableOpacity,
+    View
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import ButtonComponent from '../../component/button.component';
 import InputTextComponent from '../../component/input_text.component';
-import { APP_NAME } from '../../util/constants';
 import { LOGO } from '../../resource/image';
-import { INDIGO_1, INDIGO_2, WHITE,GREEN } from '../../util/palette';
+import { APP_NAME } from '../../util/constants';
+import { GREEN, INDIGO_2, WHITE } from '../../util/palette';
 
 
-import firebase from '../../util/firebase'
 import firebaseHelper from '../../util/firebase';
-import { validatePhone,validatePassword } from '../../util/helper';
+import { validatePassword, validatePhone } from '../../util/helper';
 export default class SignupScreen extends Component{
 
     constructor(props){

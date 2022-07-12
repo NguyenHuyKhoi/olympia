@@ -4,9 +4,9 @@ import {
     Text,
     StyleSheet,
     TextInput,
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import  Icon  from 'react-native-vector-icons/MaterialIcons';
 import { MAX_WIDTH } from '../util/constants';
 import { GREEN, INDIGO_3, RED, SILVER, WHITE } from '../util/palette';

@@ -1,20 +1,12 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
 import {
-    Text,
-    View,
-    StyleSheet,
-    Image,
-    Alert,
-    Keyboard
+    View
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import ButtonComponent from '../component/button.component';
 import FooterComponent from '../component/footer.component';
 import HeaderComponent from '../component/header.component';
-import { APP_NAME } from '../util/constants';
-import { LOGO } from '../resource/image';
-import { INDIGO_1, INDIGO_2, WHITE,GREEN,SILVER, INDIGO_3 } from '../util/palette';
+import { INDIGO_2, INDIGO_3, SILVER } from '../util/palette';
 
 export default class HomeScreen extends Component{
 
