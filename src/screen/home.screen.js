@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native"
 import React, { Component } from "react"
 
 import { View } from "react-native"
-import ButtonComponent from "../component/button.component"
+import Button from "../component/button"
 import Footer from "../component/footer"
 import HeaderComponent from "../component/header.component"
 import { INDIGO_2, INDIGO_3, SILVER } from "../util/palette"
@@ -22,13 +22,13 @@ const HomeScreen = () => {
     >
       <HeaderComponent />
 
-      <ButtonComponent
+      <Button
         label="Luyện tập"
         text_color={SILVER}
         background={INDIGO_2}
         onPress={() => navigation.navigate("practice_home")}
       />
-      <ButtonComponent
+      <Button
         label="Thi đấu"
         text_color={SILVER}
         background={INDIGO_2}

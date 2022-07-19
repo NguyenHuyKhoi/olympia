@@ -1,39 +1,39 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import { View, Text, Alert } from "react-native";
+import { View, Text, Alert } from "react-native"
 
-import RoundComponent from "../../component/round.component";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { GREEN, INDIGO_3, WHITE } from "../../util/palette";
-import HintImageModal from "../../component/hint_image.modal";
-import CrosswordsModal from "../../component/crosswords.modal";
-import { connect } from "react-redux";
-import * as actions from "../../redux/practice/action";
-import { ROUNDS } from "../../util/constants";
-import ButtonComponent from "../../component/button.component";
-import CountdownTimerComponent from "../../component/countdown_timer.component";
+import RoundComponent from "../../component/round.component"
+import Icon from "react-native-vector-icons/MaterialIcons"
+import { GREEN, INDIGO_3, WHITE } from "../../util/palette"
+import HintImageModal from "../../component/hint_image.modal"
+import CrosswordsModal from "../../component/crosswords.modal"
+import { connect } from "react-redux"
+import * as actions from "../../redux/practice/action"
+import { ROUNDS } from "../../util/constants"
+import Button from "../../component/button"
+import CountdownTimerComponent from "../../component/countdown_timer.component"
 
 class PracticeRound2Screen extends Component {
   onAnswerKeyword = (is_correct) => {
-    let { questions_state } = this.props.practice;
+    let { questions_state } = this.props.practice
     let keyword_score =
-      ROUNDS[1].max_keyword_score - 20 * (questions_state.length - 1);
+      ROUNDS[1].max_keyword_score - 20 * (questions_state.length - 1)
 
     if (keyword_score == 0)
       // answer keyword after all suggest quesion ;
-      keyword_score = 20;
-    if (!is_correct) keyword_score = 0;
+      keyword_score = 20
+    if (!is_correct) keyword_score = 0
 
     if (is_correct) {
       Alert.alert(
         "Bạn đã trả lời đúng từ khóa và nhận " + keyword_score + " điểm."
-      );
+      )
     } else {
-      Alert.alert("Bạn đã trả lời sai từ khóa và kết thúc vòng 2.");
+      Alert.alert("Bạn đã trả lời sai từ khóa và kết thúc vòng 2.")
     }
 
-    this.props.answerKeyword(keyword_score);
-  };
+    this.props.answerKeyword(keyword_score)
+  }
 
   render() {
     let {
@@ -43,11 +43,11 @@ class PracticeRound2Screen extends Component {
       questions_state,
       is_guessed_round2_keyword,
       keyword_answered,
-    } = this.props.practice;
+    } = this.props.practice
 
-    let round2 = rounds[1];
+    let round2 = rounds[1]
 
-    console.log("Round2 round2 :", questions_state);
+    console.log("Round2 round2 :", questions_state)
     return (
       <View style={{ flex: 1, backgroundColor: INDIGO_3 }}>
         <HintImageModal
@@ -70,8 +70,8 @@ class PracticeRound2Screen extends Component {
         />
         <Icon
           onPress={() => {
-            this.hintModal.open();
-            this.crosswordModal.close();
+            this.hintModal.open()
+            this.crosswordModal.close()
           }}
           name="insert-photo"
           size={40}
@@ -81,8 +81,8 @@ class PracticeRound2Screen extends Component {
 
         <Icon
           onPress={() => {
-            this.crosswordModal.open();
-            this.hintModal.close();
+            this.crosswordModal.open()
+            this.hintModal.close()
           }}
           name="reorder"
           size={40}
@@ -116,19 +116,19 @@ class PracticeRound2Screen extends Component {
             >
               Vòng 2 đã kết thúc. Nhấn Tiếp để bắt đầu vòng 3.
             </Text>
-            <ButtonComponent
+            <Button
               label="Tiếp"
               onPress={() => this.props.navigation.navigate("practice_result")}
             />
           </View>
         )}
       </View>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => ({
   practice: state.practice,
-});
+})
 
-export default connect(mapStateToProps, actions)(PracticeRound2Screen);
+export default connect(mapStateToProps, actions)(PracticeRound2Screen)

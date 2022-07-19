@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import SoundPlayer from "react-native-sound-player";
+import React, { Component } from "react"
+import SoundPlayer from "react-native-sound-player"
 import {
   View,
   Text,
@@ -7,17 +7,17 @@ import {
   Alert,
   Image,
   TouchableOpacity,
-} from "react-native";
-import ButtonComponent from "../../component/button.component";
+} from "react-native"
+import Button from "../../component/button"
 
-import STAR1 from "../../resource/image/star1.png";
-import STAR2 from "../../resource/image/star2.png";
-import { connect } from "react-redux";
-import * as actions from "../../redux/practice/action";
+import STAR1 from "../../resource/image/star1.png"
+import STAR2 from "../../resource/image/star2.png"
+import { connect } from "react-redux"
+import * as actions from "../../redux/practice/action"
 
-import { ROUNDS } from "../../util/constants";
+import { ROUNDS } from "../../util/constants"
 
-const levels = ROUNDS[3].levels;
+const levels = ROUNDS[3].levels
 
 import {
   SILVER,
@@ -26,7 +26,7 @@ import {
   GREEN,
   INDIGO_2,
   WHITE,
-} from "../../util/palette";
+} from "../../util/palette"
 class ScoreLevel extends Component {
   render() {
     return (
@@ -43,33 +43,33 @@ class ScoreLevel extends Component {
       >
         <Text style={{ fontSize: 20, color: SILVER }}>{this.props.score}</Text>
       </TouchableOpacity>
-    );
+    )
   }
 }
 
 class QuestionPackage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       is_picked_star: false,
       level: this.props.default_level,
-    };
+    }
   }
 
   pickStar = () => {
-    this.props.pickStar();
-  };
+    this.props.pickStar()
+  }
 
   pickLevel = (level) => {
-    this.props.pickLevel(level, this.state.level); //after level and before level
+    this.props.pickLevel(level, this.state.level) //after level and before level
     this.setState({
       ...this.state,
       level: level,
-    });
-  };
+    })
+  }
 
   render() {
-    const { index, is_picked_star } = this.props;
+    const { index, is_picked_star } = this.props
     return (
       <View
         style={{ width: "100%", flexDirection: "column", alignItems: "center" }}
@@ -107,69 +107,69 @@ class QuestionPackage extends Component {
           ))}
         </View>
       </View>
-    );
+    )
   }
 }
 
 class Round4SetupScreen extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       arr: [1, 1, 1],
       total_score: 60,
       picked_star: -1,
-    };
+    }
   }
 
   pickLevel = (l2, l1) => {
-    let { arr, total_score } = this.state;
-    arr[l2]++;
-    arr[l1]--;
-    total_score = total_score - levels[l1].score + levels[l2].score;
+    let { arr, total_score } = this.state
+    arr[l2]++
+    arr[l1]--
+    total_score = total_score - levels[l1].score + levels[l2].score
 
     this.setState({
       arr,
       total_score,
-    });
-  };
+    })
+  }
 
   enterRound4 = () => {
-    this.props.chooseRound4Questions(this.state.arr, this.state.picked_star);
+    this.props.chooseRound4Questions(this.state.arr, this.state.picked_star)
 
     setTimeout(() => {
-      SoundPlayer.stop();
-      this.props.navigation.navigate("practice_round4");
-    }, 1000);
-  };
+      SoundPlayer.stop()
+      this.props.navigation.navigate("practice_round4")
+    }, 1000)
+  }
 
   componentDidMount = () => {
     try {
       // play the file tone.mp3
-      SoundPlayer.loadSoundFile("round4_choose", "mp3");
-      SoundPlayer.play();
+      SoundPlayer.loadSoundFile("round4_choose", "mp3")
+      SoundPlayer.play()
     } catch (e) {
-      console.log(`cannot play the sound file`, e);
+      console.log(`cannot play the sound file`, e)
     }
-  };
+  }
 
   componentWillUnmount = () => {
-    SoundPlayer.stop();
-  };
+    SoundPlayer.stop()
+  }
 
   pickStar = (index) => {
     if (this.state.picked_star === index) {
       this.setState({
         picked_star: -1,
-      });
+      })
     } else {
       this.setState({
         picked_star: index,
-      });
+      })
     }
-  };
+  }
 
   render() {
-    const { total_score } = this.state;
+    const { total_score } = this.state
     return (
       <View
         style={{
@@ -206,7 +206,7 @@ class Round4SetupScreen extends Component {
           {"Tổng : " + total_score}
         </Text>
 
-        <ButtonComponent
+        <Button
           label="Vào"
           text_color={SILVER}
           background={GREEN}
@@ -214,12 +214,12 @@ class Round4SetupScreen extends Component {
           margin_top={30}
         />
       </View>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => ({
   practice: state.practice,
-});
+})
 
-export default connect(mapStateToProps, actions)(Round4SetupScreen);
+export default connect(mapStateToProps, actions)(Round4SetupScreen)

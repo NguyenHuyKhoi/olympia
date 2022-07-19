@@ -4,7 +4,7 @@ import { View, StyleSheet, Alert, ActivityIndicator } from "react-native"
 import { connect } from "react-redux"
 import * as actions from "../../redux/practice/action"
 
-import ButtonComponent from "../../component/button.component"
+import Button from "../../component/button"
 import Footer from "../../component/footer"
 import HeaderComponent from "../../component/header.component"
 import { INDIGO_2, SILVER, INDIGO_3 } from "../../util/palette"
@@ -29,19 +29,19 @@ class PracticeHomeScreen extends Component {
       >
         <HeaderComponent />
 
-        <ButtonComponent
+        <Button
           label="Vào luôn !"
           text_color={SILVER}
           background={INDIGO_2}
           onPress={this.onStartPractice}
         />
-        <ButtonComponent
+        <Button
           label="Luật chơi"
           text_color={SILVER}
           background={INDIGO_2}
           onPress={() => this.props.navigation.navigate("practice_rule")}
         />
-        <ButtonComponent
+        <Button
           label="Lịch sử"
           text_color={SILVER}
           background={INDIGO_2}

@@ -1,60 +1,60 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import { Alert, Keyboard, Text, View } from "react-native";
-import ButtonComponent from "../../component/button.component";
-import HeaderComponent from "../../component/header.component";
-import InputTextComponent from "../../component/input_text.component";
-import { GREEN, INDIGO_2, WHITE } from "../../util/palette";
+import { Alert, Keyboard, Text, View } from "react-native"
+import Button from "../../component/button"
+import HeaderComponent from "../../component/header.component"
+import InputTextComponent from "../../component/input_text.component"
+import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
 
-import { connect } from "react-redux";
-import * as actions from "../../redux/auth/action";
-import firebaseHelper from "../../util/firebase";
-import { validatePassword, validatePhone } from "../../util/helper";
+import { connect } from "react-redux"
+import * as actions from "../../redux/auth/action"
+import firebaseHelper from "../../util/firebase"
+import { validatePassword, validatePhone } from "../../util/helper"
 
 class SettingAccountScreen extends Component {
   constructor(props) {
-    super(props);
-    let i = this.props.user.infor;
+    super(props)
+    let i = this.props.user.infor
 
-    console.log("settingAccount :", i);
+    console.log("settingAccount :", i)
     this.state = {
       id: i.id,
       phone: i.phone,
       password: i.password,
       username: i.username,
       show_keyboard: false,
-    };
+    }
   }
 
   componentDidMount = () => {
     this.keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
       () => {
-        this.setState({ show_keyboard: true });
+        this.setState({ show_keyboard: true })
       }
-    );
+    )
     this.keyboardDidHideListener = Keyboard.addListener(
       "keyboardDidHide",
       () => {
-        this.setState({ show_keyboard: false });
+        this.setState({ show_keyboard: false })
       }
-    );
-  };
+    )
+  }
 
   update = async () => {
-    let { phone, password } = this.state;
+    let { phone, password } = this.state
 
-    let err_msg = validatePhone(phone);
+    let err_msg = validatePhone(phone)
     if (err_msg !== "") {
-      Alert.alert(err_msg);
-      return;
+      Alert.alert(err_msg)
+      return
     }
 
-    err_msg = validatePassword(password);
+    err_msg = validatePassword(password)
 
     if (err_msg !== "") {
-      Alert.alert(err_msg);
-      return;
+      Alert.alert(err_msg)
+      return
     }
 
     await firebaseHelper.updateUser({
@@ -62,14 +62,14 @@ class SettingAccountScreen extends Component {
       username: this.state.username,
       password: this.state.password,
       phone: this.state.phone,
-    });
+    })
 
-    Alert.alert("Cập nhật thành công!!!");
-    this.props.navigation.navigate("home");
-  };
+    Alert.alert("Cập nhật thành công!!!")
+    this.props.navigation.navigate("home")
+  }
 
   render() {
-    const { phone, password, username, show_keyboard } = this.state;
+    const { phone, password, username, show_keyboard } = this.state
     return (
       <View
         style={{
@@ -117,7 +117,7 @@ class SettingAccountScreen extends Component {
           onChange={(value) => this.setState({ password: value })}
         />
 
-        <ButtonComponent
+        <Button
           label="LƯU"
           text_color={WHITE}
           background={GREEN}
@@ -125,12 +125,12 @@ class SettingAccountScreen extends Component {
           margin_top={!show_keyboard ? 120 : 20}
         />
       </View>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => ({
   user: state.user,
-});
+})
 
-export default connect(mapStateToProps, actions)(SettingAccountScreen);
+export default connect(mapStateToProps, actions)(SettingAccountScreen)

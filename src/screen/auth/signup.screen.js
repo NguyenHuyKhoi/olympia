@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
-import ButtonComponent from "../../component/button.component"
+import Button from "../../component/button"
 import InputTextComponent from "../../component/input_text.component"
 import { LOGO } from "../../resource/image"
 import { APP_NAME } from "../../util/constants"
@@ -89,7 +89,7 @@ const SignupScreen = () => {
         onChange={setPassword}
       />
 
-      <ButtonComponent
+      <Button
         label="ĐĂNG KÝ"
         text_color={WHITE}
         background={GREEN}
