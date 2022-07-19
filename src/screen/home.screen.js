@@ -1,32 +1,43 @@
-import React, { Component } from 'react';
+import { useNavigation } from "@react-navigation/native"
+import React, { Component } from "react"
 
-import {
-    View
-} from 'react-native';
-import ButtonComponent from '../component/button.component';
-import FooterComponent from '../component/footer.component';
-import HeaderComponent from '../component/header.component';
-import { INDIGO_2, INDIGO_3, SILVER } from '../util/palette';
+import { View } from "react-native"
+import ButtonComponent from "../component/button.component"
+import Footer from "../component/footer"
+import HeaderComponent from "../component/header.component"
+import { INDIGO_2, INDIGO_3, SILVER } from "../util/palette"
 
-export default class HomeScreen extends Component{
+const HomeScreen = () => {
+  const navigation = useNavigation
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: INDIGO_3,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 20,
+      }}
+    >
+      <HeaderComponent />
 
+      <ButtonComponent
+        label="Luyện tập"
+        text_color={SILVER}
+        background={INDIGO_2}
+        onPress={() => navigation.navigate("practice_home")}
+      />
+      <ButtonComponent
+        label="Thi đấu"
+        text_color={SILVER}
+        background={INDIGO_2}
+        onPress={() => navigation.navigate("competition_home")}
+      />
 
-    render(){
-        return (
-			<View style={{flex:1, backgroundColor: INDIGO_3,flexDirection:'column',
-				justifyContent: 'center',
-                alignItems:'center',padding:20}}>
-     
-                <HeaderComponent/>
-
-				
-				<ButtonComponent label='Luyện tập' text_color={SILVER} background={INDIGO_2} 
-						onPress={()=>this.props.navigation.navigate('practice_home')}/>
-				<ButtonComponent label='Thi đấu' text_color={SILVER} background={INDIGO_2} 
-						onPress={()=>this.props.navigation.navigate('competition_home')}/>
-                
-                <FooterComponent navigation={this.props.navigation}/>
-            </View>
-        )
-    }
+      <Footer navigation={navigation} />
+    </View>
+  )
 }
+
+export default HomeScreen

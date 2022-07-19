@@ -1,4 +1,3 @@
-import { useNavigation } from "@react-navigation/native"
 import React, { useEffect, useState } from "react"
 
 import {
@@ -9,7 +8,9 @@ import {
   TouchableOpacity,
   View,
 } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 import { useDispatch, useSelector } from "react-redux"
+
 import ButtonComponent from "../../component/button.component"
 import InputTextComponent from "../../component/input_text.component"
 import { signIn } from "../../redux/auth/action"
@@ -17,6 +18,7 @@ import { LOGO } from "../../resource/image"
 import { APP_NAME } from "../../util/constants"
 import { validatePassword, validatePhone } from "../../util/helper"
 import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
+import ToastHandler from "../../util/toast"
 
 const SigninScreen = () => {
   const { user } = useSelector((state) => state.auth)
@@ -34,12 +36,12 @@ const SigninScreen = () => {
     }
     Keyboard.addListener("keyboardDidShow", () => setIsShowKeyboard(true))
     Keyboard.addListener("keyboardDidHide", () => setIsShowKeyboard(false))
-  }, [])
+  }, [user])
 
   const onSignIn = () => {
     var msg = null
     if ((msg = validatePhone(phone)) || (msg = validatePassword(password))) {
-      Alert.alert(msg)
+      ToastHandler.show({ type: "info", text1: msg })
       return
     }
 

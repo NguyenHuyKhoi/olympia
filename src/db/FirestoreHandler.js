@@ -7,6 +7,10 @@ class FirestoreHandler {
     console.log("get collection items: ", items)
     return items
   }
+
+  static add = async (collectionName, item) => {
+    await firestore().collection(collectionName).add(item)
+  }
 }
 
 export default FirestoreHandler
