@@ -1,8 +1,12 @@
-import { INITIAL_ROUND, ROUNDS } from "../../util/constants";
-import firebase from "../../util/firebase";
-import { practiceActions } from "../action_constant";
-
-const initial_state = {};
+import { INITIAL_ROUND, ROUNDS } from "../../util/constants"
+import firebase from "../../util/firebase"
+import { practiceActions } from "../action_constant"
+const QUIZ_STATUS = {
+  CORRECT: 0,
+  WRONG: 1,
+  CURRENT: 2,
+}
+const initial_state = {}
 
 /// fields :
 // cri: current_round_index
@@ -10,75 +14,72 @@ const initial_state = {};
 // rounds : data of 4 rounds
 // questions_state : state of questions on current round ( on ['none','current','wrong','correct'])
 export default reducer = (state = initial_state, action) => {
-  let payload = action.payload;
-  let { cri, cqi, rounds, questions_state, scores } = state;
+  let { answerScore, round4, picked_star } = action.payload
+    ? action.payload
+    : {}
+  let { round_idx, quiz_idx, rounds, status, scores } = state
   switch (action.type) {
-    case practiceActions.GET_PRACTICE_ROUNDS:
+    case "GET_PRACTICE_ROUNDS":
       return {
         ...state,
         ...payload,
-        cri: INITIAL_ROUND,
-        cqi: 0,
-        questions_state: ["current"],
+        round_idx: INITIAL_ROUND,
+        quiz_idx: 0,
+        status: [QUIZ_STATUS.CURRENT],
         scores: [0, 0, 0, 0],
         is_guessed_round2_keyword: false,
         keyword_answered: false,
-      };
+      }
 
-    case practiceActions.ANSWER:
-      console.log("practiceReducer answer :", payload.score);
-      questions_state[questions_state.length - 1] =
-        payload.score > 0 ? "correct" : "wrong";
-      scores[cri] += payload.score;
-      questions_state.push("current");
+    case "ANSWER":
+      status[status.length - 1] = answerScore > 0 ? "correct" : "wrong"
+      scores[round_idx] += answerScore
+      status.push(QUIZ_STATUS.CURRENT)
 
-      let total_question = ROUNDS[cri].number_question;
-      console.log("total question :", total_question);
+      let total_question = ROUNDS[round_idx].number_question
 
-      if (cqi < total_question - 1) {
-        cqi++;
+      if (quiz_idx < total_question - 1) {
+        quiz_idx++
       }
       return {
         ...state,
-        cqi,
-        questions_state,
+        quiz_idx,
+        status,
         scores,
-      };
+      }
 
-    case practiceActions.NEXT_ROUND:
-      console.log("practiceReducer nextRound :", cri);
-      cqi = 0;
-      cri++;
-      questions_state = [];
-      questions_state.push("current");
+    case "NEXT_ROUND":
+      quiz_idx = 0
+      round_idx++
+      status = []
+      status.push(QUIZ_STATUS.CURRENT)
 
       return {
         ...state,
-        cqi,
-        cri,
-        questions_state,
-      };
+        quiz_idx,
+        round_idx,
+        status,
+      }
 
-    case practiceActions.ANSWER_KEYWORD:
-      scores[1] += payload.keyword_score;
+    case "ANSWER_KEYWORD":
+      scores[1] += answerScore
       //move to next round :3;
 
       return {
         ...state,
         scores,
         keyword_answered: true,
-      };
+      }
 
-    case practiceActions.CHOOSE_ROUND4_QUESTIONS:
-      rounds[3] = payload.round4;
+    case "CHOOSE_ROUND4_QUESTIONS":
+      rounds[3] = round4
 
-      console.log("practiceReducer round4:", payload.round4);
       return {
         ...state,
         rounds,
-        picked_star: payload.picked_star,
-      };
+        picked_star: picked_star,
+      }
     default:
-      return state;
+      return state
   }
-};
+}

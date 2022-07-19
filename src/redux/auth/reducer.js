@@ -22,6 +22,11 @@ export default reducer = (state = initial_state, action) => {
         ...state,
         user: null,
       }
+    case "UPDATE_INFOR":
+      return {
+        ...state,
+        user,
+      }
     default:
       return state
   }

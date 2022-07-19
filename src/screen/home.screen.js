@@ -5,7 +5,7 @@ import { View } from "react-native"
 import Button from "../component/button"
 import FloatButton from "../component/float_button"
 import Footer from "../component/footer"
-import HeaderComponent from "../component/header.component"
+import Header from "../component/header"
 import PlayButton from "../component/play_button"
 import { INDIGO_2, INDIGO_3, SILVER } from "../util/palette"
 
@@ -22,23 +22,23 @@ const HomeScreen = () => {
         padding: 20,
       }}
     >
-      <HeaderComponent />
+      <Header />
       <PlayButton logo={"https"} />
       <FloatButton
         position={{ bottom: 70, right: 20 }}
         logo={"https"}
-        onPress={() => navigation.navigate("practice_history")}
+        onPress={() => navigation.navigate("history")}
       />
 
       <FloatButton
         position={{ bottom: 140, right: 20 }}
         logo={"https"}
-        onPress={() => navigation.navigate("practice_history")}
+        onPress={() => navigation.navigate("guide")}
       />
       <FloatButton
         position={{ bottom: 210, right: 20 }}
         logo={"https"}
-        onPress={() => navigation.navigate("practice_history")}
+        onPress={() => navigation.navigate("setting")}
       />
 
       <Footer navigation={navigation} />

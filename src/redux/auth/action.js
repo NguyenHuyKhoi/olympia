@@ -68,3 +68,24 @@ export const signout = () => {
     payload: {},
   }
 }
+
+export const updateInfor = (user) => {
+  return async (dispatch) => {
+    await FirestoreHandler.update("User", "234", user)
+    dispatch({
+      type: "UPDATE_INFOR",
+      payload: {
+        user,
+      },
+    })
+    dispatch({
+      type: "SHOW_NOTIFICATION",
+      payload: {
+        notif: {
+          type: "success",
+          text1: "Update successfully",
+        },
+      },
+    })
+  }
+}

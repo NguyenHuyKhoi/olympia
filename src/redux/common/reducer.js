@@ -1,5 +1,6 @@
 const initial_state = {
   notif: null,
+  isShowKeyboard: false,
 }
 
 export default reducer = (state = initial_state, action) => {
@@ -12,7 +13,18 @@ export default reducer = (state = initial_state, action) => {
         ...state,
         notif,
       }
-
+    case "SHOW_KEYBOARD": {
+      return {
+        ...state,
+        isShowKeyboard: true,
+      }
+    }
+    case "HIDE_KEYBOARD": {
+      return {
+        ...state,
+        isShowKeyboard: false,
+      }
+    }
     default:
       return state
   }

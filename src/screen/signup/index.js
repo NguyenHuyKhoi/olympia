@@ -21,8 +21,8 @@ import ToastHandler from "../../util/toast"
 import { signUp } from "../../redux/auth/action"
 const SignupScreen = () => {
   const { user } = useSelector((state) => state.auth)
+  const { isShowKeyboard } = useSelector((state) => state.common)
   const navigation = useNavigation()
-  const [isShowKeyboard, setIsShowKeyboard] = useState(false)
   const [phone, setPhone] = useState("")
   const [password, setPassword] = useState("")
   const dispatch = useDispatch()
@@ -33,8 +33,6 @@ const SignupScreen = () => {
       setPhone("")
       navigation.navigate("home")
     }
-    Keyboard.addListener("keyboardDidShow", () => setIsShowKeyboard(true))
-    Keyboard.addListener("keyboardDidHide", () => setIsShowKeyboard(false))
   }, [user])
 
   const onSignUp = () => {
