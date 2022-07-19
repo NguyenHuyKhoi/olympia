@@ -3,7 +3,6 @@ import firebase from '../../util/firebase'
 import {practiceActions} from '../action_constant'
 
 export const getPracticeRounds=()=>{
-
     return async (dispatch)=>{
         let rounds=await firebase.getPracticeRounds();
 

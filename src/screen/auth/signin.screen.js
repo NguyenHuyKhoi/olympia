@@ -1,141 +1,126 @@
-import React, { Component } from 'react';
+import { useNavigation } from "@react-navigation/native"
+import React, { useEffect, useState } from "react"
 
 import {
-    Alert, Image, Keyboard, Text,
-    TouchableOpacity,
-    View
-} from 'react-native';
-import { connect } from 'react-redux';
-import ButtonComponent from '../../component/button.component';
-import InputTextComponent from '../../component/input_text.component';
-import * as actions from '../../redux/action/user.action';
-import { LOGO } from '../../resource/image';
-import { APP_NAME } from '../../util/constants';
-import firebaseHelper from '../../util/firebase';
-import { validatePassword, validatePhone } from '../../util/helper';
-import { GREEN, INDIGO_2, WHITE } from '../../util/palette';
+  Alert,
+  Image,
+  Keyboard,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native"
+import { useDispatch, useSelector } from "react-redux"
+import ButtonComponent from "../../component/button.component"
+import InputTextComponent from "../../component/input_text.component"
+import { signIn } from "../../redux/auth/action"
+import { LOGO } from "../../resource/image"
+import { APP_NAME } from "../../util/constants"
+import { validatePassword, validatePhone } from "../../util/helper"
+import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
 
-class SigninScreen extends Component{
+const SigninScreen = () => {
+  const { user } = useSelector((state) => state.auth)
+  const navigation = useNavigation()
+  const [isShowKeyboard, setIsShowKeyboard] = useState(false)
+  const [phone, setPhone] = useState("")
+  const [password, setPassword] = useState("")
+  const dispatch = useDispatch()
 
-    constructor(props){
-        super(props);
-        this.state={
-            show_keyboard:false,
-            phone:'',
-            password:''
-        }
+  useEffect(() => {
+    if (user) {
+      setPassword("")
+      setPhone("")
+      navigation.navigate("home")
+    }
+    Keyboard.addListener("keyboardDidShow", () => setIsShowKeyboard(true))
+    Keyboard.addListener("keyboardDidHide", () => setIsShowKeyboard(false))
+  }, [])
+
+  const onSignIn = () => {
+    var msg = null
+    if ((msg = validatePhone(phone)) || (msg = validatePassword(password))) {
+      Alert.alert(msg)
+      return
     }
 
-    componentDidMount=()=>{
+    dispatch(signIn({ phone, password }))
+  }
 
-        console.log('Signin :',this.props.user)
-        if (this.props.user.infor!==null){
-            this.props.navigation.navigate('home')
-        }
-		this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', ()=>{
-			this.setState({show_keyboard:true})
-		});
-		this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', ()=>{
-			this.setState({show_keyboard:false})
-		});
-    }
-    
-    signin=async ()=>{
-        let {phone,password}=this.state;
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: INDIGO_2,
+        flexDirection: "column",
+        alignItems: "center",
+        padding: 20,
+      }}
+    >
+      {!isShowKeyboard && (
+        <Image
+          source={LOGO}
+          resizeMethod="resize"
+          style={{
+            width: 120,
+            height: 120,
+            marginTop: 50,
+          }}
+        />
+      )}
+      <Text
+        style={{
+          fontSize: 25,
+          color: WHITE,
+          fontWeight: "bold",
+          marginTop: 10,
+        }}
+      >
+        {APP_NAME}
+      </Text>
+      <InputTextComponent
+        logo="account-circle"
+        label="Số điện thoại"
+        type="numeric"
+        value={phone}
+        onChange={setPhone}
+      />
+      <InputTextComponent
+        logo="https"
+        label="Mật khẩu"
+        type="default"
+        value={password}
+        onChange={setPassword}
+      />
+      <ButtonComponent
+        label="ĐĂNG NHẬP"
+        text_color={WHITE}
+        background={GREEN}
+        onPress={onSignIn}
+        margin_top={!isShowKeyboard ? 50 : 20}
+      />
 
-        let err_msg=validatePhone(phone)
-        if (err_msg!=='') {
-            Alert.alert(err_msg);
-            return ;
-        }
+      {!isShowKeyboard && (
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            position: "absolute",
+            bottom: 20,
+            width: "100%",
+          }}
+        >
+          <TouchableOpacity onPress={() => navigation.navigate("signup")}>
+            <Text style={{ fontSize: 17, color: WHITE }}>Tạo tài khoản</Text>
+          </TouchableOpacity>
 
-        err_msg=validatePassword(password)
-
-        if (err_msg!=='') {
-            Alert.alert(err_msg);
-            return ;
-        }
-
-        let user=await firebaseHelper.signin({
-            phone:this.state.phone,
-            password:this.state.password
-        });
-
-        if (user!==null){
-            Alert.alert('Đăng nhập thành công!');
-
-            this.props.signinSuccess(user);
-            this.props.navigation.navigate('home')
-        }
-        else {
-            Alert.alert('Đăng nhập thất bại!')
-        }
-    }
-
-    render(){
-        const {show_keyboard}=this.state
-        return (
-            <View style={{flex:1, backgroundColor: INDIGO_2,flexDirection:'column',
-                alignItems:'center',padding:20}}>
-                    
-                {
-                    !show_keyboard && 
-                    <Image source={LOGO} resizeMethod='resize' style={{width: 120,height:120,marginTop: 50}}/>
-                }
-
-              
-       
-                <Text style={{fontSize:25,color:WHITE,fontWeight:'bold',marginTop: 10}}>
-                    {APP_NAME}
-                </Text>
-                <InputTextComponent 
-                    logo='account-circle' 
-                    label='Số điện thoại' 
-                    type='numeric'
-                    value={this.state.phone}
-                    onChange={value=>this.setState({phone:value})}
-                     />
-                <InputTextComponent 
-                    logo='https' 
-                    label='Mật khẩu' 
-                    type='default'
-                    value={this.state.password}
-                    onChange={value=>this.setState({password:value})}
-                     />
-                <ButtonComponent label='ĐĂNG NHẬP' text_color={WHITE} background={GREEN} 
-                    onPress={this.signin}
-                    margin_top={!show_keyboard?50:20}/>
-                
-
-                {
-                    !show_keyboard && 
-
-                    <View style={{flex:1,flexDirection:'row',justifyContent: 'space-between',
-                        position:'absolute',bottom:20,width:'100%'}}>
-                        <TouchableOpacity
-                        onPress={()=>this.props.navigation.navigate('signup')} >
-                            <Text style={{fontSize:17,color:WHITE}}>
-                                Tạo tài khoản
-                            </Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity >
-                            <Text style={{fontSize:17,color:WHITE}}>
-                                Quên mật khẩu
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                }
-           </View>
-        )
-    }
+          <TouchableOpacity>
+            <Text style={{ fontSize: 17, color: WHITE }}>Quên mật khẩu</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </View>
+  )
 }
 
-const mapStateToProps = state => ({
-	user: state.user,
-});
-
-
-
-
-export default connect(mapStateToProps,actions,null )(SigninScreen)
+export default SigninScreen

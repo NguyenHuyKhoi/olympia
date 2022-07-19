@@ -78,14 +78,13 @@ export const displayState=(state_code)=>{
 
 }
 
-
 export const validatePhone=(str)=>{
     if (str.length!==10) return 'Số điện thoại phải gồm 10 số'
     if (str[0]!='0') return 'Số điện thoại phải có số 0 ở đầu.'
-    return '';
+    return null;
 }
 
 export const validatePassword=(str)=>{
     if (str.length<6 || str.length>30) return 'Mật khẩu quá ngắn hoặc quá dài!';
-    return '';
+    return null;
 }
