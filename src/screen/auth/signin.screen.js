@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native"
 import { useDispatch, useSelector } from "react-redux"
 
 import Button from "../../component/button"
-import InputTextComponent from "../../component/input_text.component"
+import InputText from "../../component/input_text"
 import { signIn } from "../../redux/auth/action"
 import { LOGO } from "../../resource/image"
 import { APP_NAME } from "../../util/constants"
@@ -79,14 +79,14 @@ const SigninScreen = () => {
       >
         {APP_NAME}
       </Text>
-      <InputTextComponent
+      <InputText
         logo="account-circle"
         label="Số điện thoại"
         type="numeric"
         value={phone}
         onChange={setPhone}
       />
-      <InputTextComponent
+      <InputText
         logo="https"
         label="Mật khẩu"
         type="default"

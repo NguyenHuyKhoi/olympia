@@ -1,24 +1,44 @@
 import { useNavigation } from "@react-navigation/native"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import { Text, TouchableOpacity, View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import { signout } from "../redux/auth/action"
-import { SILVER } from "../util/palette"
+import { GREEN, SILVER, WHITE } from "../util/palette"
+
+const TabItem = (props) => {
+  const { label, selected } = props
+  return (
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{
+        flex: 1,
+        borderColor: selected ? GREEN : WHITE,
+        borderWidth: 2,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 10,
+      }}
+    >
+      <Text style={{ fontSize: 17, color: SILVER }}>{label}</Text>
+    </TouchableOpacity>
+  )
+}
 
 const Footer = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
 
+  const [index, setIndex] = useState(0)
   useEffect(() => {
     if (!user) {
       navigation.navigate("signin")
     }
   }, [user])
 
-  const onSignOut = () => {
-    dispatch(signout())
+  const onSelectMode = (index) => {
+    setIndex(index)
   }
   return (
     <View
@@ -27,17 +47,19 @@ const Footer = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         position: "absolute",
-        bottom: 20,
-        width: "100%",
+        bottom: 0,
       }}
     >
-      <TouchableOpacity onPress={onSignOut}>
-        <Text style={{ fontSize: 17, color: SILVER }}>Đăng xuất</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate("setting_account")}>
-        <Text style={{ fontSize: 17, color: SILVER }}>Cài đặt</Text>
-      </TouchableOpacity>
+      <TabItem
+        label="Luyen tap"
+        onPress={() => onSelectMode(0)}
+        selected={index == 0}
+      />
+      <TabItem
+        label="Thi dau"
+        onPress={() => onSelectMode(1)}
+        selected={index == 1}
+      />
     </View>
   )
 }

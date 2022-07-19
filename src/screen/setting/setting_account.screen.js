@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import { Alert, Keyboard, Text, View } from "react-native"
 import Button from "../../component/button"
 import HeaderComponent from "../../component/header.component"
-import InputTextComponent from "../../component/input_text.component"
+import InputText from "../../component/input_text"
 import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
 
 import { connect } from "react-redux"
@@ -94,14 +94,14 @@ class SettingAccountScreen extends Component {
           TÀI KHOẢN
         </Text>
 
-        <InputTextComponent
+        <InputText
           logo="account-circle"
           label="Số điện thoại"
           value={phone}
           type="numeric"
           onChange={(value) => this.setState({ phone: value })}
         />
-        <InputTextComponent
+        <InputText
           logo="account-circle"
           label="Tên người dùng"
           value={username}
@@ -109,7 +109,7 @@ class SettingAccountScreen extends Component {
           onChange={(value) => this.setState({ username: value })}
         />
 
-        <InputTextComponent
+        <InputText
           logo="https"
           label="Mật khẩu"
           value={password}

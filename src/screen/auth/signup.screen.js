@@ -11,7 +11,7 @@ import {
 } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../component/button"
-import InputTextComponent from "../../component/input_text.component"
+import InputText from "../../component/input_text"
 import { LOGO } from "../../resource/image"
 import { APP_NAME } from "../../util/constants"
 import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
@@ -39,6 +39,7 @@ const SignupScreen = () => {
 
   const onSignUp = () => {
     var msg = null
+    console.log("Input : ", phone, password)
     if ((msg = validatePhone(phone)) || (msg = validatePassword(password))) {
       ToastHandler.show({ type: "info", text1: msg })
       return
@@ -74,14 +75,14 @@ const SignupScreen = () => {
       >
         {APP_NAME}
       </Text>
-      <InputTextComponent
+      <InputText
         logo="account-circle"
         label="Số điện thoại"
-        type="numeric"
+        type="default"
         value={phone}
         onChange={setPhone}
       />
-      <InputTextComponent
+      <InputText
         logo="https"
         label="Mật khẩu"
         type="default"

@@ -3,12 +3,14 @@ import React, { Component } from "react"
 
 import { View } from "react-native"
 import Button from "../component/button"
+import FloatButton from "../component/float_button"
 import Footer from "../component/footer"
 import HeaderComponent from "../component/header.component"
+import PlayButton from "../component/play_button"
 import { INDIGO_2, INDIGO_3, SILVER } from "../util/palette"
 
 const HomeScreen = () => {
-  const navigation = useNavigation
+  const navigation = useNavigation()
   return (
     <View
       style={{
@@ -21,18 +23,22 @@ const HomeScreen = () => {
       }}
     >
       <HeaderComponent />
-
-      <Button
-        label="Luyện tập"
-        text_color={SILVER}
-        background={INDIGO_2}
-        onPress={() => navigation.navigate("practice_home")}
+      <PlayButton logo={"https"} />
+      <FloatButton
+        position={{ bottom: 70, right: 20 }}
+        logo={"https"}
+        onPress={() => navigation.navigate("practice_history")}
       />
-      <Button
-        label="Thi đấu"
-        text_color={SILVER}
-        background={INDIGO_2}
-        onPress={() => navigation.navigate("competition_home")}
+
+      <FloatButton
+        position={{ bottom: 140, right: 20 }}
+        logo={"https"}
+        onPress={() => navigation.navigate("practice_history")}
+      />
+      <FloatButton
+        position={{ bottom: 210, right: 20 }}
+        logo={"https"}
+        onPress={() => navigation.navigate("practice_history")}
       />
 
       <Footer navigation={navigation} />
