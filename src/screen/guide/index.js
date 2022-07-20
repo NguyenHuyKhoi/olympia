@@ -1,38 +1,45 @@
-import React from "react"
+import React, { useState } from "react"
 
-import { FlatList, Text, View } from "react-native"
+import { FlatList, View } from "react-native"
+import Background from "../../component/background"
+import SmallHeader from "../../component/small_header"
 import { ROUNDS } from "../../util/constants"
-import { INDIGO_3, SILVER } from "../../util/palette"
-import GuideItem from "./component/guide.item"
+import LevelItem from "./component/level.item"
 
 const GuideScreen = () => {
+  const [viewIndex, setViewIndex] = useState(null)
+  const onSelectItem = (index) => {
+    console.log("Select: ", index)
+    if (viewIndex == index) {
+      setViewIndex(null)
+    } else {
+      setViewIndex(index)
+    }
+  }
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: INDIGO_3,
         flexDirection: "column",
-        alignItems: "center",
       }}
     >
-      <Text
-        style={{
-          fontSize: 25,
-          color: SILVER,
-          fontWeight: "bold",
-          marginTop: 40,
-        }}
-      >
-        LUẬT CHƠI
-      </Text>
-
-      <TotalScore score={480} />
-
+      <Background />
+      <SmallHeader style={{ marginTop: 30 }} />
       <FlatList
         data={ROUNDS}
-        horizontal
+        style={{ marginTop: 50 }}
         keyExtractor={(item, index) => "" + index}
-        renderItem={({ item }) => <GuideItem round={item} />}
+        renderItem={({ item, index }) => (
+          <LevelItem
+            {...item}
+            style={{
+              marginHorizontal: 30,
+              marginBottom: 20,
+            }}
+            open={index == viewIndex}
+            onPress={() => onSelectItem(index)}
+          />
+        )}
       />
     </View>
   )

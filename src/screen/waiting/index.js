@@ -2,13 +2,13 @@ import React, { useEffect } from "react"
 import { Image, Text, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import Button from "../../component/button"
-import { LOGO } from "../../resource/image"
-import { GREEN, INDIGO_3, SILVER } from "../../util/palette"
+import { LOGO } from "../../asset/image"
+import { GREEN, INDIGO_3, SILVER, WHITE } from "../../util/palette"
 
 import { useNavigation } from "@react-navigation/native"
 import { useSelector } from "react-redux"
 import { ROUNDS } from "../../util/constants"
-
+import Background from "../../component/background"
 const WaitingScreen = () => {
   const navigation = useNavigation()
   const { round_idx } = useSelector((state) => state.play)
@@ -25,52 +25,59 @@ const WaitingScreen = () => {
     }
   }, [])
 
-  const round = ROUNDS[round_idx]
-
   const onPlay = () => {
+    console.log("Round index: ", round_idx)
     SoundPlayer.stop()
     if (round_idx !== 3) navigation.navigate("round" + (round_idx + 1))
     else navigation.navigate("round4_setup")
   }
+
+  const { name, max_score, index } = ROUNDS[round_idx]
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: INDIGO_3,
-        flexDirection: "column",
-        alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 30,
       }}
     >
-      <Image
-        source={LOGO}
-        resizeMethod="resize"
-        style={{ width: 120, height: 120, marginTop: 40 }}
-      />
-      <Text style={{ fontSize: 22, color: SILVER, marginTop: 15 }}>
-        {"Vòng " + (round_idx + 1)}
-      </Text>
-      <Text
+      <Background />
+      <View
         style={{
-          fontSize: 25,
-          color: SILVER,
-          fontWeight: "bold",
-          marginTop: 15,
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
-        {"round.name"}
-      </Text>
+        <Image
+          source={LOGO}
+          resizeMethod="resize"
+          style={{ width: 240, height: 240, alignSelf: "center" }}
+        />
+        <Text style={{ fontSize: 22, color: WHITE, marginTop: 40 }}>
+          {"Vòng " + (index + 1)}
+        </Text>
+        <Text
+          style={{
+            fontSize: 32,
+            color: WHITE,
+            fontWeight: "bold",
+            marginTop: 10,
+          }}
+        >
+          {name}
+        </Text>
+        <Text
+          style={{
+            fontSize: 20,
+            color: WHITE,
+            marginTop: 5,
+          }}
+        >
+          {`Số điểm tối đa mà bạn có thể đạt được là ${max_score} điểm`}
+        </Text>
+      </View>
 
-      <Button
-        label="Vào"
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: 20,
-          right: 20,
-        }}
-        onPress={onPlay}
-      />
+      <Button label="Vào" onPress={onPlay} style={{ marginBottom: 20 }} />
     </View>
   )
 }

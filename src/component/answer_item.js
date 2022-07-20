@@ -3,7 +3,11 @@ import React from "react"
 import { Text, TouchableOpacity, View } from "react-native"
 import { MAX_WIDTH } from "../util/constants"
 import { GREEN, INDIGO_3, RED, SILVER } from "../util/palette"
-import { ANSWER_STATE } from "./answer_list"
+export const ANSWER_STATE = {
+  NORMAL: 0,
+  CORRECT: 1,
+  WRONG: 2,
+}
 const AnswerItem = (props) => {
   const { status, content } = props
 

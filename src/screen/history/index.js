@@ -1,19 +1,43 @@
 import React, { useEffect, useState } from "react"
 import { FlatList, Text, View } from "react-native"
-import { INDIGO_3, SILVER } from "../../util/palette"
+import { INDIGO_3, SILVER, WHITE } from "../../util/palette"
 
 import { useSelector } from "react-redux"
 
-import FirestoreHandler from "../../db/FirestoreHandler"
+import FirestoreHandler from "../../service/FirestoreHandler"
 import ResultItem from "../history/component/result_item"
+import SmallHeader from "../../component/small_header"
+import Background from "../../component/background"
 const GAMES = [
   {
     time: "16-07-2012",
     scores: [1, 2, 3, 4],
   },
+  {
+    time: "16-07-2012",
+    scores: [1, 2, 3, 4],
+  },
+  {
+    time: "16-07-2012",
+    scores: [1, 2, 3, 4],
+  },
+  {
+    time: "16-07-2012",
+    scores: [1, 2, 3, 4],
+  },
+  {
+    time: "16-07-2012",
+    scores: [1, 2, 3, 4],
+  },
+  {
+    time: "16-07-2012",
+    scores: [1, 2, 3, 4],
+  },
 ]
+
 const HistoryScreen = () => {
   const [games, setGames] = useState([])
+  const [viewIndex, setViewIndex] = useState(null)
   const { user } = useSelector((state) => state.auth)
   useEffect(() => {
     const getResults = async () => {
@@ -24,32 +48,31 @@ const HistoryScreen = () => {
     getResults()
   }, [])
 
+  const onSelectItem = (index) => {
+    if (viewIndex == index) {
+      setViewIndex(null)
+    } else {
+      setViewIndex(index)
+    }
+  }
   return (
     <View
       style={{
         flex: 1,
         backgroundColor: INDIGO_3,
         flexDirection: "column",
-        alignItems: "center",
       }}
     >
-      <Text
-        style={{
-          fontSize: 25,
-          color: SILVER,
-          fontWeight: "bold",
-          marginTop: 40,
-        }}
-      >
-        LỊCH SỬ
-      </Text>
+      <Background />
+      <SmallHeader style={{ marginTop: 30, alignSelf: "center" }} />
       {games.length == 0 ? (
         <Text
           style={{
-            fontSize: 25,
-            color: SILVER,
+            fontSize: 40,
+            color: WHITE,
             fontWeight: "bold",
-            marginTop: 40,
+            alignSelf: "center",
+            marginTop: 250,
           }}
         >
           Khong co lich su
@@ -57,8 +80,18 @@ const HistoryScreen = () => {
       ) : (
         <FlatList
           data={games}
+          style={{
+            padding: 30,
+          }}
           keyExtractor={(item, index) => "" + index}
-          renderItem={({ item }) => <ResultItem {...item} />}
+          renderItem={({ item, index }) => (
+            <ResultItem
+              {...item}
+              index={index}
+              open={index == viewIndex}
+              onPress={() => onSelectItem(index)}
+            />
+          )}
         />
       )}
     </View>

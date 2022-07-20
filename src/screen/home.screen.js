@@ -3,12 +3,12 @@ import React from "react"
 
 import { View } from "react-native"
 import { useDispatch } from "react-redux"
-import Header from "../component/header"
+import Background from "../component/background"
 import IconButton from "../component/icon_button"
 import PlayButton from "../component/play_button"
-import { getRounds } from "../redux/play/action"
-import { INDIGO_3 } from "../util/palette"
+import SmallHeader from "../component/small_header"
 import { signout } from "../redux/auth/action"
+import { getRounds } from "../redux/play/action"
 const HomeScreen = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
@@ -24,11 +24,11 @@ const HomeScreen = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: INDIGO_3,
         flexDirection: "column",
       }}
     >
-      <Header />
+      <Background />
+      <SmallHeader style={{ marginTop: 30 }} />
       <View
         style={{
           flex: 1,
@@ -36,31 +36,31 @@ const HomeScreen = () => {
           alignItems: "center",
         }}
       >
-        <PlayButton logo={"https"} onPress={onPlay} />
+        <PlayButton onPress={onPlay} />
       </View>
       <View
         style={{
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           alignItems: "center",
-          paddingVertical: 10,
-          paddingHorizontal: 50,
+          padding: 10,
+          paddingBottom: 20,
         }}
       >
-        <IconButton logo={"https"} onPress={onSignOut} />
+        <IconButton logo={"arrow-back"} onPress={onSignOut} />
 
         <IconButton
-          logo={"https"}
-          onPress={() => navigation.navigate("history")}
+          logo={"settings"}
+          onPress={() => navigation.navigate("setting")}
         />
 
         <IconButton
-          logo={"https"}
+          logo={"assignment"}
           onPress={() => navigation.navigate("guide")}
         />
         <IconButton
-          logo={"https"}
-          onPress={() => navigation.navigate("setting")}
+          logo={"assessment"}
+          onPress={() => navigation.navigate("history")}
         />
       </View>
     </View>

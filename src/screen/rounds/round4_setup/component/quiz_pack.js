@@ -1,64 +1,73 @@
-import React, { useState } from "react"
-import { Image, Text, TouchableOpacity, View } from "react-native"
+import React from "react"
+import { ImageBackground, Text, TouchableOpacity } from "react-native"
 
-import STAR1 from "../../../../resource/image/star1.png"
-import STAR2 from "../../../../resource/image/star2.png"
+import Icon from "react-native-vector-icons/MaterialIcons"
+import { GRADIENT1, GRADIENT2, GRADIENT3 } from "../../../../asset/image"
+import { WHITE } from "../../../../util/palette"
 
-import { ROUNDS } from "../../../../util/constants"
-
-const levels = ROUNDS[3].levels
-
-import { SILVER } from "../../../../util/palette"
-import ScoreLevel from "./score_level"
+const BGs = [GRADIENT1, GRADIENT2, GRADIENT3]
+const LOGOs = ["filter-1", "filter-2", "filter-3"]
 const QuizPack = (props) => {
-  const { pickedStar, index } = props
-  const [level, setLevel] = useState(props.default_level)
+  const { index, scores, style, selectedIndex } = props
 
-  const pickStar = () => {
-    props.pickStar()
-  }
-
-  const pickLevel = (selectedLevel) => {
-    props.pickLevel(selectedLevel, level) //after level and before level
-    setLevel(selectedLevel)
-  }
+  const totalScore = scores.reduce((sum, num) => (sum += num), 0)
+  const content = scores.reduce(
+    (str, num, index) => (str += (index ? "-" : "") + num),
+    ""
+  )
   return (
-    <View
-      style={{ width: "100%", flexDirection: "column", alignItems: "center" }}
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={{
+        backgroundColor:
+          selectedIndex != null && selectedIndex != index
+            ? "#CDCDCD"
+            : "rgba(0,0,0,0)",
+        ...style,
+      }}
     >
-      <Text style={{ fontSize: 25, color: SILVER, marginTop: 25 }}>
-        {"Câu " + index}
-      </Text>
-
-      <TouchableOpacity
-        onPress={pickStar}
-        style={{ position: "absolute", top: 25, right: 85 }}
-      >
-        <Image
-          source={!pickedStar ? STAR1 : STAR2}
-          style={{ width: 30, height: 30 }}
-        />
-      </TouchableOpacity>
-
-      <View
+      <ImageBackground
         style={{
-          marginTop: 20,
-          width: "100%",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
+          padding: 10,
+          paddingHorizontal: 15,
+          flexDirection: "column",
         }}
+        source={
+          selectedIndex == null || selectedIndex == index ? BGs[index] : null
+        }
       >
-        {levels.map((item, index) => (
-          <ScoreLevel
-            key={"" + index}
-            picked={level === index}
-            score={item.score}
-            onChoose={() => pickLevel(index)}
-          />
-        ))}
-      </View>
-    </View>
+        <Icon
+          name={
+            selectedIndex == null
+              ? LOGOs[index]
+              : selectedIndex == index
+              ? "check-box"
+              : "cancel"
+          }
+          size={30}
+          color={WHITE}
+        />
+        <Text
+          style={{
+            fontSize: 20,
+            color: WHITE,
+            marginTop: 5,
+            fontWeight: "bold",
+          }}
+        >
+          {"Gói " + totalScore}
+        </Text>
+        <Text
+          style={{
+            fontSize: 26,
+            color: WHITE,
+            fontWeight: "bold",
+          }}
+        >
+          {content}
+        </Text>
+      </ImageBackground>
+    </TouchableOpacity>
   )
 }
 

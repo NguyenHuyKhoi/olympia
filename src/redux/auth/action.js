@@ -1,4 +1,4 @@
-import FirestoreHandler from "../../db/FirestoreHandler"
+import FirestoreHandler from "../../service/FirestoreHandler"
 export const signIn = ({ phone, password }) => {
   return async (dispatch) => {
     let users = await FirestoreHandler.getCollection("User")

@@ -10,7 +10,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { updateInfor } from "../../redux/auth/action"
 import { validatePassword, validatePhone } from "../../util/helper"
 import ToastHandler from "../../util/toast"
-
+import Background from "../../component/background"
+import SmallHeader from "../../component/small_header"
+import Link from "../../component/link"
 const SettingScreen = () => {
   const dispatch = useDispatch()
   const { isShowKeyboard } = useSelector((state) => state.common)
@@ -37,53 +39,57 @@ const SettingScreen = () => {
         backgroundColor: INDIGO_2,
         flexDirection: "column",
         alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 30,
       }}
     >
-      {!isShowKeyboard && <Header />}
-
-      <Text
+      <Background />
+      <SmallHeader
         style={{
-          fontSize: 25,
-          color: WHITE,
-          fontWeight: "bold",
-          marginTop: !isShowKeyboard ? 100 : 0,
-          marginBottom: !isShowKeyboard ? 50 : 10,
+          marginTop: 120,
         }}
-      >
-        TÀI KHOẢN
-      </Text>
-
+      />
       <View
         style={{
           flex: 1,
+          width: "100%",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
         <InputText
-          logo="account-circle"
-          label="Số điện thoại"
-          value={phone}
+          placeholder="Số điện thoại"
           type="numeric"
+          value={phone}
+          maxLength={10}
           onChange={setPhone}
         />
         <InputText
-          logo="account-circle"
-          label="Tên người dùng"
+          placeholder="Tên người dùng"
+          type="default"
           value={username}
-          type="default"
+          maxLength={10}
           onChange={setUsername}
+          style={{ marginTop: 20 }}
         />
-
         <InputText
-          logo="https"
-          label="Mật khẩu"
+          placeholder="Mật khẩu"
+          type="numeric"
           value={password}
-          type="default"
+          maxLength={6}
+          secure={true}
+          style={{ marginTop: 20 }}
           onChange={setPassword}
         />
       </View>
-
-      <Button label="LƯU" onPress={onUpdate} />
+      {!isShowKeyboard && (
+        <>
+          <Button
+            label="Cập nhật"
+            onPress={onUpdate}
+            style={{ marginBottom: 20 }}
+          />
+        </>
+      )}
     </View>
   )
 }

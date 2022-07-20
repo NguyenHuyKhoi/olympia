@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Image, Text, View } from "react-native"
-import { LOGO } from "../resource/image"
+import { LOGO } from "../asset/image"
 import { APP_NAME } from "../util/constants"
 import { SILVER } from "../util/palette"
 

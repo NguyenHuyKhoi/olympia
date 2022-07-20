@@ -1,26 +1,23 @@
 import React from "react"
 
-import { TouchableOpacity } from "react-native"
-import Icon from "react-native-vector-icons/MaterialIcons"
-import { GREEN, WHITE } from "../util/palette"
-const SIZE = 240
+import { Image, TouchableOpacity } from "react-native"
+import { PLAY_BUTTON } from "../asset/image"
+const SIZE = 300
 const PlayButton = (props) => {
   let { position, logo } = props
   return (
     <TouchableOpacity
-      style={{
-        width: SIZE,
-        height: SIZE,
-        backgroundColor: GREEN,
-        borderRadius: SIZE / 2,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
       onPress={() => {
         if (props.onPress) props.onPress()
       }}
     >
-      <Icon name={logo} size={SIZE * 0.6} color={WHITE} />
+      <Image
+        style={{
+          width: SIZE,
+          height: SIZE,
+        }}
+        source={PLAY_BUTTON}
+      />
     </TouchableOpacity>
   )
 }

@@ -2,10 +2,10 @@ import React from "react"
 
 import { TouchableOpacity } from "react-native"
 import Icon from "react-native-vector-icons/MaterialIcons"
-import { WHITE } from "../util/palette"
+import { WHITE } from "../../../../util/palette"
 const SIZE = 55
-const IconButton = (props) => {
-  let { style, logo } = props
+const StarCell = (props) => {
+  let { style, select } = props
   return (
     <TouchableOpacity
       style={{
@@ -18,13 +18,11 @@ const IconButton = (props) => {
         alignItems: "center",
         ...style,
       }}
-      onPress={() => {
-        if (props.onPress) props.onPress()
-      }}
+      onPress={props.onPress}
     >
-      <Icon name={logo} size={30} color={WHITE} />
+      {select && <Icon name={"star"} size={30} color={WHITE} />}
     </TouchableOpacity>
   )
 }
 
-export default IconButton
+export default StarCell

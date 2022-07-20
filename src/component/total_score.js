@@ -22,3 +22,5 @@ const TotalScore = (props) => {
     </View>
   )
 }
+
+export default TotalScore

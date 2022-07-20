@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 
 import RoundContent from "../../../component/round_content"
 import { ROUNDS } from "../../../util/constants"
-import STAR2 from "../../../resource/image/star2.png"
+import STAR2 from "../../../asset/image/star2.png"
 const Round4Screen = () => {
   const { quiz_idx, picked_star } = useSelector((state) => state.play)
   return (

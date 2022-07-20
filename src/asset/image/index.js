@@ -1,0 +1,11 @@
+export const LOGO = require("./logo.png")
+export const STAR1 = require("./star1.png")
+export const STAR2 = require("./star2.png")
+export const BG = require("./background.jpg")
+export const PLAY_BUTTON = require("./play_button.png")
+export const RESULT_BG = require("./result_bg.png")
+
+export const GRADIENT1 = require("./gradient1.png")
+export const GRADIENT2 = require("./gradient2.png")
+export const GRADIENT3 = require("./gradient3.png")
+export const GRADIENT4 = require("./gradient4.png")

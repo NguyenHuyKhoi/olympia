@@ -3,7 +3,6 @@ const initial_state = {
 }
 
 export default reducer = (state = initial_state, action) => {
-  console.log("action: ", action)
   let { user } = action.payload ? action.payload : {}
 
   switch (action.type) {

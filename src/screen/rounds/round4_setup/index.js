@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from "react"
-import { Text, View } from "react-native"
+import React, { useEffect, useState } from "react"
+import { FlatList, Text, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import Button from "../../../component/button"
 
 import { useDispatch } from "react-redux"
-
-import { ROUNDS } from "../../../util/constants"
-
-const levels = ROUNDS[3].levels
-
 import { useNavigation } from "@react-navigation/native"
-import { GREEN, INDIGO_3, SILVER } from "../../../util/palette"
-import QuizPack from "./component/quiz_pack"
+import Background from "../../../component/background"
 import { chooseRound4Questions } from "../../../redux/play/action"
+import { GREEN, INDIGO_3, SILVER, WHITE } from "../../../util/palette"
+import QuizPack from "./component/quiz_pack"
+import StarCell from "./component/star_cell"
+import { ROUNDS } from "../../../util/constants"
 
 const Round4SetupScreen = () => {
   const dispatch = useDispatch()
   const navigation = useNavigation()
-  const [arr, setArr] = useState([1, 1, 1])
-  const [totalScore, setTotalScore] = useState(60)
-  const [pickedStar, setPickedStar] = useState(-1)
 
-  const pickLevel = (l2, l1) => {
-    const tempArr = arr
-    tempArr[l2]++
-    tempArr[l1]--
-    setArr(tempArr)
-
-    const newScore = totalScore - levels[l1].score + levels[l2].score
-    setTotalScore(newScore)
-  }
-
-  const enterRound4 = () => {
-    dispatch(chooseRound4Questions(arr, pickedStar))
-
-    setTimeout(() => {
-      SoundPlayer.stop()
-      navigation.navigate("round4")
-    }, 1000)
-  }
+  const [starIndex, setStarIndex] = useState(null)
+  const [packIndex, setPackIndex] = useState(null)
 
   useEffect(() => {
     try {
@@ -54,12 +33,28 @@ const Round4SetupScreen = () => {
     }
   }, [])
 
-  const pickStar = (index) => {
-    console.log("Picked star: ", index)
-    if (pickedStar === index) {
-      setPickedStar(-1)
+  const onSelectPack = (index) => {
+    if (packIndex == index) {
+      setPackIndex(null)
     } else {
-      setPickedStar(index)
+      setPackIndex(index)
+    }
+  }
+
+  const onPlay = () => {
+    dispatch(chooseRound4Questions(arr, pickedStar))
+
+    setTimeout(() => {
+      SoundPlayer.stop()
+      navigation.navigate("round4")
+    }, 1000)
+  }
+
+  const onSelectStar = (index) => {
+    if (starIndex === index) {
+      setStarIndex(null)
+    } else {
+      setStarIndex(index)
     }
   }
 
@@ -68,42 +63,78 @@ const Round4SetupScreen = () => {
       style={{
         flex: 1,
         backgroundColor: INDIGO_3,
-        flexDirection: "column",
-        alignItems: "center",
         padding: 20,
       }}
     >
-      <Text
+      <Background />
+
+      <View
         style={{
-          fontSize: 25,
-          color: SILVER,
-          fontWeight: "bold",
-          marginTop: 40,
+          flex: 1,
+          flexDirection: "column",
         }}
       >
-        CHỌN GÓI CÂU HỎI
-      </Text>
-
-      {[1, 2, 3].map((item, index) => (
-        <QuizPack
-          key={"" + index}
-          index={index + 1}
-          pickedStar={index === pickedStar}
-          pickLevel={pickLevel}
-          pickStar={() => pickStar(index)}
-          default_level={index}
+        <Text
+          style={{
+            fontSize: 22,
+            color: WHITE,
+            fontWeight: "bold",
+            marginTop: 40,
+          }}
+        >
+          CHỌN GÓI CÂU HỎI
+        </Text>
+        <FlatList
+          data={ROUNDS[3].quiz_packs}
+          keyExtractor={(item, index) => index + ""}
+          style={{
+            flexGrow: 0,
+          }}
+          renderItem={({ item, index }) => (
+            <QuizPack
+              key={"" + index}
+              {...item}
+              index={index}
+              selectedIndex={packIndex}
+              onPress={() => onSelectPack(index)}
+              style={{ margin: 10 }}
+            />
+          )}
         />
-      ))}
-
-      <Text style={{ fontSize: 25, color: SILVER, marginTop: 20 }}>
-        {"Tổng : " + totalScore}
-      </Text>
+        <Text
+          style={{
+            fontSize: 22,
+            color: WHITE,
+            fontWeight: "bold",
+            marginTop: 40,
+          }}
+        >
+          CHỌN GÓI CÂU HỎI
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 20,
+            marginTop: 20,
+          }}
+        >
+          {[1, 2, 3].map((item, index) => (
+            <StarCell
+              key={"" + index}
+              select={starIndex == index}
+              onPress={() => onSelectStar(index)}
+            />
+          ))}
+        </View>
+      </View>
 
       <Button
         label="Vào"
+        disabled={packIndex == null}
         text_color={SILVER}
         background={GREEN}
-        onPress={enterRound4}
+        onPress={onPlay}
         margin_top={30}
       />
     </View>

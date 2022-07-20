@@ -1,39 +1,24 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 import { useNavigation } from "@react-navigation/native"
-import {
-  Alert,
-  Image,
-  Keyboard,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native"
+import { View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../component/button"
 import InputText from "../../component/input_text"
-import { LOGO } from "../../resource/image"
-import { APP_NAME } from "../../util/constants"
-import { GREEN, INDIGO_2, WHITE } from "../../util/palette"
+import { INDIGO_2 } from "../../util/palette"
 
+import Background from "../../component/background"
+import BigHeader from "../../component/big_header"
+import Link from "../../component/link"
+import { signUp } from "../../redux/auth/action"
 import { validatePassword, validatePhone } from "../../util/helper"
 import ToastHandler from "../../util/toast"
-import { signUp } from "../../redux/auth/action"
 const SignupScreen = () => {
-  const { user } = useSelector((state) => state.auth)
   const { isShowKeyboard } = useSelector((state) => state.common)
   const navigation = useNavigation()
   const [phone, setPhone] = useState("")
   const [password, setPassword] = useState("")
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    if (user) {
-      setPassword("")
-      setPhone("")
-      // navigation.navigate("home")
-    }
-  }, [user])
 
   const onSignUp = () => {
     var msg = null
@@ -52,69 +37,53 @@ const SignupScreen = () => {
         backgroundColor: INDIGO_2,
         flexDirection: "column",
         alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 30,
       }}
     >
-      {!isShowKeyboard && (
-        <Image
-          source={LOGO}
-          resizeMethod="resize"
-          style={{ width: 120, height: 120, marginTop: 50 }}
-        />
-      )}
-
-      <Text
+      <Background />
+      <BigHeader
         style={{
-          fontSize: 25,
-          color: WHITE,
-          fontWeight: "bold",
-          marginTop: 10,
+          marginTop: 120,
+        }}
+      />
+      <View
+        style={{
+          flex: 1,
+          width: "100%",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
-        {APP_NAME}
-      </Text>
-      <InputText
-        logo="account-circle"
-        label="Số điện thoại"
-        type="default"
-        value={phone}
-        onChange={setPhone}
-      />
-      <InputText
-        logo="https"
-        label="Mật khẩu"
-        type="default"
-        value={password}
-        onChange={setPassword}
-      />
-
-      <Button
-        label="ĐĂNG KÝ"
-        text_color={WHITE}
-        background={GREEN}
-        onPress={onSignUp}
-        margin_top={!isShowKeyboard ? 50 : 20}
-      />
-
+        <InputText
+          placeholder="Số điện thoại"
+          type="numeric"
+          value={phone}
+          maxLength={10}
+          onChange={setPhone}
+        />
+        <InputText
+          placeholder="Mật khẩu"
+          type="numeric"
+          value={password}
+          secure={true}
+          maxLength={6}
+          style={{ marginTop: 20 }}
+          onChange={setPassword}
+        />
+      </View>
       {!isShowKeyboard && (
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            position: "absolute",
-            bottom: 20,
-            width: "100%",
-          }}
-        >
-          <TouchableOpacity onPress={() => navigation.navigate("signin")}>
-            <Text style={{ fontSize: 17, color: WHITE }}>Đăng nhập</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={{ fontSize: 17, color: WHITE }}>Quên mật khẩu</Text>
-          </TouchableOpacity>
-        </View>
+        <>
+          <Button label="ĐĂNG KÝ" onPress={onSignUp} />
+          <Link
+            style={{
+              marginVertical: 20,
+            }}
+            onPress={() => {
+              navigation.navigate("signin")
+            }}
+            label={"Đăng nhập"}
+          />
+        </>
       )}
     </View>
   )

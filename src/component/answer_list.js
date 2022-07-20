@@ -2,13 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import { FlatList, View } from "react-native"
 import { useDispatch } from "react-redux"
-import AnswerItem from "./answer_item"
-
-export const ANSWER_STATE = {
-  NORMAL: 0,
-  CORRECT: 1,
-  WRONG: 2,
-}
+import AnswerItem, { ANSWER_STATE } from "./answer_item"
 
 const AnswerList = (props) => {
   const dispatch = useDispatch()

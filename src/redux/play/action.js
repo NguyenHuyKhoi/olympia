@@ -1,11 +1,11 @@
-import RealtimeDBHandler from "../../db/RealtimeDBHandler"
+import RealtimeDBHandler from "../../service/RealtimeDBHandler"
 
 export const getRounds = () => {
   return async (dispatch) => {
     let rounds = await RealtimeDBHandler.getRounds()
 
     dispatch({
-      type: "GE_ROUNDS",
+      type: "GET_ROUNDS",
       payload: { rounds },
     })
   }
