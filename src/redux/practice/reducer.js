@@ -1,10 +1,9 @@
 import { INITIAL_ROUND, ROUNDS } from "../../util/constants"
-import firebase from "../../util/firebase"
-import { practiceActions } from "../action_constant"
-const QUIZ_STATUS = {
+export const QUIZ_STATUS = {
   CORRECT: 0,
   WRONG: 1,
   CURRENT: 2,
+  NONE: 3,
 }
 const initial_state = {}
 
@@ -22,7 +21,7 @@ export default reducer = (state = initial_state, action) => {
     case "GET_PRACTICE_ROUNDS":
       return {
         ...state,
-        ...payload,
+        ...action.payload,
         round_idx: INITIAL_ROUND,
         quiz_idx: 0,
         status: [QUIZ_STATUS.CURRENT],
@@ -31,8 +30,9 @@ export default reducer = (state = initial_state, action) => {
         keyword_answered: false,
       }
 
-    case "ANSWER":
-      status[status.length - 1] = answerScore > 0 ? "correct" : "wrong"
+    case "ANSWER_QUIZ":
+      status[status.length - 1] =
+        answerScore > 0 ? QUIZ_STATUS.CORRECT : QUIZ_STATUS.WRONG
       scores[round_idx] += answerScore
       status.push(QUIZ_STATUS.CURRENT)
 

@@ -1,11 +1,10 @@
-import React, { Component } from "react"
+import React from "react"
 
-import { Text, StyleSheet, TouchableOpacity } from "react-native"
-import { MAX_WIDTH } from "../util/constants"
+import { Text, TouchableOpacity } from "react-native"
 import { GREEN, WHITE } from "../util/palette"
 
 const Button = (props) => {
-  let { width, background, label } = props
+  let { style, label } = props
   return (
     <TouchableOpacity
       style={{
@@ -16,6 +15,7 @@ const Button = (props) => {
         justifyContent: "center",
         alignItems: "center",
         marginTop: 30,
+        ...style,
       }}
       onPress={() => {
         if (props.onPress) props.onPress()

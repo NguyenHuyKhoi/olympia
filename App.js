@@ -20,6 +20,7 @@ import SettingScreen from "./src/screen/setting"
 import SigninScreen from "./src/screen/signin"
 import SignupScreen from "./src/screen/signup"
 import ToastHandler from "./src/util/toast"
+import ResultScreen from "./src/screen/result"
 
 const { store } = returnStoreAndPersistor()
 
@@ -66,11 +67,12 @@ const App = () => {
         <stack.Screen name="signup" component={SignupScreen} />
         <stack.Screen name="home" component={HomeScreen} />
         <stack.Screen name="waiting" component={WaitingScreen} />
+        <stack.Screen name="result" component={ResultScreen} />
         <stack.Screen name="round1" component={Round1Screen} />
         <stack.Screen name="round2" component={Round2Screen} />
         <stack.Screen name="round3" component={Round3Screen} />
         <stack.Screen name="round4" component={Round4Screen} />
-        <stack.Screen name="ound4_setup" component={Round4SetupScreen} />
+        <stack.Screen name="round4_setup" component={Round4SetupScreen} />
         <stack.Screen name="guide" component={GuideScreen} />
         <stack.Screen name="history" component={HistoryScreen} />
         <stack.Screen name="setting" component={SettingScreen} />

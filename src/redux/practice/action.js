@@ -1,9 +1,8 @@
-import firebase from "../../util/firebase"
-import { practiceActions } from "../action_constant"
+import RealtimeDBHandler from "../../db/RealtimeDBHandler"
 
 export const getPracticeRounds = () => {
   return async (dispatch) => {
-    let rounds = await firebase.getPracticeRounds()
+    let rounds = await RealtimeDBHandler.getPracticeRounds()
 
     dispatch({
       type: "GET_PRACTICE_ROUNDS",
@@ -12,11 +11,25 @@ export const getPracticeRounds = () => {
   }
 }
 
-export const answer = (answerScore) => {
+export const answerQuiz = (answerScore) => {
   console.log("choose option :", answerScore)
   return {
-    type: "ANSWER",
+    type: "ANSWER_QUIZ",
     payload: { answerScore },
+  }
+}
+
+export const saveResult = (result) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "SAVE_RESULT",
+      payload: {},
+    })
+    // await firebaseHelper.push("/history/", {
+    //   user_id: this.props.user.infor.id,
+    //   scores: this.props.practice.scores,
+    //   time,
+    // })
   }
 }
 

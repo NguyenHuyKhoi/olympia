@@ -1,23 +1,26 @@
-import React, { Component, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 
-import { Text, StyleSheet, TextInput, View } from "react-native"
-import { GREEN, INDIGO_3, RED, SILVER, WHITE } from "../util/palette"
-import ProgressBarComponent from "./progress_bar.component"
-import QuestionComponent from "./question.component"
-import SoundPlayer from "react-native-sound-player"
-import { connect, useSelector } from "react-redux"
-import * as actions from "../redux/practice/action"
-import { MAX_WIDTH, ROUNDS } from "../util/constants"
-import AnswersOptionComponent from "./answers_option.component"
-import AnswerInputComponent from "./answers_input.component"
-import CountdownTimerComponent from "./countdown_timer.component"
 import { useNavigation } from "@react-navigation/native"
+import { Text, View } from "react-native"
+import { useDispatch, useSelector } from "react-redux"
+import { MAX_WIDTH, ROUNDS } from "../util/constants"
+import { INDIGO_3, SILVER } from "../util/palette"
+import AnswerInput from "./answer_input"
+import AnswersList from "./answer_list"
+import Timer from "./timer"
+import ProgressBar from "./progress_bar"
+import QuestionComponent from "./question.component"
+import { answerKeyword, answerQuiz } from "../redux/practice/action"
+import { shuffle } from "../util/helper"
 
 const RoundContent = (props) => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
   const { duration } = props
-  const { round_idx, quiz_idx, rounds } = useSelector((state) => state.practice)
-  const timer = useRef(null)
+  const { round_idx, quiz_idx, rounds, status } = useSelector(
+    (state) => state.practice
+  )
+  const timerRef = useRef(null)
   const calculateScore = () => {
     if (round_idx <= 2) return ROUNDS[round_idx].score
     let round4 = rounds[3]
@@ -33,22 +36,22 @@ const RoundContent = (props) => {
   }
 
   useEffect(() => {
-    if (timer.current) {
-      timer.current.reset()
+    if (timerRef.current) {
+      timerRef.current.reset()
     }
 
     return () => {}
   }, [])
 
-  const answer = (correct) => {
-    if (round_idx !== 0 && timer.current) timer.current.pause()
+  const onAnswer = (correct) => {
+    if (round_idx !== 0 && timerRef.current) timerRef.current.pause()
     let score = calculateScore()
 
     if (round_idx === 3 && picked_star === quiz_idx) {
       if (correct) score *= 2
       else score = -score
     } else if (round_idx === 2) {
-      let time = timer.current ? timer.current.getTime() : 0
+      let time = timerRef.current ? timerRef.current.getTime() : 0
 
       console.log("GetAnswerTime :", time)
       if (!correct) score = 0
@@ -62,18 +65,16 @@ const RoundContent = (props) => {
     }
 
     if (round_idx === 1 && quiz_idx === 4) {
-      if (props.onAnswerKeyword) {
-        props.onAnswerKeyword(correct)
-      }
+      dispatch(answerKeyword(score))
     } else {
-      props.answer(score)
+      answerQuiz(answerQuiz(score))
 
       if (quiz_idx === ROUNDS[round_idx].number_question - 1) {
-        if (timer.current) timer.current.pause()
+        if (timerRef.current) timerRef.current.pause()
         if (round_idx < 3) nextRound()
         else viewResult()
-      } else if (timer.current && round_idx != 0) {
-        timer.current.reset()
+      } else if (timerRef.current && round_idx != 0) {
+        timerRef.current.reset()
       }
     }
   }
@@ -90,7 +91,7 @@ const RoundContent = (props) => {
     if (round_idx === 0) {
       navigation.navigate("result")
     } else {
-      answer(false)
+      onAnswer(false)
     }
   }
 
@@ -114,10 +115,10 @@ const RoundContent = (props) => {
         alignItems: "center",
       }}
     >
-      <CountdownTimerComponent
-        ref={(ref) => (this.timer = ref)}
-        round_index={cri}
-        onTimeOut={() => this.onTimeOut()}
+      <Timer
+        ref={timerRef}
+        round_idx={round_idx}
+        onTimeOut={onTimeOut}
         duration={duration}
       />
 
@@ -131,26 +132,25 @@ const RoundContent = (props) => {
         }}
       >
         <Text style={{ fontSize: 22, color: SILVER }}>
-          {"Câu " + (cqi + 1) + "/" + questions_num}
+          {"Câu " + (quiz_idx + 1) + "/" + questions_num}
         </Text>
       </View>
-      <ProgressBarComponent states={questions_state} amount={questions_num} />
+      <ProgressBar status={status} amount={questions_num} />
 
       <View style={{ flex: 5, marginTop: 20, width: MAX_WIDTH }}>
         <QuestionComponent question={question} />
       </View>
 
       <View style={{ flex: 4, width: "100%", marginTop: 10 }}>
-        {cri !== 1 ? (
-          <AnswersOptionComponent
-            answers={question.answers}
-            onAnswer={this.answer}
+        {round_idx !== 1 ? (
+          <AnswersList
+            answers={shuffle(question.answers)}
+            correct_answer={question.answers[0]}
+            onAnswer={onAnswer}
+            quiz_idx={quiz_idx}
           />
         ) : (
-          <AnswerInputComponent
-            correct_answer={question.answer}
-            onAnswer={this.answer}
-          />
+          <AnswerInput correct_answer={question.answer} onAnswer={onAnswer} />
         )}
       </View>
     </View>

@@ -9,7 +9,6 @@ const ResultItem = (props) => {
   const { scores, time } = props
   let total = 0
   scores.map((item) => (total += item))
-  console.log("resultComponent :", scores, time)
   return (
     <View
       style={{

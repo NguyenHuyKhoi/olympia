@@ -1,14 +1,13 @@
-import React, { Component } from "react"
+import React, { useEffect } from "react"
+import { Image, Text, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
-import { View, Image, StyleSheet, Alert, Text } from "react-native"
 import Button from "../../component/button"
 import { LOGO } from "../../resource/image"
-import { INDIGO_2, SILVER, INDIGO_3, GREEN } from "../../util/palette"
+import { GREEN, INDIGO_3, SILVER } from "../../util/palette"
 
-import { connect, useSelector } from "react-redux"
-import * as actions from "../../redux/practice/action"
-import { ROUNDS } from "../../util/constants"
 import { useNavigation } from "@react-navigation/native"
+import { useSelector } from "react-redux"
+import { ROUNDS } from "../../util/constants"
 
 const WaitingScreen = () => {
   const navigation = useNavigation()
@@ -28,6 +27,11 @@ const WaitingScreen = () => {
 
   const round = ROUNDS[round_idx]
 
+  const onPlay = () => {
+    SoundPlayer.stop()
+    if (round_idx !== 3) navigation.navigate("round" + (round_idx + 1))
+    else navigation.navigate("round4_setup")
+  }
   return (
     <View
       style={{
@@ -44,7 +48,7 @@ const WaitingScreen = () => {
         style={{ width: 120, height: 120, marginTop: 40 }}
       />
       <Text style={{ fontSize: 22, color: SILVER, marginTop: 15 }}>
-        {"Vòng " + round.index}
+        {"Vòng " + (round_idx + 1)}
       </Text>
       <Text
         style={{
@@ -54,19 +58,18 @@ const WaitingScreen = () => {
           marginTop: 15,
         }}
       >
-        {round.name}
+        {"round.name"}
       </Text>
 
       <Button
         label="Vào"
-        text_color={SILVER}
-        background={GREEN}
-        onPress={() => {
-          SoundPlayer.stop()
-          if (cri !== 3) navigation.navigate("round" + (round + 1))
-          else navigation.navigate("round4_setup")
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: 20,
+          right: 20,
         }}
-        margin_top={250}
+        onPress={onPlay}
       />
     </View>
   )
