@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
-import { View, FlatList } from "react-native"
-import { shuffle } from "../util/helper"
-import AnswerItem from "./answer_item"
+import { FlatList, View } from "react-native"
 import { useDispatch } from "react-redux"
-import { answerQuiz } from "../redux/practice/action"
+import AnswerItem from "./answer_item"
 
 export const ANSWER_STATE = {
   NORMAL: 0,

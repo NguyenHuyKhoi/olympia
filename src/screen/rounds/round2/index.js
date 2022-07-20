@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Text, View } from "react-native"
 
@@ -6,12 +6,14 @@ import { useNavigation } from "@react-navigation/native"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../../component/button"
-import CrosswordsModal from "../../../component/crosswords.modal"
-import HintImageModal from "../../../component/hint_image.modal"
-import RoundComponent from "../../../component/round_content"
+import RoundContent from "../../../component/round_content"
+import { answerKeyword } from "../../../redux/practice/action"
+import { QUIZ_STATUS } from "../../../redux/practice/reducer"
 import { ROUNDS } from "../../../util/constants"
 import { GREEN, INDIGO_3, WHITE } from "../../../util/palette"
 import ToastHandler from "../../../util/toast"
+import CrosswordsModal from "./component/crosswords.modal"
+import HintImageModal from "./component/hint_image.modal"
 
 const Round2Screen = (props) => {
   const navigation = useNavigation()
@@ -50,11 +52,16 @@ const Round2Screen = (props) => {
 
   let round2 = rounds[1]
 
+  const filledStatus = status
+  while (filledStatus.length < 4) {
+    filledStatus.push(QUIZ_STATUS.NONE)
+  }
+  console.log("Filled status: ", filledStatus)
   return (
     <View style={{ flex: 1, backgroundColor: INDIGO_3 }}>
       <HintImageModal
-        states={[...status]}
-        url={round2.keyword.image}
+        status={filledStatus}
+        uri={round2.keyword.image}
         keyword_answered={keyword_answered}
         open={modal.state == "hint"}
       />
@@ -66,13 +73,13 @@ const Round2Screen = (props) => {
         answers={round2.questions.map((item) =>
           item.answer.replace(" ", "").toUpperCase()
         )}
-        states={[...status]}
-        onAnswerKeyword={onAnswerKeyword}
+        status={filledStatus}
+        onAnswer={onAnswerKeyword}
         open={modal.state == "crossword"}
       />
       <Icon
         onPress={() => {
-          setModal({ status: "hint" })
+          setModal({ state: "hint" })
         }}
         name="insert-photo"
         size={40}
@@ -82,7 +89,7 @@ const Round2Screen = (props) => {
 
       <Icon
         onPress={() => {
-          setModal({ status: "crossword" })
+          setModal({ state: "crossword" })
         }}
         name="reorder"
         size={40}
@@ -91,7 +98,7 @@ const Round2Screen = (props) => {
       />
 
       {!keyword_answered ? (
-        <RoundComponent
+        <RoundContent
           duration={ROUNDS[1].time}
           onAnswerKeyword={onAnswerKeyword}
         />
@@ -115,10 +122,7 @@ const Round2Screen = (props) => {
           >
             Vòng 2 đã kết thúc. Nhấn Tiếp để bắt đầu vòng 3.
           </Text>
-          <Button
-            label="Tiếp"
-            onPress={() => navigation.navigate("practice_result")}
-          />
+          <Button label="Tiếp" onPress={() => navigation.navigate("result")} />
         </View>
       )}
     </View>

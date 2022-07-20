@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Image, Text, TouchableOpacity, View } from "react-native"
 
 import STAR1 from "../../../../resource/image/star1.png"
@@ -9,8 +9,9 @@ import { ROUNDS } from "../../../../util/constants"
 const levels = ROUNDS[3].levels
 
 import { SILVER } from "../../../../util/palette"
+import ScoreLevel from "./score_level"
 const QuizPack = (props) => {
-  const [isPickedStar, setIsPickedStar] = useState(false)
+  const { pickedStar, index } = props
   const [level, setLevel] = useState(props.default_level)
 
   const pickStar = () => {
@@ -34,7 +35,7 @@ const QuizPack = (props) => {
         style={{ position: "absolute", top: 25, right: 85 }}
       >
         <Image
-          source={!isPickedStar ? STAR1 : STAR2}
+          source={!pickedStar ? STAR1 : STAR2}
           style={{ width: 30, height: 30 }}
         />
       </TouchableOpacity>
@@ -51,7 +52,7 @@ const QuizPack = (props) => {
         {levels.map((item, index) => (
           <ScoreLevel
             key={"" + index}
-            is_picked={level === index}
+            picked={level === index}
             score={item.score}
             onChoose={() => pickLevel(index)}
           />

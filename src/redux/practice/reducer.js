@@ -41,6 +41,7 @@ export default reducer = (state = initial_state, action) => {
       if (quiz_idx < total_question - 1) {
         quiz_idx++
       }
+      console.log("Quiz_idx: ", quiz_idx)
       return {
         ...state,
         quiz_idx,

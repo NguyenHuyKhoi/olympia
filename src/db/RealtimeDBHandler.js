@@ -11,9 +11,7 @@ class RealtimeDBHandler {
   }
 
   static getRound1 = async () => {
-    console.log("Get data of round1: ")
     const round1s = await RealtimeDBHandler.get("/bank/round1")
-    console.log("Rounds1: ", round1s)
     const res = round1s.map((item) => {
       return {
         category: item.category,
@@ -70,7 +68,6 @@ class RealtimeDBHandler {
     let round4 = await RealtimeDBHandler.getRound4([1, 1, 1])
 
     let rounds = [round1, round2, round3, round4]
-    console.log("Get rounds: ", rounds)
     return rounds
   }
 }

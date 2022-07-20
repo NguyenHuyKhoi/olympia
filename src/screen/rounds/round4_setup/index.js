@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Text, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import Button from "../../../component/button"
@@ -12,6 +12,7 @@ const levels = ROUNDS[3].levels
 import { useNavigation } from "@react-navigation/native"
 import { GREEN, INDIGO_3, SILVER } from "../../../util/palette"
 import QuizPack from "./component/quiz_pack"
+import { chooseRound4Questions } from "../../../redux/practice/action"
 
 const Round4SetupScreen = () => {
   const dispatch = useDispatch()
@@ -54,6 +55,7 @@ const Round4SetupScreen = () => {
   }, [])
 
   const pickStar = (index) => {
+    console.log("Picked star: ", index)
     if (pickedStar === index) {
       setPickedStar(-1)
     } else {
@@ -86,7 +88,7 @@ const Round4SetupScreen = () => {
         <QuizPack
           key={"" + index}
           index={index + 1}
-          is_picked_star={index === pickedStar}
+          pickedStar={index === pickedStar}
           pickLevel={pickLevel}
           pickStar={() => pickStar(index)}
           default_level={index}

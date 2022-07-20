@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import { Text, View } from "react-native"
 
@@ -14,20 +14,20 @@ import ResultItem from "../history/component/result_item"
 const ResultScreen = (props) => {
   const { round_idx, scores } = useSelector((state) => state.practice)
   const { user } = useSelector((state) => state.auth)
+  const [time, setTime] = useState(new Date().toISOString())
   const dispatch = useDispatch()
   const navigation = useNavigation()
 
   const onNextRound = async () => {
-    console.log("resultScreen :", cri)
     if (round_idx < 3) {
       SoundPlayer.stop()
       dispatch(nextRound())
       navigation.navigate("waiting")
     } else {
-      let time = new Date().toISOString()
+      var currentTime = new Date().toISOString()
       dispatch(
         saveResult({
-          time,
+          time: currentTime,
           scores,
           user_id: user.phone,
         })

@@ -17,7 +17,7 @@ const RoundContent = (props) => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
   const { duration } = props
-  const { round_idx, quiz_idx, rounds, status } = useSelector(
+  const { round_idx, quiz_idx, rounds, status, picked_star } = useSelector(
     (state) => state.practice
   )
   const timerRef = useRef(null)
@@ -67,7 +67,7 @@ const RoundContent = (props) => {
     if (round_idx === 1 && quiz_idx === 4) {
       dispatch(answerKeyword(score))
     } else {
-      answerQuiz(answerQuiz(score))
+      dispatch(answerQuiz(score))
 
       if (quiz_idx === ROUNDS[round_idx].number_question - 1) {
         if (timerRef.current) timerRef.current.pause()

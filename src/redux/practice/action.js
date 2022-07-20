@@ -12,7 +12,7 @@ export const getPracticeRounds = () => {
 }
 
 export const answerQuiz = (answerScore) => {
-  console.log("choose option :", answerScore)
+  console.log("answerQuiz :", answerScore)
   return {
     type: "ANSWER_QUIZ",
     payload: { answerScore },
@@ -41,7 +41,6 @@ export const nextRound = () => {
 }
 
 export const answerKeyword = (answerScore) => {
-  console.log("choose option :", answerScore)
   return {
     type: "ANSWER_KEYWORD",
     payload: { answerScore },
