@@ -11,7 +11,7 @@ import { ROUNDS } from "../../util/constants"
 
 const WaitingScreen = () => {
   const navigation = useNavigation()
-  const { round_idx } = useSelector((state) => state.practice)
+  const { round_idx } = useSelector((state) => state.play)
   useEffect(() => {
     try {
       // play the file tone.mp3

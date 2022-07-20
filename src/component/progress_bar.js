@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from "react-native"
 import { GRAY, GREEN, RED, SILVER, WHITE } from "../util/palette"
 import { initialArray } from "../util/helper"
 import { MAX_WIDTH } from "../util/constants"
-import { QUIZ_STATUS } from "../redux/practice/reducer"
+import { QUIZ_STATUS } from "../redux/play/reducer"
 
 const ProgressBar = (props) => {
   const { status, amount } = props

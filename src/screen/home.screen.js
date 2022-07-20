@@ -3,19 +3,22 @@ import React from "react"
 
 import { View } from "react-native"
 import { useDispatch } from "react-redux"
-import FloatButton from "../component/float_button"
-import Footer from "../component/footer"
 import Header from "../component/header"
+import IconButton from "../component/icon_button"
 import PlayButton from "../component/play_button"
-import { getPracticeRounds } from "../redux/practice/action"
+import { getRounds } from "../redux/play/action"
 import { INDIGO_3 } from "../util/palette"
-
+import { signout } from "../redux/auth/action"
 const HomeScreen = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
   const onPlay = () => {
-    dispatch(getPracticeRounds())
+    dispatch(getRounds())
     navigation.navigate("waiting")
+  }
+
+  const onSignOut = () => {
+    dispatch(signout())
   }
   return (
     <View
@@ -23,31 +26,43 @@ const HomeScreen = () => {
         flex: 1,
         backgroundColor: INDIGO_3,
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 20,
       }}
     >
       <Header />
-      <PlayButton logo={"https"} onPress={onPlay} />
-      <FloatButton
-        position={{ bottom: 70, right: 20 }}
-        logo={"https"}
-        onPress={() => navigation.navigate("history")}
-      />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <PlayButton logo={"https"} onPress={onPlay} />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          paddingVertical: 10,
+          paddingHorizontal: 50,
+        }}
+      >
+        <IconButton logo={"https"} onPress={onSignOut} />
 
-      <FloatButton
-        position={{ bottom: 140, right: 20 }}
-        logo={"https"}
-        onPress={() => navigation.navigate("guide")}
-      />
-      <FloatButton
-        position={{ bottom: 210, right: 20 }}
-        logo={"https"}
-        onPress={() => navigation.navigate("setting")}
-      />
+        <IconButton
+          logo={"https"}
+          onPress={() => navigation.navigate("history")}
+        />
 
-      <Footer navigation={navigation} />
+        <IconButton
+          logo={"https"}
+          onPress={() => navigation.navigate("guide")}
+        />
+        <IconButton
+          logo={"https"}
+          onPress={() => navigation.navigate("setting")}
+        />
+      </View>
     </View>
   )
 }

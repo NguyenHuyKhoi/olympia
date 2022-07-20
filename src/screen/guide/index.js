@@ -1,7 +1,6 @@
 import React from "react"
 
 import { FlatList, Text, View } from "react-native"
-import Footer from "../../component/footer"
 import { ROUNDS } from "../../util/constants"
 import { INDIGO_3, SILVER } from "../../util/palette"
 import GuideItem from "./component/guide.item"
@@ -27,7 +26,7 @@ const GuideScreen = () => {
         LUẬT CHƠI
       </Text>
 
-      {/* <AllRoundSumComponent score={480} /> */}
+      <TotalScore score={480} />
 
       <FlatList
         data={ROUNDS}
@@ -35,7 +34,6 @@ const GuideScreen = () => {
         keyExtractor={(item, index) => "" + index}
         renderItem={({ item }) => <GuideItem round={item} />}
       />
-      <Footer />
     </View>
   )
 }

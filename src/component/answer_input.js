@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 
-import { Keyboard, TextInput, View } from "react-native"
+import { TextInput, View } from "react-native"
+import { useDispatch, useSelector } from "react-redux"
 import { INDIGO_3, WHITE } from "../util/palette"
 import Button from "./button"
-import { useDispatch, useSelector } from "react-redux"
 const AnswerInput = (props) => {
   const { correct_answer } = props
   const [answer, setAnswer] = useState("")

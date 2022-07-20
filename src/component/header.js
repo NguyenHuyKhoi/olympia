@@ -1,20 +1,22 @@
-import React, { Component } from "react"
+import React from "react"
 
-import { Text, Image, View } from "react-native"
-import { APP_NAME } from "../util/constants"
+import { Image, Text, View } from "react-native"
 import { LOGO } from "../resource/image"
+import { APP_NAME } from "../util/constants"
 import { SILVER } from "../util/palette"
 
 const Header = () => {
   return (
     <View
       style={{
-        width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         position: "absolute",
-        top: 40,
+        top: 20,
+        left: 0,
+        right: 0,
+        padding: 20,
       }}
     >
       <Image

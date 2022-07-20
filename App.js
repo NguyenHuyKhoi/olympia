@@ -36,6 +36,7 @@ const AppWrapper = () => {
 }
 const App = () => {
   const { notif } = useSelector((state) => state.common)
+  const { user } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   useEffect(() => {
     if (notif) {
@@ -54,6 +55,7 @@ const App = () => {
   }, [])
 
   const stack = createNativeStackNavigator()
+
   return (
     <NavigationContainer>
       <stack.Navigator
@@ -63,19 +65,26 @@ const App = () => {
           headerShown: false,
         }}
       >
-        <stack.Screen name="signin" component={SigninScreen} />
-        <stack.Screen name="signup" component={SignupScreen} />
-        <stack.Screen name="home" component={HomeScreen} />
-        <stack.Screen name="waiting" component={WaitingScreen} />
-        <stack.Screen name="result" component={ResultScreen} />
-        <stack.Screen name="round1" component={Round1Screen} />
-        <stack.Screen name="round2" component={Round2Screen} />
-        <stack.Screen name="round3" component={Round3Screen} />
-        <stack.Screen name="round4" component={Round4Screen} />
-        <stack.Screen name="round4_setup" component={Round4SetupScreen} />
-        <stack.Screen name="guide" component={GuideScreen} />
-        <stack.Screen name="history" component={HistoryScreen} />
-        <stack.Screen name="setting" component={SettingScreen} />
+        {!user ? (
+          <>
+            <stack.Screen name="signin" component={SigninScreen} />
+            <stack.Screen name="signup" component={SignupScreen} />
+          </>
+        ) : (
+          <>
+            <stack.Screen name="home" component={HomeScreen} />
+            <stack.Screen name="waiting" component={WaitingScreen} />
+            <stack.Screen name="result" component={ResultScreen} />
+            <stack.Screen name="round1" component={Round1Screen} />
+            <stack.Screen name="round2" component={Round2Screen} />
+            <stack.Screen name="round3" component={Round3Screen} />
+            <stack.Screen name="round4" component={Round4Screen} />
+            <stack.Screen name="round4_setup" component={Round4SetupScreen} />
+            <stack.Screen name="guide" component={GuideScreen} />
+            <stack.Screen name="history" component={HistoryScreen} />
+            <stack.Screen name="setting" component={SettingScreen} />
+          </>
+        )}
       </stack.Navigator>
     </NavigationContainer>
   )

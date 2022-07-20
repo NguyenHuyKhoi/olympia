@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React from "react"
 
-import { Text, StyleSheet, TextInput, View } from "react-native"
+import { TextInput, View } from "react-native"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { MAX_WIDTH } from "../util/constants"
 import { INDIGO_1, WHITE } from "../util/palette"

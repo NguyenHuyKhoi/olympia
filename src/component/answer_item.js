@@ -1,16 +1,8 @@
-import React, { Component } from "react"
+import React from "react"
 
-import {
-  Text,
-  StyleSheet,
-  TextInput,
-  View,
-  TouchableOpacity,
-} from "react-native"
-import Icon from "react-native-vector-icons/MaterialIcons"
+import { Text, TouchableOpacity, View } from "react-native"
 import { MAX_WIDTH } from "../util/constants"
-import { GREEN, INDIGO_3, RED, SILVER, WHITE } from "../util/palette"
-import { useDispatch } from "react-redux"
+import { GREEN, INDIGO_3, RED, SILVER } from "../util/palette"
 import { ANSWER_STATE } from "./answer_list"
 const AnswerItem = (props) => {
   const { status, content } = props

@@ -12,7 +12,7 @@ const levels = ROUNDS[3].levels
 import { useNavigation } from "@react-navigation/native"
 import { GREEN, INDIGO_3, SILVER } from "../../../util/palette"
 import QuizPack from "./component/quiz_pack"
-import { chooseRound4Questions } from "../../../redux/practice/action"
+import { chooseRound4Questions } from "../../../redux/play/action"
 
 const Round4SetupScreen = () => {
   const dispatch = useDispatch()

@@ -3,22 +3,22 @@ import React, { useEffect, useRef } from "react"
 import { useNavigation } from "@react-navigation/native"
 import { Text, View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
+import { answerKeyword, answerQuiz } from "../redux/play/action"
 import { MAX_WIDTH, ROUNDS } from "../util/constants"
+import { shuffle } from "../util/helper"
 import { INDIGO_3, SILVER } from "../util/palette"
 import AnswerInput from "./answer_input"
 import AnswersList from "./answer_list"
-import Timer from "./timer"
 import ProgressBar from "./progress_bar"
-import QuestionComponent from "./question.component"
-import { answerKeyword, answerQuiz } from "../redux/practice/action"
-import { shuffle } from "../util/helper"
+import Question from "./question"
+import Timer from "./timer"
 
 const RoundContent = (props) => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
   const { duration } = props
   const { round_idx, quiz_idx, rounds, status, picked_star } = useSelector(
-    (state) => state.practice
+    (state) => state.play
   )
   const timerRef = useRef(null)
   const calculateScore = () => {
@@ -138,7 +138,7 @@ const RoundContent = (props) => {
       <ProgressBar status={status} amount={questions_num} />
 
       <View style={{ flex: 5, marginTop: 20, width: MAX_WIDTH }}>
-        <QuestionComponent question={question} />
+        <Question question={question} />
       </View>
 
       <View style={{ flex: 4, width: "100%", marginTop: 10 }}>

@@ -7,8 +7,8 @@ import Icon from "react-native-vector-icons/MaterialIcons"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../../component/button"
 import RoundContent from "../../../component/round_content"
-import { answerKeyword } from "../../../redux/practice/action"
-import { QUIZ_STATUS } from "../../../redux/practice/reducer"
+import { answerKeyword } from "../../../redux/play/action"
+import { QUIZ_STATUS } from "../../../redux/play/reducer"
 import { ROUNDS } from "../../../util/constants"
 import { GREEN, INDIGO_3, WHITE } from "../../../util/palette"
 import ToastHandler from "../../../util/toast"
@@ -24,7 +24,7 @@ const Round2Screen = (props) => {
     status,
     is_guessed_round2_keyword,
     keyword_answered,
-  } = useSelector((state) => state.practice)
+  } = useSelector((state) => state.play)
   const dispatch = useDispatch()
   const [modal, setModal] = useState({ state: "" })
   const onAnswerKeyword = (correct) => {

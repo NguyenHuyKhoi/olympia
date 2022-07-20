@@ -32,7 +32,7 @@ const SigninScreen = () => {
     if (user) {
       setPassword("")
       setPhone("")
-      navigation.navigate("home")
+      // navigation.navigate("home")
     }
     Keyboard.addListener("keyboardDidShow", () => setIsShowKeyboard(true))
     Keyboard.addListener("keyboardDidHide", () => setIsShowKeyboard(false))

@@ -23,7 +23,7 @@ const ResultItem = (props) => {
         <Text style={{ fontSize: 18, color: SILVER }}>{time}</Text>
       ) : null}
 
-      {/* <AllRoundSumComponent score={total} /> */}
+      <TotalScore score={total} />
 
       <FlatList
         data={scores}

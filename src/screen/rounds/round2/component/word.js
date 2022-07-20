@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Text, View } from "react-native"
-import { QUIZ_STATUS } from "../../../../redux/practice/reducer"
+import { QUIZ_STATUS } from "../../../../redux/play/reducer"
 import { GREEN, RED, SILVER, WHITE } from "../../../../util/palette"
 
 const Word = (props) => {

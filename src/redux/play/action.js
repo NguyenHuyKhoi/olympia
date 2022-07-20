@@ -1,11 +1,11 @@
 import RealtimeDBHandler from "../../db/RealtimeDBHandler"
 
-export const getPracticeRounds = () => {
+export const getRounds = () => {
   return async (dispatch) => {
-    let rounds = await RealtimeDBHandler.getPracticeRounds()
+    let rounds = await RealtimeDBHandler.getRounds()
 
     dispatch({
-      type: "GET_PRACTICE_ROUNDS",
+      type: "GE_ROUNDS",
       payload: { rounds },
     })
   }

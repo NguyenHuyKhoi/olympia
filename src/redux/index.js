@@ -4,11 +4,11 @@ import thunk from "redux-thunk"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 import { combineReducers } from "redux"
-import practiceReducer from "./practice/reducer"
+import playReducer from "./play/reducer"
 import authReducer from "./auth/reducer"
 import commonReducer from "./common/reducer"
 const reducers = combineReducers({
-  practice: practiceReducer,
+  play: playReducer,
   auth: authReducer,
   common: commonReducer,
 })
@@ -16,7 +16,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  blacklist: ["practice", "common"],
+  blacklist: ["play", "common"],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

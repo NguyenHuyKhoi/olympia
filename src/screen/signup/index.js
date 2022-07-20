@@ -31,7 +31,7 @@ const SignupScreen = () => {
     if (user) {
       setPassword("")
       setPhone("")
-      navigation.navigate("home")
+      // navigation.navigate("home")
     }
   }, [user])
 

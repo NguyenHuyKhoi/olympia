@@ -18,7 +18,7 @@ export default reducer = (state = initial_state, action) => {
     : {}
   let { round_idx, quiz_idx, rounds, status, scores } = state
   switch (action.type) {
-    case "GET_PRACTICE_ROUNDS":
+    case "GET_ROUNDS":
       return {
         ...state,
         ...action.payload,

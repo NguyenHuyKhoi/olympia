@@ -9,10 +9,10 @@ import { INDIGO_3, SILVER } from "../../util/palette"
 import { useNavigation } from "@react-navigation/native"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../component/button"
-import { nextRound, saveResult } from "../../redux/practice/action"
+import { nextRound, saveResult } from "../../redux/play/action"
 import ResultItem from "../history/component/result_item"
 const ResultScreen = (props) => {
-  const { round_idx, scores } = useSelector((state) => state.practice)
+  const { round_idx, scores } = useSelector((state) => state.play)
   const { user } = useSelector((state) => state.auth)
   const [time, setTime] = useState(new Date().toISOString())
   const dispatch = useDispatch()

@@ -60,8 +60,8 @@ class RealtimeDBHandler {
     return res
   }
 
-  static getPracticeRounds = async () => {
-    console.log("firebase on getPracticeRounds begin :")
+  static getRounds = async () => {
+    console.log("firebase on getRounds begin :")
     let round1 = await RealtimeDBHandler.getRound1()
     let round2 = await RealtimeDBHandler.getRound2()
     let round3 = await RealtimeDBHandler.getRound3()

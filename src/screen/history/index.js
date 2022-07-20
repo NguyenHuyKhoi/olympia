@@ -6,7 +6,6 @@ import { useSelector } from "react-redux"
 
 import FirestoreHandler from "../../db/FirestoreHandler"
 import ResultItem from "../history/component/result_item"
-import Footer from "../../component/footer"
 const GAMES = [
   {
     time: "16-07-2012",
@@ -62,7 +61,6 @@ const HistoryScreen = () => {
           renderItem={({ item }) => <ResultItem {...item} />}
         />
       )}
-      <Footer />
     </View>
   )
 }
