@@ -1,13 +1,13 @@
 export const APP_NAME = "Cùng lên Olympia"
 
-export const INITIAL_ROUND = 3
+export const INITIAL_ROUND = 1
 
 export const MAX_WIDTH = 340
 export const ROUNDS = [
   {
     index: 0,
     name: "Khởi động",
-    number_question: 12, //12
+    num_quiz: 12, //12
     max_score: 120,
     time: 60,
     score: 10,
@@ -17,7 +17,7 @@ export const ROUNDS = [
   {
     index: 1,
     name: "Vượt chướng ngại vật",
-    number_question: 5, //5 - cả từ khóa
+    num_quiz: 5, //5 - cả từ khóa
     max_score: 120,
     time: 20,
     max_keyword_score: 80,
@@ -28,7 +28,7 @@ export const ROUNDS = [
   {
     index: 2,
     name: "Tăng tốc",
-    number_question: 4, //4
+    num_quiz: 4, //4
     max_score: 120,
     time: 33,
     score: 40,
@@ -38,7 +38,7 @@ export const ROUNDS = [
   {
     index: 3,
     name: "Về đích",
-    number_question: 3, //3
+    num_quiz: 3, //3
     max_score: 120,
     time: 20,
     quiz_packs: [

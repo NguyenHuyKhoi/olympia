@@ -60,7 +60,7 @@ const App = () => {
     <NavigationContainer>
       <stack.Navigator
         headerMode="none"
-        initialRouteName="round4_setup"
+        initialRouteName="home"
         screenOptions={{
           headerShown: false,
         }}

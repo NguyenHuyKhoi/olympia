@@ -7,24 +7,29 @@ import AnswerItem, { ANSWER_STATE } from "./answer_item"
 const AnswerList = (props) => {
   const dispatch = useDispatch()
   const [isAnswered, setIsAnswered] = useState(false)
-  var { answers, quiz_idx, correct_answer } = props
+  const [answerIndex, setAnswerIndex] = useState(null)
+  var { answers, quiz_idx, correct_index, style } = props
 
   console.log("Quiz_idx: ", quiz_idx)
   useEffect(() => {
     setIsAnswered(false)
+    setAnswerIndex(null)
     console.log("Reset is answered")
   }, [quiz_idx])
 
-  const onSelectItem = (correct) => {
+  const onSelectItem = (index) => {
     setIsAnswered(true)
-    setTimeout(() => {
-      props.onAnswer(correct)
-    }, 500)
+    setAnswerIndex(index)
+    props.onAnswer(index == correct_index)
   }
 
   return (
     <View
-      style={{ width: "100%", flexDirection: "column", alignItems: "center" }}
+      style={{
+        width: "100%",
+        flexDirection: "column",
+        ...style,
+      }}
     >
       <FlatList
         data={answers}
@@ -36,11 +41,16 @@ const AnswerList = (props) => {
             status={
               !isAnswered
                 ? ANSWER_STATE.NORMAL
-                : item == correct_answer
+                : index == correct_index
                 ? ANSWER_STATE.CORRECT
-                : ANSWER_STATE.WRONG
+                : index == answerIndex
+                ? ANSWER_STATE.WRONG
+                : ANSWER_STATE.NORMAL
             }
-            onPress={() => onSelectItem(item === correct_answer)}
+            style={{
+              marginBottom: index == answers.length - 1 ? 0 : 20,
+            }}
+            onPress={() => onSelectItem(index)}
           />
         )}
       />

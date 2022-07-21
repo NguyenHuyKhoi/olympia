@@ -32,7 +32,7 @@ const WaitingScreen = () => {
     else navigation.navigate("round4_setup")
   }
 
-  const { name, max_score, index } = ROUNDS[round_idx]
+  const { name, max_score, index } = ROUNDS[round_idx] ? ROUNDS[round_idx] : {}
   return (
     <View
       style={{

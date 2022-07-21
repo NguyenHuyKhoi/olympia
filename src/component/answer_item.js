@@ -1,67 +1,46 @@
 import React from "react"
 
 import { Text, TouchableOpacity, View } from "react-native"
+import { QUIZ_STATUS } from "../redux/play/reducer"
 import { MAX_WIDTH } from "../util/constants"
-import { GREEN, INDIGO_3, RED, SILVER } from "../util/palette"
+import { GREEN, INDIGO_3, RED, SILVER, WHITE } from "../util/palette"
 export const ANSWER_STATE = {
   NORMAL: 0,
   CORRECT: 1,
   WRONG: 2,
 }
 const AnswerItem = (props) => {
-  const { status, content } = props
-
-  const defineColor = () => {
-    switch (status) {
-      case ANSWER_STATE.NORMAL:
-        return SILVER
-      case ANSWER_STATE.CORRECT:
-        return GREEN
-      case ANSWER_STATE.WRONG:
-        return RED
-    }
-  }
+  const { status, content, disabled, style } = props
 
   return (
     <TouchableOpacity
-      onPress={props.onPress}
+      disabled={disabled}
       style={{
-        width: MAX_WIDTH,
-        height: 45,
-        backgroundColor: INDIGO_3,
-        borderWidth: 1,
-        borderColor: defineColor(),
-        flexDirection: "row",
-        justifyContent: "space-between",
-        borderRadius: 22,
+        width: "100%",
+        height: 55,
+        backgroundColor:
+          status == ANSWER_STATE.NORMAL
+            ? WHITE
+            : status == ANSWER_STATE.CORRECT
+            ? "#ccc604"
+            : "#ed7f81",
+        borderRadius: 8,
+        justifyContent: "center",
         alignItems: "center",
-        paddingHorizontal: 20,
-        paddingVertical: 7,
-        marginTop: 10,
+        ...style,
+      }}
+      onPress={() => {
+        if (props.onPress) props.onPress()
       }}
     >
-      <Text style={{ fontSize: 20, color: defineColor() }}>{content}</Text>
-
-      <View
+      <Text
         style={{
-          width: 30,
-          height: 30,
-          borderRadius: 15,
-          borderWidth: 1,
-          borderColor: defineColor(),
-          backgroundColor: defineColor(),
-          justifyContent: "center",
-          alignItems: "center",
+          fontSize: 20,
+          color: status == ANSWER_STATE.NORMAL ? "#425CE9" : WHITE,
         }}
       >
-        <Text style={{ fontSize: 17, color: SILVER }}>
-          {status === ANSWER_STATE.NORMAL
-            ? ""
-            : status === ANSWER_STATE.CORRECT
-            ? "v"
-            : "x"}
-        </Text>
-      </View>
+        {content}
+      </Text>
     </TouchableOpacity>
   )
 }

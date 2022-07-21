@@ -12,6 +12,13 @@ const initial_state = {}
 // cqi: current_question_index
 // rounds : data of 4 rounds
 // questions_state : state of questions on current round ( on ['none','current','wrong','correct'])
+
+const initStatus = (num) => {
+  var status = new Array(num).fill(QUIZ_STATUS.NONE)
+  status[0] = QUIZ_STATUS.CURRENT
+  console.log("Init status: ", status, num)
+  return status
+}
 export default reducer = (state = initial_state, action) => {
   let { answerScore, round4, picked_star } = action.payload
     ? action.payload
@@ -24,7 +31,7 @@ export default reducer = (state = initial_state, action) => {
         ...action.payload,
         round_idx: INITIAL_ROUND,
         quiz_idx: 0,
-        status: [QUIZ_STATUS.CURRENT],
+        status: initStatus(ROUNDS[INITIAL_ROUND].num_quiz),
         scores: [0, 0, 0, 0],
         is_guessed_round2_keyword: false,
         keyword_answered: false,
@@ -34,9 +41,9 @@ export default reducer = (state = initial_state, action) => {
       status[status.length - 1] =
         answerScore > 0 ? QUIZ_STATUS.CORRECT : QUIZ_STATUS.WRONG
       scores[round_idx] += answerScore
-      status.push(QUIZ_STATUS.CURRENT)
+      status[quiz_idx] = QUIZ_STATUS.CURRENT
 
-      let total_question = ROUNDS[round_idx].number_question
+      let total_question = ROUNDS[round_idx].num_quiz
 
       if (quiz_idx < total_question - 1) {
         quiz_idx++
@@ -52,14 +59,12 @@ export default reducer = (state = initial_state, action) => {
     case "NEXT_ROUND":
       quiz_idx = 0
       round_idx++
-      status = []
-      status.push(QUIZ_STATUS.CURRENT)
 
       return {
         ...state,
         quiz_idx,
         round_idx,
-        status,
+        status: initStatus(ROUNDS[round_idx].num_quiz),
       }
 
     case "ANSWER_KEYWORD":

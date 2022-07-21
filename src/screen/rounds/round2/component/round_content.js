@@ -1,21 +1,29 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 
 import { useNavigation } from "@react-navigation/native"
 import { View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
-import { answerKeyword, answerQuiz } from "../redux/play/action"
-import { ROUNDS } from "../util/constants"
-import AnswersList from "./answer_list"
-import Background from "./background"
-import IconButton from "./icon_button"
-import QuizContent from "./quiz_content"
-import Timer from "./timer"
-
+import Background from "../../../../component/background"
+import QuizContent from "../../../../component/quiz_content"
+import Timer from "../../../../component/timer"
+import { answerKeyword, answerQuiz } from "../../../../redux/play/action"
+import { ROUNDS } from "../../../../util/constants"
+import AnswerInput from "./answer_input"
+import Crosswords from "./crosswords"
+import { remove } from "../../../../util/helper"
+import { QUIZ_STATUS } from "../../../../redux/play/reducer"
+import KeywordHint from "./keyword_hint"
+const VIEW_TYPE = {
+  QUIZ: 0,
+  CROSSWORD: 1,
+  KEYWORD: 2,
+}
 const RoundContent = (props) => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
+  const [viewType, setViewType] = useState(VIEW_TYPE.QUIZ)
   const { duration } = props
-  const { round_idx, quiz_idx, rounds, status, picked_star } = useSelector(
+  const { round_idx, quiz_idx, rounds, status, keyword_answered } = useSelector(
     (state) => state.play
   )
   const timerRef = useRef(null)
@@ -93,18 +101,18 @@ const RoundContent = (props) => {
     }
   }
 
-  const round = rounds[round_idx]
-  let quiz = {}
-  let num_quiz = ROUNDS[round_idx].num_quiz
+  const quiz = rounds[1].questions[quiz_idx]
+  const uri = rounds[1].keyword.image
+  const keyword = rounds[1].keyword.answer
+  const num_quiz = rounds[1].questions.length
+  const answers = rounds[1].questions.map((item) =>
+    remove(item.answer, " ").toUpperCase()
+  )
 
-  if (round_idx === 1) {
-    quiz = round.questions[quiz_idx]
-  } else {
-    quiz = round[quiz_idx]
+  const onNextView = () => {
+    setViewType((viewType + 1) % 3)
   }
-
-  const onNextQuiz = () => {}
-
+  console.log("Status: ", status)
   return (
     <View
       style={{
@@ -123,27 +131,43 @@ const RoundContent = (props) => {
         duration={duration}
         style={{ marginTop: 10, alignSelf: "center" }}
       />
-      <QuizContent
-        {...quiz}
-        index={quiz_idx}
-        num_quiz={num_quiz}
-        style={{
-          marginVertical: 20,
-          flex: 1,
-        }}
-      />
-      <IconButton
-        logo={"arrow-forward"}
-        onPress={onNextQuiz}
-        style={{ marginBottom: 20, alignSelf: "center" }}
-      />
+      {viewType == VIEW_TYPE.QUIZ ? (
+        <QuizContent
+          {...quiz}
+          index={quiz_idx}
+          num_quiz={num_quiz}
+          style={{
+            marginVertical: 20,
+            flex: 1,
+          }}
+        />
+      ) : viewType == VIEW_TYPE.CROSSWORD ? (
+        <Crosswords
+          answers={answers}
+          keyword_answered={keyword_answered}
+          status={status}
+          style={{
+            marginVertical: 20,
+            flex: 1,
+          }}
+        />
+      ) : (
+        <KeywordHint
+          status={status}
+          uri={uri}
+          keyword={keyword}
+          keyword_answered={keyword_answered}
+          style={{
+            marginVertical: 20,
+            flex: 1,
+          }}
+        />
+      )}
 
-      <AnswersList
-        {...quiz}
-        correct_index={0}
+      <AnswerInput
+        correct_answer={quiz.answer}
         onAnswer={onAnswer}
-        quiz_idx={quiz_idx}
-        style={{ paddingHorizontal: 20 }}
+        onNext={onNextView}
       />
     </View>
   )

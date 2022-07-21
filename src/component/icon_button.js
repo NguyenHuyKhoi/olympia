@@ -5,14 +5,14 @@ import Icon from "react-native-vector-icons/MaterialIcons"
 import { WHITE } from "../util/palette"
 const SIZE = 55
 const IconButton = (props) => {
-  let { style, logo } = props
+  let { style, logo, color } = props
   return (
     <TouchableOpacity
       style={{
-        width: SIZE,
         height: SIZE,
+        width: SIZE,
         borderWidth: 3,
-        borderColor: WHITE,
+        borderColor: color ? color : WHITE,
         borderRadius: 8,
         justifyContent: "center",
         alignItems: "center",
@@ -22,7 +22,7 @@ const IconButton = (props) => {
         if (props.onPress) props.onPress()
       }}
     >
-      <Icon name={logo} size={30} color={WHITE} />
+      <Icon name={logo} size={30} color={color ? color : WHITE} />
     </TouchableOpacity>
   )
 }

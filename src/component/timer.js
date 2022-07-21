@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { Text, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
-import { SILVER } from "../util/palette"
+import { SILVER, WHITE } from "../util/palette"
 
 const Timer = (props) => {
-  const { duration, round_idx } = props
+  const { duration, round_idx, style } = props
   const [time, setTime] = useState(duration)
   const [timerId, setTimerId] = useState(null)
 
@@ -53,8 +53,19 @@ const Timer = (props) => {
   }, [])
 
   return (
-    <View style={{ position: "absolute", top: 15, right: 30, zIndex: 1 }}>
-      <Text style={{ fontSize: 20, color: SILVER }}>{time + " s"}</Text>
+    <View
+      style={{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        borderWidth: 3,
+        borderColor: WHITE,
+        justifyContent: "center",
+        alignItems: "center",
+        ...style,
+      }}
+    >
+      <Text style={{ fontSize: 20, color: WHITE }}>{time}</Text>
     </View>
   )
 }
