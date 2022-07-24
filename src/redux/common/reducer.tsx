@@ -9,6 +9,7 @@ export default reducer = (state: CommonState = initial_state, action: Action) =>
   switch (action.type) {
     case "SHOW_NOTIFICATION":
       return {
+        ...state,
         notification,
       }
     case "SHOW_KEYBOARD": {

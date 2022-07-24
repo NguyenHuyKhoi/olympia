@@ -1,7 +1,8 @@
 import React from "react"
 
-import { Text, TouchableOpacity } from "react-native"
+import {  TouchableOpacity } from "react-native"
 import { GREEN, WHITE } from "../util/palette"
+import Text from "./text"
 
 const Button = (props) => {
   let { style, label, disabled } = props

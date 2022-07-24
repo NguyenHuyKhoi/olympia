@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-import { Text, View } from "react-native"
+import {  View } from "react-native"
 
 import SoundPlayer from "react-native-sound-player"
 
@@ -14,6 +14,7 @@ import { nextRound, saveResult } from "../../redux/play/action"
 import ResultItem from "../history/component/result_item"
 import Background from '../../component/background'
 import {Round} from '../../redux/types'
+import Text from "../../component/text"
 const ResultScreen = (props) => {
   const gameData = useSelector((state) => state.play)
   const {rounds, round_idx} = gameData

@@ -1,6 +1,7 @@
 import React from "react"
-import { Text, View } from "react-native"
+import {  View } from "react-native"
 import { WHITE } from "../util/palette"
+import Text from "./text"
 
 const ScoreView = (props: any) => {
   const { score, style } = props

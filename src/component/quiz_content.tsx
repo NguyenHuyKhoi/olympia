@@ -1,9 +1,10 @@
 import React from "react"
 
-import { Image, Text, View } from "react-native"
+import { Image, View } from "react-native"
 import { LOGO } from "../asset/image"
 import CrossWord from "../screen/rounds/round2/component/crossword"
 import { WHITE } from "../util/palette"
+import Text from "./text"
 const QuizContent = (props) => {
   const { category, content, image, video, answer, index, num_quiz, style, round_idx, correct_answer } = props
   

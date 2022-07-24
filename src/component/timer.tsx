@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import { WHITE } from "../util/palette"
+import Text from "./text"
 
 const Timer = (props) => {
   const { duration, round_idx, style } = props

@@ -1,6 +1,7 @@
 import React from "react"
 
-import { Text, TouchableOpacity } from "react-native"
+import {  TouchableOpacity } from "react-native"
+import Text from "../../../../component/text"
 import { WHITE } from "../../../../util/palette"
 
 const SIZE = 55

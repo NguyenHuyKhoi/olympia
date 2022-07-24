@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Text, TouchableOpacity, ImageBackground } from "react-native"
+import {TouchableOpacity, ImageBackground } from "react-native"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import {
   GRADIENT1,
@@ -8,16 +8,17 @@ import {
   GRADIENT3,
   GRADIENT4,
 } from "../../../asset/image"
+import Text from "../../../component/text"
 import { WHITE } from "../../../util/palette"
 const BGs = [GRADIENT1, GRADIENT2, GRADIENT3, GRADIENT4]
 const LOGOs = ["filter-1", "filter-1", "filter-1", "filter-1"]
 const LevelItem = (props) => {
-  const { index, name, content, open, style } = props
+  const { index, name, guide, open, style } = props
   return (
     <TouchableOpacity
       onPress={props.onPress}
       style={{
-        ...style,
+        ...style
       }}
     >
       <ImageBackground
@@ -50,7 +51,7 @@ const LevelItem = (props) => {
               lineHeight: 32,
             }}
           >
-            {content}
+            {guide}
           </Text>
         )}
       </ImageBackground>

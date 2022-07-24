@@ -73,7 +73,7 @@ const SigninScreen = () => {
       </View>
       {!isShowKeyboard && (
         <>
-          <Button label="ĐĂNG NHẬP" onPress={onSignIn} />
+          <Button label="signin" onPress={onSignIn} />
           <Link
             style={{
               marginVertical: 20,

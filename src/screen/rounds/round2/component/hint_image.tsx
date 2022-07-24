@@ -1,6 +1,7 @@
 //import from library
 import React from "react"
-import { ImageBackground, Text, View } from "react-native"
+import { ImageBackground, View } from "react-native"
+import Text from "../../../../component/text"
 import { INDIGO_3, WHITE } from "../../../../util/palette"
 
 const HintImage = (props) => {

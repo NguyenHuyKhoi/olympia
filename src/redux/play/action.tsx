@@ -1,7 +1,7 @@
-import FirestoreHandler from "../../service/FirestoreHandler"
-import RealtimeDBHandler from "../../service/RealtimeDBHandler"
-import { Action, GameResult, PlayState } from "../types"
-import { createGame } from "./rule"
+import FirestoreHandler from "../../service/FirestoreHandler";
+import { Action, GameResult, PlayState } from "../types";
+import uuid from 'react-native-uuid'
+import { createGame } from "./rule";
 interface IStartGame {
   (): (dispatch: any) => Promise<void>
 }
@@ -92,7 +92,7 @@ export const saveResult: ISaveResult = (user, game) => {
       scores: game.rounds.map(i => i.score),
       user_id: user.phone
     }
-    await FirestoreHandler.shared.add('Result', result)
+    await FirestoreHandler.shared.add('Result', result, uuid.v4().toString())
     dispatch({
       type: "SAVE_RESULT",
       payload: {},

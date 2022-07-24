@@ -1,9 +1,10 @@
 import React from "react"
 
-import { Image, Text, View } from "react-native"
+import { Image, View } from "react-native"
 import { LOGO } from "../asset/image"
 import { APP_NAME } from "../util/constants"
 import { SILVER } from "../util/palette"
+import Text from "./text"
 
 const Header = () => {
   return (

@@ -1,8 +1,9 @@
 import React from "react"
-import { ImageBackground, Text, TouchableOpacity } from "react-native"
+import { ImageBackground, TouchableOpacity } from "react-native"
 
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { GRADIENT1, GRADIENT2, GRADIENT3 } from "../../../../asset/image"
+import Text from "../../../../component/text"
 import { WHITE } from "../../../../util/palette"
 
 const BGs = [GRADIENT1, GRADIENT2, GRADIENT3]

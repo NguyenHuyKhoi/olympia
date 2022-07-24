@@ -26,7 +26,7 @@ const SettingScreen = () => {
       return
     }
 
-    dispatch(updateInfor({ phone, password, username }))
+    dispatch(updateInfor({ ...user, phone, password, username }))
   }
 
   return (
@@ -57,6 +57,7 @@ const SettingScreen = () => {
           placeholder="Số điện thoại"
           type="numeric"
           value={phone}
+          disabled = {true}
           maxLength={10}
           onChange={setPhone}
         />

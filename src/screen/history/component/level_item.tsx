@@ -1,7 +1,8 @@
 import React from "react"
 
-import { Text, View } from "react-native"
+import {View } from "react-native"
 import Icon from "react-native-vector-icons/MaterialIcons"
+import Text from "../../../component/text"
 import { WHITE } from "../../../util/palette"
 const ICON_NAMES = ["filter-1", "filter-2", "filter-3", "filter-4"]
 

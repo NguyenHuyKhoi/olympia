@@ -3,11 +3,11 @@ import React from "react"
 import {
   FlatList,
   ImageBackground,
-  Text,
   TouchableOpacity,
   View,
 } from "react-native"
 import { RESULT_BG } from "../../../asset/image"
+import Text from "../../../component/text"
 import { WHITE } from "../../../util/palette"
 import LevelItem from "./level_item"
 

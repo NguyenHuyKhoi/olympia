@@ -1,7 +1,8 @@
 import React from "react"
 
-import { Text, TouchableOpacity } from "react-native"
+import { TouchableOpacity } from "react-native"
 import { WHITE } from "../util/palette"
+import Text from "./text"
 
 const Link = (props) => {
   const { label, style } = props

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { FlatList, Text, View } from "react-native"
+import { FlatList, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import Button from "../../../component/button"
 
@@ -10,6 +10,7 @@ import { ROUND4_PACKS } from "../../../redux/play/rule"
 import { GREEN, INDIGO_3, SILVER, WHITE } from "../../../util/palette"
 import QuizPack from "./component/quiz_pack"
 import StarCell from "./component/star_cell"
+import Text from "../../../component/text"
 
 const Round4SetupScreen = () => {
   const dispatch = useDispatch()

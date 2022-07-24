@@ -1,6 +1,7 @@
 import React from "react"
 
-import { Text, View } from "react-native"
+import {View } from "react-native"
+import Text from "../../../../component/text"
 import { GREEN, RED, WHITE } from "../../../../util/palette"
 
 const SIZE = 40

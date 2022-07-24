@@ -4,7 +4,7 @@ import { TextInput } from "react-native"
 import { GRAY, WHITE } from "../util/palette"
 
 const InputText = (props) => {
-  var { type, value, placeholder, secure, style, maxLength } = props
+  var { type, value, placeholder, secure, style, disabled, maxLength } = props
 
   if (!maxLength) maxLength = 6
   if (!secure) secure = false
@@ -21,7 +21,7 @@ const InputText = (props) => {
       style={{
         width: "100%",
         fontSize: 20,
-        color: "#425CE9",
+        color: disabled ? GRAY : "#425CE9",
         height: 60,
         backgroundColor: WHITE,
         borderWidth: 2,

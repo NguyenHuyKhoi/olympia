@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Image, Text, View } from "react-native"
+import { Image, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import { LOGO } from "../../asset/image"
 import Button from "../../component/button"
@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native"
 import { useSelector } from "react-redux"
 import Background from "../../component/background"
 import { PlayState } from "../../redux/types"
+import Text from "../../component/text"
 const WaitingScreen = () => {
   const navigation = useNavigation()
   const { round_idx, rounds } = useSelector<any, PlayState>((state) => state.play)

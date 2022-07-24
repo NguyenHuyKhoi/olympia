@@ -35,14 +35,14 @@ const AppWrapper = () => {
   )
 }
 const App = () => {
-  const { notif } = useSelector((state) => state.common)
+  const { notification } = useSelector((state) => state.common)
   const { user } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   useEffect(() => {
-    if (notif) {
-      ToastHandler.show(notif)
+    if (notification) {
+      ToastHandler.show(notification)
     }
-  }, [notif])
+  }, [notification])
 
   useEffect(() => {
     Keyboard.addListener("keyboardDidShow", () =>

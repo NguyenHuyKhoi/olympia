@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react"
-import { FlatList, Text, View } from "react-native"
+import { FlatList, View } from "react-native"
 import { INDIGO_3, WHITE } from "../../util/palette"
 
 import { useSelector } from "react-redux"
 
+import { useDispatch } from "react-redux"
 import Background from "../../component/background"
 import SmallHeader from "../../component/small_header"
-import FirestoreHandler from "../../service/FirestoreHandler"
-import ResultItem from "../history/component/result_item"
-import { useDispatch } from "react-redux"
 import { retrieveHistories } from "../../redux/library/action"
+import ResultItem from "../history/component/result_item"
+import Text from "../../component/text"
 const GAMES = [
   {
     time: "16-07-2012",

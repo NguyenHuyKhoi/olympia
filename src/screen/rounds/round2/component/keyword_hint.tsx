@@ -1,6 +1,7 @@
 //import from library
 import React from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
+import Text from "../../../../component/text"
 import { WHITE } from "../../../../util/palette"
 import CrossWord from "./crossword"
 import HintImage from "./hint_image"

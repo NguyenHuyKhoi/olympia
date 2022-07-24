@@ -11,6 +11,7 @@ export type Notification = {
   text2?: string
 }
 export type User = {
+  id: string,
   username?: string,
   phone: string,
   password: string
