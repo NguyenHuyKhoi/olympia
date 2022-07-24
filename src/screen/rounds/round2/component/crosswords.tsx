@@ -1,11 +1,12 @@
 import React from "react"
 
 import { View } from "react-native"
+import Link from "../../../../component/link"
+import { Quiz } from "../../../../redux/types"
 import { WHITE } from "../../../../util/palette"
 import CrossWord from "./crossword"
 const Crosswords = (props) => {
-  const { answers, status, keyword_answered, style } = props
-
+  const { quizzes, style } = props
   return (
     <View
       style={{
@@ -19,12 +20,10 @@ const Crosswords = (props) => {
         ...style,
       }}
     >
-      {answers.slice(0, 4).map((item, index) => (
+      {quizzes.slice(0, 4).map((item: Quiz, index) => (
         <CrossWord
-          key={"" + index}
-          content={item}
-          show={keyword_answered}
-          status={status[index]}
+          key={"" + index} 
+          {...item}
           style={{
             marginTop: 20,
           }}

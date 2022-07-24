@@ -4,8 +4,9 @@ import { View } from "react-native"
 import CharCell from "./char_cell"
 
 const CrossWord = (props) => {
-  const { status, content, show, style } = props
-  const chars = [...content.toUpperCase()]
+  var { answer, correct_answer, show, style, status } = props
+  console.log("Crossword: ", answer, status)
+  while (answer.length < correct_answer.length) {answer += ' '}
   return (
     <View
       style={{
@@ -14,13 +15,12 @@ const CrossWord = (props) => {
         ...style,
       }}
     >
-      {chars.map((item, index) => (
+      {answer.split('').map((item, index) => (
         <CharCell
           key={index + ""}
-          status={"none"}
+          status={status}
           content={item}
           style={{}}
-          show={false}
         />
       ))}
     </View>

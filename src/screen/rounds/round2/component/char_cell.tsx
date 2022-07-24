@@ -12,7 +12,7 @@ const CharCell = (props) => {
         return GREEN
       case "wrong":
         return RED
-      case "current":
+      case 'current':
         return WHITE
       case "none":
         return WHITE
@@ -24,7 +24,7 @@ const CharCell = (props) => {
         return WHITE
       case "wrong":
         return WHITE
-      case "current":
+      case 'current':
         return "#6598ec"
       case "none":
         return "rgba(0,0,0,0)"
@@ -36,7 +36,7 @@ const CharCell = (props) => {
         width: SIZE,
         height: SIZE,
         borderRadius: SIZE / 2,
-        backgroundColor: show ? GREEN : defineBgColor(),
+        backgroundColor: defineBgColor(),
         justifyContent: "center",
         alignItems: "center",
         ...style,

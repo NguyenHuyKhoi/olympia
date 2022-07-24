@@ -1,26 +1,59 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import { FlatList, View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
+import Button from "../../../../component/button"
 import IconButton from "../../../../component/icon_button"
-import { answerQuiz } from "../../../../redux/play/action"
+import { answerKeyword, answerQuiz, enableAnswerKeyword, nextQuiz, pickChar, unpickChar } from "../../../../redux/play/action"
 import CharPicker from "./char_picker"
 const AnswerInput = (props) => {
-  const { correct_answer } = props
-  const [answer, setAnswer] = useState("")
-  const { isShowKeyboard } = useSelector((state) => state.common)
+  const {pickStatus, correct_answer, answer, quiz_idx, isEnableKeyword} = props
+  const [isNextQuiz, setIsNextQuiz] = useState(false)
+  const canAnswer = answer.length == correct_answer.length && props.status == 'current'
+  const canDelete = answer.length > 0 && props.status == 'current'
+  const {chars, status} = pickStatus
   const dispatch = useDispatch()
-  const onSubmit = () => {
-    //    if (this.state.answer==='') return ;
-    let correct = answer.toLowerCase() === correct_answer.toLowerCase()
-    setTimeout(() => {
-      setAnswer("")
-      dispatch(answerQuiz(correct))
-    }, 1000)
+
+  console.log("Can answer: ", canAnswer)
+  useEffect(() => {
+    setIsNextQuiz(false)
+  }, [quiz_idx])
+
+  useEffect(() => {
+    setIsNextQuiz(false)
+  }, [isEnableKeyword])
+  
+  
+  const onPickChar = (index) => {
+    console.log("On pick char: ", index, status, correct_answer)
+    if (status.length == correct_answer.length) return
+    dispatch(pickChar(index))
   }
 
-  const chars = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"]
-  const onPickChar = () => {}
+  const onUnpickChar = () => {
+    dispatch(unpickChar())
+  }
+
+  const onAnswer = () => {
+    console.log("Answer: ", answer, correct_answer, isEnableKeyword)
+    if (isEnableKeyword) {
+      dispatch(answerKeyword(answer == correct_answer))
+    }
+    else {
+      dispatch(answerQuiz(answer == correct_answer, 0))
+      setIsNextQuiz(true)
+    }
+  }
+
+  const onNextQuiz = () => {
+    if (quiz_idx < 3) {
+      dispatch(nextQuiz())
+    }
+    else {
+      dispatch(enableAnswerKeyword())
+    }
+  }
+
   return (
     <View
       style={{
@@ -46,7 +79,7 @@ const AnswerInput = (props) => {
           >
             <CharPicker
               content={item}
-              select={index % 2 == 0}
+              select={status.find(i => index == i)}
               onPress={() => onPickChar(index)}
             />
           </View>
@@ -58,16 +91,30 @@ const AnswerInput = (props) => {
           margin: 10,
         }}
       >
-        <IconButton logo="delete" color="#F25E7B" />
-        <IconButton
-          onPress={props.onNext}
-          logo="arrow-forward"
-          style={{
-            flex: 1,
-            marginHorizontal: 20,
-          }}
+        <IconButton logo="delete" color="#F25E7B" onPress = {onUnpickChar}
+          disabled = {!canDelete}/>
+          {
+            isNextQuiz ? 
+            <Button
+              onPress = {onNextQuiz}
+              label = {quiz_idx < 3 ? 'Next quiz' : 'Answer keyword'}
+              style = {{
+                flex: 1,
+                marginHorizontal: 20
+              }}
+            />
+            :
+            <IconButton
+              onPress={props.onNext}
+              logo="arrow-forward"
+              style={{
+                flex: 1,
+                marginHorizontal: 20,
+              }}
         />
-        <IconButton logo="send" color="#0FC599" />
+          }
+        
+        <IconButton logo="send" color="#0FC599" onPress = {onAnswer} disabled = {!canAnswer}/>
       </View>
     </View>
   )

@@ -4,7 +4,7 @@ import { ImageBackground, Text, View } from "react-native"
 import { INDIGO_3, WHITE } from "../../../../util/palette"
 
 const HintImage = (props) => {
-  const { uri, status, show, style, keyword_answered } = props
+  const { uri, status, show, keyword_answered } = props
   // status = [
   //   'correct',
   //   'wrong',

@@ -45,7 +45,7 @@ export const toArray = (data) => {
   return Object.values(data)
 }
 
-export const shuffle = (arr) => {
+export const shuffle = (arr: Array<any>) => {
   arr.sort(() => Math.random() - 0.5)
   return arr
 }

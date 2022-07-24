@@ -13,6 +13,15 @@ interface ISaveResult {
   (result: any):  (dispatch: any) => Promise<void>
 }
 
+interface IEnableAnswerKeyword {
+  (): Action
+}
+
+interface IUnpickChar {
+  (): Action
+}
+
+
 interface INextRound {
   (): Action
 }
@@ -21,8 +30,12 @@ interface INextQuiz {
   (): Action
 }
 
+interface IPickChar {
+  (index: number): Action
+}
+
 interface IAnswerKeyword {
-  (score: number): Action
+  (correct: boolean): Action
 }
 
 export const startGame: IStartGame = () => {
@@ -44,10 +57,31 @@ export const answerQuiz: IAnswerQuiz = (correct, time) => {
   }
 }
 
+export const pickChar: IPickChar = (index) => {
+  return {
+    type: "PICK_CHAR",
+    payload: { index },
+  }
+}
+
+export const unpickChar: IUnpickChar = () => {
+  return {
+    type: "UN_PICK_CHAR",
+    payload: {  },
+  }
+}
+
 export const nextQuiz: INextQuiz = () => {
   return {
     type: "NEXT_QUIZ",
     payload: { },
+  }
+}
+
+export const enableAnswerKeyword: IEnableAnswerKeyword = () => {
+  return {
+    type: "ENABLE_ANSWER_KEYWORD",
+    payload: {},
   }
 }
 
@@ -73,9 +107,10 @@ export const nextRound: INextRound = () => {
   }
 }
 
-export const answerKeyword: IAnswerKeyword = (answerScore) => {
+export const answerKeyword: IAnswerKeyword = (correct) => {
+  console.log("Answer action: ", correct)
   return {
     type: "ANSWER_KEYWORD",
-    payload: { answerScore },
+    payload: { correct },
   }
 }

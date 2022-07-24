@@ -23,7 +23,6 @@ const AnswerList = (props: any) => {
     dispatch(answerQuiz(answer == correct_answer, 0))
   }
 
-  console.log("Correct answer: ", correct_answer, answers)
   return (
     <View
       style={{

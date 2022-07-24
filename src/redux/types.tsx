@@ -19,6 +19,10 @@ export type User = {
 
 export type DifficultyLevel = 'easy' | 'medium' | 'hard'
 
+export type PickStatus = {
+  chars: Array<string>,
+  status: Array<number> 
+}
 export type Quiz = {
   content: string,
   image?: string,
@@ -29,15 +33,10 @@ export type Quiz = {
   correct_answer: string,
   category: string,
   difficulty: DifficultyLevel,
-  hint?: string
-}
-
-export type Keyword = {
-  text?: string,
-  image?: string,
-  correct_answer: string,
-  score: number,
-  is_guessed: boolean, // undefine - true - false
+  hint?: string,
+  status: QuizStatus,
+  pickStatus?: PickStatus,
+  answer?: string
 }
 export type Round = {
   index: number,
@@ -46,9 +45,8 @@ export type Round = {
   time?: number,
   num_quiz: number,
   quizzes: Array<Quiz>,
-  keyword?: Keyword,
+  keyword?: Quiz,
   guide: string,
-  status: Array<QuizStatus>,
   score: number
 }
 
@@ -56,7 +54,7 @@ export type QUIZ_PACK = {
   index: number,
   scores: Array<number>
 }
-export type QuizStatus = 'correct'| 'wrong' | 'none'
+export type QuizStatus = 'correct'| 'wrong' | 'none' | 'current'
 
 export type AuthState = {
   user?: User
@@ -81,7 +79,7 @@ export type QuizBank = {
   type?: QuizType,
   difficulty?: DifficultyLevel,
   quizzes: Array<Quiz>,
-  keyword?: Keyword
+  keyword?: Quiz
 }
 
 export type GameBank = {

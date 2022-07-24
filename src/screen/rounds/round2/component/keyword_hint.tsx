@@ -6,8 +6,9 @@ import CrossWord from "./crossword"
 import HintImage from "./hint_image"
 
 const KeywordHint = (props) => {
-  const { open, uri, status, keyword_answered, style, keyword } = props
-  console.log("HintImageModal: ", uri)
+  const { open, uri, quizzes, keyword_answered, style, keyword } = props
+  const {status, correct_answer} = keyword
+  console.log("Keyword hint: ", keyword)
   return (
     <View
       style={{
@@ -22,7 +23,7 @@ const KeywordHint = (props) => {
       }}
     >
       <HintImage
-        status={status.slice(0, 4)}
+        status={quizzes.map(i => i.status)}
         style={{}}
         keyword_answered={keyword_answered}
       />
@@ -36,9 +37,7 @@ const KeywordHint = (props) => {
         Từ khóa
       </Text>
       <CrossWord
-        content={keyword}
-        show={keyword_answered}
-        status={status[4]}
+        {...keyword}
         style={{
           marginTop: 20,
         }}

@@ -106,7 +106,7 @@ const Round4SetupScreen = () => {
             marginTop: 40,
           }}
         >
-          CHỌN GÓI CÂU HỎI
+          CHỌN NGOI SAO HI VONG
         </Text>
         <View
           style={{
