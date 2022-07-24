@@ -22,7 +22,6 @@ const SignupScreen = () => {
 
   const onSignUp = () => {
     var msg = null
-    console.log("Input : ", phone, password)
     if ((msg = validatePhone(phone)) || (msg = validatePassword(password))) {
       ToastHandler.show({ type: "info", text1: msg })
       return

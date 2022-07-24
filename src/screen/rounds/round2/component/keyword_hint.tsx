@@ -6,9 +6,8 @@ import CrossWord from "./crossword"
 import HintImage from "./hint_image"
 
 const KeywordHint = (props) => {
-  const { open, uri, quizzes, keyword_answered, style, keyword } = props
+  const { open, uri, quizzes, style, keyword, unhide } = props
   const {status, correct_answer} = keyword
-  console.log("Keyword hint: ", keyword)
   return (
     <View
       style={{
@@ -23,9 +22,9 @@ const KeywordHint = (props) => {
       }}
     >
       <HintImage
+        unhide = {unhide}
         status={quizzes.map(i => i.status)}
         style={{}}
-        keyword_answered={keyword_answered}
       />
       <Text
         style={{
@@ -37,6 +36,7 @@ const KeywordHint = (props) => {
         Từ khóa
       </Text>
       <CrossWord
+        unhide = {unhide}
         {...keyword}
         style={{
           marginTop: 20,

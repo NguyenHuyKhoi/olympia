@@ -14,7 +14,6 @@ const AnswerInput = (props) => {
   const {chars, status} = pickStatus
   const dispatch = useDispatch()
 
-  console.log("Can answer: ", canAnswer)
   useEffect(() => {
     setIsNextQuiz(false)
   }, [quiz_idx])
@@ -25,7 +24,6 @@ const AnswerInput = (props) => {
   
   
   const onPickChar = (index) => {
-    console.log("On pick char: ", index, status, correct_answer)
     if (status.length == correct_answer.length) return
     dispatch(pickChar(index))
   }
@@ -35,7 +33,6 @@ const AnswerInput = (props) => {
   }
 
   const onAnswer = () => {
-    console.log("Answer: ", answer, correct_answer, isEnableKeyword)
     if (isEnableKeyword) {
       dispatch(answerKeyword(answer == correct_answer))
     }

@@ -15,7 +15,8 @@ import ResultItem from "../history/component/result_item"
 import Background from '../../component/background'
 import {Round} from '../../redux/types'
 const ResultScreen = (props) => {
-  const { round_idx, scores, rounds } = useSelector((state) => state.play)
+  const gameData = useSelector((state) => state.play)
+  const {rounds, round_idx} = gameData
   const { user } = useSelector((state) => state.auth)
   const [time, setTime] = useState(new Date().toISOString())
   const dispatch = useDispatch()
@@ -28,14 +29,7 @@ const ResultScreen = (props) => {
       dispatch(nextRound())
       navigation.navigate("waiting")
     } else {
-      var currentTime = new Date().toISOString()
-      dispatch(
-        saveResult({
-          time: currentTime,
-          scores,
-          user_id: user.phone,
-        })
-      )
+      dispatch(saveResult(user, gameData))
       navigation.navigate("home")
     }
   }
@@ -67,7 +61,7 @@ const ResultScreen = (props) => {
         flexDirection: 'column',
         marginTop: 50
       }}>
-        <ResultItem scores={scores} time={time} open = {true}/>
+        <ResultItem scores={rounds.map(r => r.score)} time={time} open = {true}/>
         <Text style={{ fontSize: 22, color: WHITE, marginTop: 40 }}>
           {"Vòng " + (round_idx + 1)}
         </Text>

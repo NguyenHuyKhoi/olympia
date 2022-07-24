@@ -4,8 +4,7 @@ import { View } from "react-native"
 import CharCell from "./char_cell"
 
 const CrossWord = (props) => {
-  var { answer, correct_answer, show, style, status } = props
-  console.log("Crossword: ", answer, status)
+  var { answer, correct_answer, unhide, style, status } = props
   while (answer.length < correct_answer.length) {answer += ' '}
   return (
     <View
@@ -15,11 +14,12 @@ const CrossWord = (props) => {
         ...style,
       }}
     >
-      {answer.split('').map((item, index) => (
+      {(unhide ? correct_answer : answer).split('').map((item, index) => (
         <CharCell
           key={index + ""}
+          unhide = {unhide}
           status={status}
-          content={item}
+          content={ item}
           style={{}}
         />
       ))}

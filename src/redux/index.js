@@ -7,16 +7,18 @@ import { combineReducers } from "redux"
 import playReducer from "./play/reducer"
 import authReducer from "./auth/reducer"
 import commonReducer from "./common/reducer"
+import libraryReducer from "./library/reducer"
 const reducers = combineReducers({
   play: playReducer,
   auth: authReducer,
   common: commonReducer,
+  library: libraryReducer,
 })
 
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  blacklist: ["common"],
+  blacklist: ["common", "play"],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

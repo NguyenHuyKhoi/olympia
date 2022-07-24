@@ -7,8 +7,14 @@ export const QUIZ_STATUS = {
   NONE: 3,
 }
 
-const calculateScore = (correct: number, time: boolean ) => {
-  return 20
+const calculateScore = (quiz: Quiz, correct: boolean ) => {
+  if (!correct) return 0
+  return quiz.score
+}
+
+const calculateKeywordScore = (quiz: Quiz, correct: boolean) => {
+  if (!correct) return 0
+  return quiz.score
 }
 
 const initial_state: PlayState = INITIAL_GAME
@@ -28,9 +34,10 @@ export default reducer = (state: PlayState = initial_state, action: Action) => {
   let { correct, time, game, index } = action.payload
     ? action.payload
     : {}
-  let { round_idx, quiz_idx, rounds } = state
+  let { round_idx, quiz_idx, rounds, score } = state
 
   var round = rounds[round_idx]
+  var earnedScore
   switch (action.type) {
     case "START_GAME":
       return {
@@ -40,10 +47,11 @@ export default reducer = (state: PlayState = initial_state, action: Action) => {
 
     case "ANSWER_QUIZ":
       round.quizzes[quiz_idx].status = correct ? 'correct' : 'wrong'
-      round.score += calculateScore(correct, time)
-
+      earnedScore = calculateScore(round.quizzes[quiz_idx], correct)
+      round.score += earnedScore
       return {
-        ...state
+        ...state,
+        score: score + earnedScore
       }
     case 'NEXT_QUIZ':
       round.quizzes[quiz_idx+1].status = 'current'
@@ -57,7 +65,6 @@ export default reducer = (state: PlayState = initial_state, action: Action) => {
         ...state
       }
     case 'PICK_CHAR':
-      console.log("Pick char: ")
       if (round_idx == 1 && round.keyword?.status == 'current') {
         round.keyword.pickStatus.status.push(index)
         round.keyword.answer = getCurrentAnswer(round.keyword)
@@ -71,9 +78,9 @@ export default reducer = (state: PlayState = initial_state, action: Action) => {
       }
   
     case 'UN_PICK_CHAR':
-      console.log("Pick char: ")
       if (round_idx == 1 && round.keyword?.status == 'current') {
-        round.keyword.pickStatus.status.push(index)
+        console.log("Keyword: ", round.keyword.pickStatus)
+        round.keyword.pickStatus.status.pop()
         round.keyword.answer = getCurrentAnswer(round.keyword)
       }
       else {
@@ -95,9 +102,11 @@ export default reducer = (state: PlayState = initial_state, action: Action) => {
 
     case "ANSWER_KEYWORD":
       round.keyword.status = correct ? 'correct' : 'wrong'
-      round.score += calculateScore(correct, time)
+      earnedScore = calculateKeywordScore(round.keyword, correct)
+      round.score += earnedScore
       return {
         ...state,
+        score: score + earnedScore
       }
     default:
       return state

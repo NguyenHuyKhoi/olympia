@@ -21,7 +21,6 @@ const Timer = (props) => {
   }
 
   const reset = () => {
-    console.log("timer reset ")
     pause()
     setTime(duration)
     loop()

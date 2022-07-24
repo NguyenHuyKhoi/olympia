@@ -1,7 +1,8 @@
 import firestore from "@react-native-firebase/firestore"
 interface IFirestore {
   getCollection: (name: string) => Promise<Array<any>>
-  add: (collectionName: string, item: any) => Promise<void>
+  add: (name: string, item: any) => Promise<void>
+  filterByUserId: (name: string, userId: string) => Promise<Array<any>>
 }
 
 class FirestoreHandler implements IFirestore {
@@ -10,15 +11,19 @@ class FirestoreHandler implements IFirestore {
 
   }
   getCollection = async (name: string) => {
-    console.log("Get collection :", name)
     var result = await firestore().collection(name).get()
     var items = result._docs.map((item: any) => item.data())
-    console.log("get collection items: ", items)
     return items
   }
 
-  add = async (collectionName: string, item: any) => {
-    await firestore().collection(collectionName).add(item)
+  filterByUserId =  async (name: string, userId: string) => {
+    var result = await firestore().collection(name).where('user_id', '==', userId).get()
+    var items = result._docs.map((item: any) => item.data())
+    return items
+  } 
+
+  add = async (name: string, item: any) => {
+    await firestore().collection(name).add(item)
   }
 }
 

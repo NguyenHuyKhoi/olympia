@@ -10,43 +10,18 @@ import { PlayState, Round } from "../redux/types"
 import Background from "./background"
 import IconButton from "./icon_button"
 import QuizContent from "./quiz_content"
-import Timer from "./timer"
+import ScoreView from "./score_view"
 const RoundContent = () => {
   const navigation = useNavigation()
   const dispatch = useDispatch()
-  const { round_idx, quiz_idx, rounds } = useSelector<any, PlayState>(
+  const { round_idx, quiz_idx, rounds, score } = useSelector<any, PlayState>(
     (state) => state.play
   )
   const round: Round = rounds[round_idx]
   const quiz = round.quizzes[quiz_idx]
 
   const {num_quiz} = round
-  const timerRef = useRef(null)
-
-  useEffect(() => {
-    if (timerRef.current) {
-      timerRef.current.reset()
-    }
-
-    return () => {}
-  }, [])
-
-  const nextRound = () => {
-    navigation.navigate("result")
-  }
-
-  const viewResult = () => {
-    navigation.navigate("result")
-  }
-
-  const onTimeOut = () => {
-    // if (round_idx === 0) {
-    //   navigation.navigate("result")
-    // } else {
-    //   onAnswer(false)
-    // }
-  }
-
+  
   const onNextQuiz = () => {
     if (quiz_idx < num_quiz - 1) {
       dispatch(nextQuiz())
@@ -55,7 +30,6 @@ const RoundContent = () => {
       navigation.navigate('result')
     }
   }
-
   return (
     <View
       style={{
@@ -67,12 +41,12 @@ const RoundContent = () => {
       }}
     >
       <Background />
-      <Timer
-        ref={timerRef}
-        round_idx={round_idx}
-        onTimeOut={onTimeOut}
-        duration={0}
-        style={{ marginTop: 10, alignSelf: "center" }}
+      <ScoreView 
+        score = {score} 
+        style = {{
+          marginTop: 5,
+          alignSelf: 'center'
+        }}
       />
       <QuizContent
         {...quiz}

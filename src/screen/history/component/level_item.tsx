@@ -3,7 +3,7 @@ import React from "react"
 import { Text, View } from "react-native"
 import Icon from "react-native-vector-icons/MaterialIcons"
 import { WHITE } from "../../../util/palette"
-const ICON_NAMES = ["https", "https", "https", "https"]
+const ICON_NAMES = ["filter-1", "filter-2", "filter-3", "filter-4"]
 
 const LevelItem = (props) => {
   const { score, index, style } = props

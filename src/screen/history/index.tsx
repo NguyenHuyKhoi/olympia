@@ -8,6 +8,8 @@ import Background from "../../component/background"
 import SmallHeader from "../../component/small_header"
 import FirestoreHandler from "../../service/FirestoreHandler"
 import ResultItem from "../history/component/result_item"
+import { useDispatch } from "react-redux"
+import { retrieveHistories } from "../../redux/library/action"
 const GAMES = [
   {
     time: "16-07-2012",
@@ -36,17 +38,14 @@ const GAMES = [
 ]
 
 const HistoryScreen = () => {
-  const [games, setGames] = useState([])
   const [viewIndex, setViewIndex] = useState(null)
+  const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
+  const {results} = useSelector((state) => state.library)
   useEffect(() => {
-    const getResults = async () => {
-      let games = await FirestoreHandler.getCollection("Game")
-      games = games.filter((item) => item.user_id == user.phone)
-      setGames(GAMES)
-    }
-    getResults()
+    dispatch(retrieveHistories(user.phone))
   }, [])
+
 
   const onSelectItem = (index) => {
     if (viewIndex == index) {
@@ -65,7 +64,7 @@ const HistoryScreen = () => {
     >
       <Background />
       <SmallHeader style={{ marginTop: 30, alignSelf: "center" }} />
-      {games.length == 0 ? (
+      {results.length == 0 ? (
         <Text
           style={{
             fontSize: 40,
@@ -75,11 +74,11 @@ const HistoryScreen = () => {
             marginTop: 250,
           }}
         >
-          Khong co lich su
+          Không có lịch sử chơi
         </Text>
       ) : (
         <FlatList
-          data={games}
+          data={results}
           style={{
             padding: 30,
           }}

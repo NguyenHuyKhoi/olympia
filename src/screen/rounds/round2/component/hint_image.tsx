@@ -4,7 +4,7 @@ import { ImageBackground, Text, View } from "react-native"
 import { INDIGO_3, WHITE } from "../../../../util/palette"
 
 const HintImage = (props) => {
-  const { uri, status, show, keyword_answered } = props
+  const { uri, status, unhide } = props
   // status = [
   //   'correct',
   //   'wrong',
@@ -36,11 +36,11 @@ const HintImage = (props) => {
             justifyContent: "center",
             alignItems: "center",
             backgroundColor:
-              keyword_answered || item == "correct" ? "rgba(0,0,0,0)" : WHITE,
+              unhide || item == "correct" ? "rgba(0,0,0,0)" : WHITE,
             zIndex: 1,
           }}
         >
-          {!keyword_answered && item !== "correct" ? (
+          {item !== "correct" ? (
             <Text
               style={{
                 fontSize: 45,

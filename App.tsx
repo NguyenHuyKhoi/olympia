@@ -40,7 +40,6 @@ const App = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     if (notif) {
-      console.log("Notif content: ", notif)
       ToastHandler.show(notif)
     }
   }, [notif])

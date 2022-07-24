@@ -26,7 +26,6 @@ const WaitingScreen = () => {
   }, [])
 
   const onPlay = () => {
-    console.log("Round index: ", round_idx)
     SoundPlayer.stop()
     if (round_idx !== 3) navigation.navigate("round" + (round_idx + 1))
     else navigation.navigate("round4_setup")

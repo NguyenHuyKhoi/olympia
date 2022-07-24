@@ -59,9 +59,9 @@ export const ROUND4_PACKS: Array<QUIZ_PACK> = [
 ]
 export const INITIAL_GAME: PlayState = {
   rounds: [...INITIAL_ROUNDS],
-  round_idx: 0,
+  round_idx: 3,
   quiz_idx: 0,
-  total_score: 0
+  score: 0
 }
 
 export const getRandomQuizzes = (list: Array<QuizBank>) => {
@@ -77,9 +77,7 @@ export const getRandomQuizzes = (list: Array<QuizBank>) => {
 
 const createPicks = (content) => {
   var chars = 'qwertyuiopasdfghjklzxcvbnm'.split('')
-  console.log("All chars: ", chars)
   var randomChars = shuffle(chars).slice(0, 12 - content.length).join('')
-  console.log("Random chars: ", randomChars)
   var result = shuffle((content + randomChars).split(''))
   return result
 }
@@ -111,6 +109,7 @@ export const initKeywordQuiz = (quiz: Quiz) => {
   // hardcode score base round
   quiz.status = 'none'
   quiz.answer = ''
+  quiz.score = 80
   quiz.correct_answer = remove(quiz.correct_answer, ' ')
   quiz.pickStatus = {
     chars:  createPicks(quiz.correct_answer),
@@ -131,10 +130,8 @@ export const createGame = async () => {
   game.rounds[3].quizzes = getRandomQuizzes(bank.round4)
 
   var r2: QuizBank = randomItem(bank.round2)
-  console.log("Round 2 selected: ", JSON.stringify(game, null, 2))
   game.rounds[1].quizzes = r2.quizzes 
   game.rounds[1].keyword = r2.keyword 
-  console.log("Game data: ", JSON.stringify(game, null, 2))
 
   game.rounds.forEach((item, i1) => {
     item.quizzes.forEach((quiz, i2) => {

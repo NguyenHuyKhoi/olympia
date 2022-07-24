@@ -7,7 +7,6 @@ import { WHITE } from "../../../../util/palette"
 const QuizContent = (props) => {
   const {quiz, num_quiz, quiz_idx, isEnableKeyword} = props
   const { category, content, image, video, status, index, answer, style } = quiz
-  console.log("Answer: ", answer, isEnableKeyword)
   return (
     <View
       style={{

@@ -12,8 +12,7 @@ import { WHITE } from "../../../util/palette"
 import LevelItem from "./level_item"
 
 const ResultItem = (props) => {
-  const { scores, time, open } = props
-  console.log("Scores: ", scores, time)
+  const { scores, open } = props
   let total = 0
   scores.map((item) => (total += item))
   return (
@@ -43,24 +42,23 @@ const ResultItem = (props) => {
         >
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: WHITE,
             }}
           >
-            {time}
+            {'Tổng điểm'}
           </Text>
-          {!open && (
-            <Text
-              style={{
-                fontSize: 24,
-                color: WHITE,
-                textDecorationLine: "underline",
-                fontWeight: "bold",
-              }}
-            >
-              {"XEM"}
-            </Text>
-          )}
+          <Text
+            style={{
+              fontSize: 18,
+              color: WHITE,
+              textDecorationLine: "underline",
+              fontWeight: "bold",
+            }}
+          >
+            {open ? "Thu gọn" : "Xem"}
+          </Text>
+          
         </View>
         <Text
           style={{

@@ -9,7 +9,6 @@ import LevelItem from "./component/level_item"
 const GuideScreen = () => {
   const [viewIndex, setViewIndex] = useState(null)
   const onSelectItem = (index) => {
-    console.log("Select: ", index)
     if (viewIndex == index) {
       setViewIndex(null)
     } else {

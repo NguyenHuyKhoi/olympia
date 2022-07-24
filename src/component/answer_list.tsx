@@ -11,7 +11,6 @@ const AnswerList = (props: any) => {
   const [userAnswer, setUserAnswer] = useState('')
   var { answers, quiz_idx, correct_answer, style } = props
 
-  console.log("Quiz_idx: ", quiz_idx)
   useEffect(() => {
     setIsAnswered(false)
     setUserAnswer('')

@@ -12,7 +12,7 @@ const StarCell = (props) => {
         width: SIZE,
         height: SIZE,
         borderWidth: 3,
-        borderColor: WHITE,
+        borderColor: select ? 'yellow' : WHITE,
         borderRadius: 8,
         justifyContent: "center",
         alignItems: "center",
@@ -20,7 +20,7 @@ const StarCell = (props) => {
       }}
       onPress={props.onPress}
     >
-      {select && <Icon name={"star"} size={30} color={WHITE} />}
+      {select && <Icon name={"star"} size={30} color={select ? 'yellow' : WHITE} />}
     </TouchableOpacity>
   )
 }

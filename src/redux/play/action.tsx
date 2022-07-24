@@ -1,5 +1,6 @@
+import FirestoreHandler from "../../service/FirestoreHandler"
 import RealtimeDBHandler from "../../service/RealtimeDBHandler"
-import { Action } from "../types"
+import { Action, GameResult, PlayState } from "../types"
 import { createGame } from "./rule"
 interface IStartGame {
   (): (dispatch: any) => Promise<void>
@@ -10,7 +11,7 @@ interface IAnswerQuiz {
 }
 
 interface ISaveResult {
-  (result: any):  (dispatch: any) => Promise<void>
+  (user: User, result: PlayState):  (dispatch: any) => Promise<void>
 }
 
 interface IEnableAnswerKeyword {
@@ -50,7 +51,6 @@ export const startGame: IStartGame = () => {
 }
 
 export const answerQuiz: IAnswerQuiz = (correct, time) => {
-  console.log("answerQuiz :", correct)
   return {
     type: "ANSWER_QUIZ",
     payload: { correct, time },
@@ -86,17 +86,17 @@ export const enableAnswerKeyword: IEnableAnswerKeyword = () => {
 }
 
 
-export const saveResult: ISaveResult = (result) => {
+export const saveResult: ISaveResult = (user, game) => {
   return async (dispatch) => {
+    const result: GameResult = {
+      scores: game.rounds.map(i => i.score),
+      user_id: user.phone
+    }
+    await FirestoreHandler.shared.add('Result', result)
     dispatch({
       type: "SAVE_RESULT",
       payload: {},
     })
-    // await firebaseHelper.push("/history/", {
-    //   user_id: this.props.user.infor.id,
-    //   scores: this.props.practice.scores,
-    //   time,
-    // })
   }
 }
 
@@ -108,7 +108,6 @@ export const nextRound: INextRound = () => {
 }
 
 export const answerKeyword: IAnswerKeyword = (correct) => {
-  console.log("Answer action: ", correct)
   return {
     type: "ANSWER_KEYWORD",
     payload: { correct },

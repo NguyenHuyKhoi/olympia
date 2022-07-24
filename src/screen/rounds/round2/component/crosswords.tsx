@@ -6,7 +6,7 @@ import { Quiz } from "../../../../redux/types"
 import { WHITE } from "../../../../util/palette"
 import CrossWord from "./crossword"
 const Crosswords = (props) => {
-  const { quizzes, style } = props
+  const { quizzes, style, unhide } = props
   return (
     <View
       style={{
@@ -23,6 +23,7 @@ const Crosswords = (props) => {
       {quizzes.slice(0, 4).map((item: Quiz, index) => (
         <CrossWord
           key={"" + index} 
+          unhide = {unhide}
           {...item}
           style={{
             marginTop: 20,
