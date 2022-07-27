@@ -1,13 +1,25 @@
 import { useNavigation } from "@react-navigation/native"
-import React from "react"
+import React, {useEffect} from "react"
 import { Alert, View } from "react-native"
 import SoundPlayer from "react-native-sound-player"
 import RoundContent from "../../../component/round_content"
 
 const Round1Screen = () => {
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
+  // useEffect(() => {
+  //   try {
+  //     // play the file tone.mp3
+  //     SoundPlayer.loadSoundFile("round1_play", "mp3")
+  //     SoundPlayer.play()
+  //   } catch (e) {
+  //     console.log(`cannot play the sound file`, e)
+  //   }
+  //   return () => {
+  //     SoundPlayer.stop()
+  //   }
+  // }, [])
+
   onTimeOut = () => {
-    Alert.alert("time out")
     SoundPlayer.stop()
     navigation.navigate("result")
   }

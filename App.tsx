@@ -64,12 +64,12 @@ const App = () => {
           headerShown: false,
         }}
       >
-        {!user ? (
+        {/* {!user ? (
           <>
             <stack.Screen name="signin" component={SigninScreen} />
             <stack.Screen name="signup" component={SignupScreen} />
           </>
-        ) : (
+        ) : ( */}
           <>
             <stack.Screen name="home" component={HomeScreen} />
             <stack.Screen name="waiting" component={WaitingScreen} />
@@ -81,9 +81,9 @@ const App = () => {
             <stack.Screen name="round4_setup" component={Round4SetupScreen} />
             <stack.Screen name="guide" component={GuideScreen} />
             <stack.Screen name="history" component={HistoryScreen} />
-            <stack.Screen name="setting" component={SettingScreen} />
+            {/* <stack.Screen name="setting" component={SettingScreen} /> */}
           </>
-        )}
+        {/* )} */}
       </stack.Navigator>
     </NavigationContainer>
   )

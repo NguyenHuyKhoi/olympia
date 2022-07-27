@@ -59,7 +59,7 @@ export const ROUND4_PACKS: Array<QUIZ_PACK> = [
 ]
 export const INITIAL_GAME: PlayState = {
   rounds: [...INITIAL_ROUNDS],
-  round_idx: 3,
+  round_idx: 0,
   quiz_idx: 0,
   score: 0
 }
@@ -122,7 +122,7 @@ export const createGame = async () => {
   // Game data set up quizzes before
   // Here we add meta-data like score or time for per quiz in each round base on rules
 
-  var game = {...INITIAL_GAME}
+  var game = JSON.parse(JSON.stringify(INITIAL_GAME))
   var bank: GameBank = await RealtimeDBHandler.shared.getBank()
 
   game.rounds[0].quizzes = getRandomQuizzes(bank.round1)

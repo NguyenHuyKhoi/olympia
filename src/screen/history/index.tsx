@@ -42,10 +42,6 @@ const HistoryScreen = () => {
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
   const {results} = useSelector((state) => state.library)
-  useEffect(() => {
-    dispatch(retrieveHistories(user.phone))
-  }, [])
-
 
   const onSelectItem = (index) => {
     if (viewIndex == index) {
@@ -67,9 +63,8 @@ const HistoryScreen = () => {
       {results.length == 0 ? (
         <Text
           style={{
-            fontSize: 40,
+            fontSize: 30,
             color: WHITE,
-            fontWeight: "bold",
             alignSelf: "center",
             marginTop: 250,
           }}
@@ -86,7 +81,6 @@ const HistoryScreen = () => {
           renderItem={({ item, index }) => (
             <ResultItem
               {...item}
-              index={index}
               open={index == viewIndex}
               onPress={() => onSelectItem(index)}
             />

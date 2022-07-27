@@ -10,11 +10,12 @@ import {WHITE} from '../../util/palette'
 import { useNavigation } from "@react-navigation/native"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../../component/button"
-import { nextRound, saveResult } from "../../redux/play/action"
+import { nextRound } from "../../redux/play/action"
 import ResultItem from "../history/component/result_item"
 import Background from '../../component/background'
 import {Round} from '../../redux/types'
 import Text from "../../component/text"
+import { saveResult } from "../../redux/library/action"
 const ResultScreen = (props) => {
   const gameData = useSelector((state) => state.play)
   const {rounds, round_idx} = gameData
@@ -30,23 +31,23 @@ const ResultScreen = (props) => {
       dispatch(nextRound())
       navigation.navigate("waiting")
     } else {
-      dispatch(saveResult(user, gameData))
+      dispatch(saveResult(null, gameData))
       navigation.navigate("home")
     }
   }
 
-  useEffect(() => {
-    try {
-      // play the file tone.mp3
-      SoundPlayer.loadSoundFile("end", "mp3")
-      SoundPlayer.play()
-    } catch (e) {
-      console.log(`cannot play the sound file`, e)
-    }
-    return () => {
-      SoundPlayer.stop()
-    }
-  }, [])
+  // useEffect(() => {
+  //   try {
+  //     // play the file tone.mp3
+  //     SoundPlayer.loadSoundFile("end", "mp3")
+  //     SoundPlayer.play()
+  //   } catch (e) {
+  //     console.log(`cannot play the sound file`, e)
+  //   }
+  //   return () => {
+  //     SoundPlayer.stop()
+  //   }
+  // }, [])
 
   return (
     <View

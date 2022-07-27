@@ -8,7 +8,6 @@ const Round4Screen = () => {
   return (
     <View style={{ flex: 1 }}>
       <RoundContent />
-
     </View>
   )
 }

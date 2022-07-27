@@ -6,7 +6,7 @@ import Button from "../../../component/button"
 import { useNavigation } from "@react-navigation/native"
 import { useDispatch } from "react-redux"
 import Background from "../../../component/background"
-import { ROUND4_PACKS } from "../../../redux/play/rule"
+import { ROUND4_PACKS } from "../../../redux/play/logic"
 import { GREEN, INDIGO_3, SILVER, WHITE } from "../../../util/palette"
 import QuizPack from "./component/quiz_pack"
 import StarCell from "./component/star_cell"
@@ -19,19 +19,19 @@ const Round4SetupScreen = () => {
   const [starIndex, setStarIndex] = useState(null)
   const [packIndex, setPackIndex] = useState(null)
 
-  useEffect(() => {
-    try {
-      // play the file tone.mp3
-      SoundPlayer.loadSoundFile("round4_choose", "mp3")
-      SoundPlayer.play()
-    } catch (e) {
-      console.log(`cannot play the sound file`, e)
-    }
+  // useEffect(() => {
+  //   try {
+  //     // play the file tone.mp3
+  //     SoundPlayer.loadSoundFile("round4_choose", "mp3")
+  //     SoundPlayer.play()
+  //   } catch (e) {
+  //     console.log(`cannot play the sound file`, e)
+  //   }
 
-    return () => {
-      SoundPlayer.stop()
-    }
-  }, [])
+  //   return () => {
+  //     SoundPlayer.stop()
+  //   }
+  // }, [])
 
   const onSelectPack = (index) => {
     if (packIndex == index) {

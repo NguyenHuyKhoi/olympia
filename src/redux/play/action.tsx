@@ -1,7 +1,7 @@
 import FirestoreHandler from "../../service/FirestoreHandler";
 import { Action, GameResult, PlayState } from "../types";
 import uuid from 'react-native-uuid'
-import { createGame } from "./rule";
+import { createGame } from "./logic";
 interface IStartGame {
   (): (dispatch: any) => Promise<void>
 }
@@ -10,9 +10,6 @@ interface IAnswerQuiz {
   (correct: boolean, time: number): Action
 }
 
-interface ISaveResult {
-  (user: User, result: PlayState):  (dispatch: any) => Promise<void>
-}
 
 interface IEnableAnswerKeyword {
   (): Action
@@ -82,21 +79,6 @@ export const enableAnswerKeyword: IEnableAnswerKeyword = () => {
   return {
     type: "ENABLE_ANSWER_KEYWORD",
     payload: {},
-  }
-}
-
-
-export const saveResult: ISaveResult = (user, game) => {
-  return async (dispatch) => {
-    const result: GameResult = {
-      scores: game.rounds.map(i => i.score),
-      user_id: user.phone
-    }
-    await FirestoreHandler.shared.add('Result', result, uuid.v4().toString())
-    dispatch({
-      type: "SAVE_RESULT",
-      payload: {},
-    })
   }
 }
 

@@ -47,12 +47,12 @@ const HomeScreen = () => {
           paddingBottom: 20,
         }}
       >
-        <IconButton logo={"arrow-back"} onPress={onSignOut} />
+        {/* <IconButton logo={"arrow-back"} onPress={onSignOut} /> */}
 
-        <IconButton
+        {/* <IconButton
           logo={"settings"}
           onPress={() => navigation.navigate("setting")}
-        />
+        /> */}
 
         <IconButton
           logo={"assignment"}

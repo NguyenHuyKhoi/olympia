@@ -23,7 +23,10 @@ const Button = (props) => {
         if (props.onPress) props.onPress()
       }}
     >
-      <Text style={{ fontSize: 20, color: "#425CE9" }}>{label}</Text>
+      <Text style={{ fontSize: 20, color: "#425CE9" }}
+        onPress={() => {
+          if (props.onPress) props.onPress()
+        }}>{label}</Text>
     </TouchableOpacity>
   )
 }

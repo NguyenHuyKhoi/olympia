@@ -13,18 +13,18 @@ import Text from "../../component/text"
 const WaitingScreen = () => {
   const navigation = useNavigation()
   const { round_idx, rounds } = useSelector<any, PlayState>((state) => state.play)
-  useEffect(() => {
-    try {
-      // play the file tone.mp3
-      SoundPlayer.loadSoundFile("start", "mp3")
-      SoundPlayer.play()
-    } catch (e) {
-      console.log(`cannot play the sound file`, e)
-    }
-    return () => {
-      SoundPlayer.stop()
-    }
-  }, [])
+  // useEffect(() => {
+  //   try {
+  //     // play the file tone.mp3
+  //     SoundPlayer.loadSoundFile("start", "mp3")
+  //     SoundPlayer.play()
+  //   } catch (e) {
+  //     console.log(`cannot play the sound file`, e)
+  //   }
+  //   return () => {
+  //     SoundPlayer.stop()
+  //   }
+  // }, [])
 
   const onPlay = () => {
     SoundPlayer.stop()

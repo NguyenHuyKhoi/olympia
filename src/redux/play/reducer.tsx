@@ -1,5 +1,5 @@
 import { Action, PlayState, Quiz } from "../types"
-import { INITIAL_GAME } from "./rule"
+import { INITIAL_GAME } from "./logic"
 export const QUIZ_STATUS = {
   CORRECT: 0,
   WRONG: 1,

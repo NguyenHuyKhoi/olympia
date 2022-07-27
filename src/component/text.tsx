@@ -10,13 +10,13 @@ import { theme } from '../theme';
 
 const Text = (props) => {
 	var { children, style, variant, already_trans } = props
-	console.log("Children: ", children)
 	// Like typo
 	if (variant == undefined) variant = 'label'
 	if (children == undefined) children = ''
 	if (already_trans == undefined) already_trans = false
 	return (
 		<TouchableOpacity 
+			disabled = {true}
 			onPress = {() => {
 			if (props.onPress) props.onPress()
 		}}>

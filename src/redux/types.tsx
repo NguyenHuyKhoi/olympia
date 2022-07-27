@@ -62,7 +62,7 @@ export type AuthState = {
 }
 
 export type LibraryState = {
-  results?: Array<GameResult>
+  results: Array<GameResult>
 }
 
 export type CommonState = {
@@ -79,7 +79,7 @@ export type PlayState = {
 
 export type GameResult = {
   scores: Array<number>,
-  user_id: string
+  // user_id: string
 }
 
 export type QuizType = 'math' | 'physical' | 'chemist' | 'biology' | 'literature' | 'history' | 'geography' | 'sport' | 'art' | 'other' | 'common_knowledge' | 'english' | 'iq1' | 'iq2' | 'sort/filter' | 'data'

@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { FlatList, View } from "react-native"
 import Background from "../../component/background"
 import SmallHeader from "../../component/small_header"
-import { INITIAL_ROUNDS } from "../../redux/play/rule"
+import { INITIAL_ROUNDS } from "../../redux/play/logic"
 import LevelItem from "./component/level_item"
 
 const GuideScreen = () => {
