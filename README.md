@@ -1,4 +1,4 @@
-  ### Ứng dụng Mobile với luật chơi và bộ câu hỏi được lấy từ chương trình"Đường lên đỉnh Olympia". <br> Ứng dụng được viết thiết kế bằng Adobe XD và xây dựng bằng React native, cho phép build trên cả Android và Ios.
+  ### Ứng dụng Mobile với luật chơi và bộ câu hỏi từ "Đường lên đỉnh Olympia". <br> App được thiết kế bằng Adobe XD và dùng React native để phát triển, cho phép build trên cả Android và Ios.
 
 Nguyên mẫu giao diện: 
 ![12](https://user-images.githubusercontent.com/43669007/181222553-8202774d-7ad3-4734-b0c7-8a8cd34ba478.PNG)
